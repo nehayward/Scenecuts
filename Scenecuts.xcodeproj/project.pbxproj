@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */; };
 		0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 0177BE82254B1B42008492AB /* KeyboardShortcuts */; };
 		0177BE86254B1B52008492AB /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BE85254B1B52008492AB /* AdvancedSettingsView.swift */; };
+		0177BF0D254B4293008492AB /* ScenecutsHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */; };
+		0177BF0F254B4293008492AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF0E254B4293008492AB /* ContentView.swift */; };
+		0177BF11254B4294008492AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0177BF10254B4294008492AB /* Assets.xcassets */; };
+		0177BF14254B4294008492AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0177BF13254B4294008492AB /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,13 @@
 		013D3A9F254B059C0057F24A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		0177BE85254B1B52008492AB /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
+		0177BF0A254B4293008492AB /* ScenecutsHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenecutsHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenecutsHelperApp.swift; sourceTree = "<group>"; };
+		0177BF0E254B4293008492AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0177BF10254B4294008492AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0177BF13254B4294008492AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0177BF15254B4294008492AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0177BF1B254B42A3008492AB /* ScenecutsHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScenecutsHelper.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +50,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0177BF07254B4293008492AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -46,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				013D3A0C254AFADF0057F24A /* Scenecuts */,
+				0177BF0B254B4293008492AB /* ScenecutsHelper */,
 				013D3A0B254AFADF0057F24A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				013D3A0A254AFADF0057F24A /* Scenecuts.app */,
+				0177BF0A254B4293008492AB /* ScenecutsHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +110,27 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		0177BF0B254B4293008492AB /* ScenecutsHelper */ = {
+			isa = PBXGroup;
+			children = (
+				0177BF1B254B42A3008492AB /* ScenecutsHelper.entitlements */,
+				0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */,
+				0177BF0E254B4293008492AB /* ContentView.swift */,
+				0177BF10254B4294008492AB /* Assets.xcassets */,
+				0177BF15254B4294008492AB /* Info.plist */,
+				0177BF12254B4294008492AB /* Preview Content */,
+			);
+			path = ScenecutsHelper;
+			sourceTree = "<group>";
+		};
+		0177BF12254B4294008492AB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0177BF13254B4294008492AB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -100,6 +141,7 @@
 				013D3A06254AFADF0057F24A /* Sources */,
 				013D3A07254AFADF0057F24A /* Frameworks */,
 				013D3A08254AFADF0057F24A /* Resources */,
+				0177BF24254B43CF008492AB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -113,6 +155,23 @@
 			productReference = 013D3A0A254AFADF0057F24A /* Scenecuts.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0177BF09254B4293008492AB /* ScenecutsHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0177BF18254B4294008492AB /* Build configuration list for PBXNativeTarget "ScenecutsHelper" */;
+			buildPhases = (
+				0177BF06254B4293008492AB /* Sources */,
+				0177BF07254B4293008492AB /* Frameworks */,
+				0177BF08254B4293008492AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScenecutsHelper;
+			productName = ScenecutsHelper;
+			productReference = 0177BF0A254B4293008492AB /* ScenecutsHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -123,6 +182,9 @@
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					013D3A09254AFADF0057F24A = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					0177BF09254B4293008492AB = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -144,6 +206,7 @@
 			projectRoot = "";
 			targets = (
 				013D3A09254AFADF0057F24A /* Scenecuts */,
+				0177BF09254B4293008492AB /* ScenecutsHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -158,7 +221,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0177BF08254B4293008492AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0177BF14254B4294008492AB /* Preview Assets.xcassets in Resources */,
+				0177BF11254B4294008492AB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0177BF24254B43CF008492AB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"$SRCROOT\"\n\"$SRCROOT\"/buildPhase.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		013D3A06254AFADF0057F24A /* Sources */ = {
@@ -170,6 +263,15 @@
 				013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */,
 				0177BE86254B1B52008492AB /* AdvancedSettingsView.swift in Sources */,
 				013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0177BF06254B4293008492AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0177BF0F254B4293008492AB /* ContentView.swift in Sources */,
+				0177BF0D254B4293008492AB /* ScenecutsHelperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +437,57 @@
 			};
 			name = Release;
 		};
+		0177BF16254B4294008492AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ScenecutsHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0177BF17254B4294008492AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = ScenecutsHelper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -352,6 +505,15 @@
 			buildConfigurations = (
 				013D3A1B254AFADF0057F24A /* Debug */,
 				013D3A1C254AFADF0057F24A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0177BF18254B4294008492AB /* Build configuration list for PBXNativeTarget "ScenecutsHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0177BF16254B4294008492AB /* Debug */,
+				0177BF17254B4294008492AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
