@@ -13,13 +13,31 @@
 		013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3A1E254AFB320057F24A /* StatusBarController.swift */; };
 		013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3A9F254B059C0057F24A /* SettingsView.swift */; };
 		013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */; };
+		01426014254DAF7200821E69 /* URLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426013254DAF7200821E69 /* URLView.swift */; };
+		01426018254DB15300821E69 /* ActionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426017254DB15300821E69 /* ActionSet.swift */; };
+		01426019254DB15300821E69 /* ActionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426017254DB15300821E69 /* ActionSet.swift */; };
 		0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 0177BE82254B1B42008492AB /* KeyboardShortcuts */; };
 		0177BE86254B1B52008492AB /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BE85254B1B52008492AB /* AdvancedSettingsView.swift */; };
 		0177BF0D254B4293008492AB /* ScenecutsHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */; };
-		0177BF0F254B4293008492AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF0E254B4293008492AB /* ContentView.swift */; };
 		0177BF11254B4294008492AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0177BF10254B4294008492AB /* Assets.xcassets */; };
 		0177BF14254B4294008492AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0177BF13254B4294008492AB /* Preview Assets.xcassets */; };
+		0177BF3C254B4671008492AB /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF3B254B4671008492AB /* ServiceManagement.framework */; };
+		0177BF8B254B4F3D008492AB /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF8A254B4F3D008492AB /* HomeManager.swift */; };
+		0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF8E254B538C008492AB /* HomeKit.framework */; };
+		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0177BF73254B4A25008492AB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		013D3A0A254AFADF0057F24A /* Scenecuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scenecuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,14 +49,19 @@
 		013D3A1E254AFB320057F24A /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		013D3A9F254B059C0057F24A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
+		01426013254DAF7200821E69 /* URLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLView.swift; sourceTree = "<group>"; };
+		01426017254DB15300821E69 /* ActionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSet.swift; sourceTree = "<group>"; };
 		0177BE85254B1B52008492AB /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
 		0177BF0A254B4293008492AB /* ScenecutsHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenecutsHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenecutsHelperApp.swift; sourceTree = "<group>"; };
-		0177BF0E254B4293008492AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0177BF10254B4294008492AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0177BF13254B4294008492AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0177BF15254B4294008492AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0177BF1B254B42A3008492AB /* ScenecutsHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScenecutsHelper.entitlements; sourceTree = "<group>"; };
+		0177BF3B254B4671008492AB /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		0177BF8A254B4F3D008492AB /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
+		0177BF8E254B538C008492AB /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
+		0177BF92254B60B3008492AB /* HelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */,
+				0177BF3C254B4671008492AB /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +91,7 @@
 				013D3A0C254AFADF0057F24A /* Scenecuts */,
 				0177BF0B254B4293008492AB /* ScenecutsHelper */,
 				013D3A0B254AFADF0057F24A /* Products */,
+				0177BF3A254B4671008492AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +109,7 @@
 			children = (
 				013D3A0D254AFADF0057F24A /* ScenecutsApp.swift */,
 				013D3A1E254AFB320057F24A /* StatusBarController.swift */,
+				0177BF92254B60B3008492AB /* HelperManager.swift */,
 				0177BE7E254B0B97008492AB /* Settings */,
 				013D3A11254AFADF0057F24A /* Assets.xcassets */,
 				013D3A16254AFADF0057F24A /* Info.plist */,
@@ -115,7 +142,9 @@
 			children = (
 				0177BF1B254B42A3008492AB /* ScenecutsHelper.entitlements */,
 				0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */,
-				0177BF0E254B4293008492AB /* ContentView.swift */,
+				0177BF8A254B4F3D008492AB /* HomeManager.swift */,
+				01426017254DB15300821E69 /* ActionSet.swift */,
+				01426013254DAF7200821E69 /* URLView.swift */,
 				0177BF10254B4294008492AB /* Assets.xcassets */,
 				0177BF15254B4294008492AB /* Info.plist */,
 				0177BF12254B4294008492AB /* Preview Content */,
@@ -131,6 +160,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0177BF3A254B4671008492AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0177BF8E254B538C008492AB /* HomeKit.framework */,
+				0177BF3B254B4671008492AB /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,6 +180,7 @@
 				013D3A07254AFADF0057F24A /* Frameworks */,
 				013D3A08254AFADF0057F24A /* Resources */,
 				0177BF24254B43CF008492AB /* ShellScript */,
+				0177BF73254B4A25008492AB /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -249,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"$SRCROOT\"\n\"$SRCROOT\"/buildPhase.sh\n";
+			shellScript = "#\"$SRCROOT\"/buildPhase.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -261,6 +300,8 @@
 				013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */,
 				013D3A0E254AFADF0057F24A /* ScenecutsApp.swift in Sources */,
 				013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */,
+				0177BF93254B60B3008492AB /* HelperManager.swift in Sources */,
+				01426018254DB15300821E69 /* ActionSet.swift in Sources */,
 				0177BE86254B1B52008492AB /* AdvancedSettingsView.swift in Sources */,
 				013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */,
 			);
@@ -270,7 +311,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0177BF0F254B4293008492AB /* ContentView.swift in Sources */,
+				01426019254DB15300821E69 /* ActionSet.swift in Sources */,
+				01426014254DAF7200821E69 /* URLView.swift in Sources */,
+				0177BF8B254B4F3D008492AB /* HomeManager.swift in Sources */,
 				0177BF0D254B4293008492AB /* ScenecutsHelperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,7 +452,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alo.alomoves.Scenecuts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -431,7 +474,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.alo.alomoves.Scenecuts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -456,6 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,6 +525,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -13,14 +13,14 @@ struct SettingsView: View {
     }
     var body: some View {
         TabView {
-            GeneralSettingsView()
+            GeneralSettingsView(helper: HelperManager.shared.helper)
                 .frame(width: 375, height: 150)
                 .tabItem {
                     Label("General", systemImage: "gear")
                 }
                 .tag(Tabs.general)
             
-            AdvancedSettingsView()
+            AdvancedSettingsView(book: BookItem(name: "Testing", enabled: false), helper: HelperManager.shared.helper)
                 .frame(width: 375)
                 .tabItem {
                     Label("Advanced", systemImage: "star")

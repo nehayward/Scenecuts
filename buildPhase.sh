@@ -6,5 +6,16 @@ set -e
 # fi
 
 echo "Hello"
+# cp testing.txt ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app
 
-exit 0
+xcodebuild -alltargets clean
+xcodebuild archive -scheme "ScenecutsHelper" -archivePath macCatalyst.xcarchive -sdk macosx SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES SUPPORTS_MACCATALYST=YES
+
+# 
+# xcodebuild archive \
+# -scheme $SCHEME \
+# -archivePath $ARCHS/macCatalyst.xcarchive \
+# -sdk macosx \
+# SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES SUPPORTS_MACCATALYST=YES
+# 
+# xcodebuild archive -scheme "ScenecutsHelper" -archivePath $ARCHS/macCatalyst.xcarchive -sdk macosx SKIP_INSTALL=NO BUILD_LIBRARIES_FOR_DISTRIBUTION=YES SUPPORTS_MACCATALYST=YES

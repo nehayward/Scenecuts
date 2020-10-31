@@ -7,65 +7,88 @@
 
 import SwiftUI
 import KeyboardShortcuts
+import Combine
+
+class BookItem: ObservableObject, Identifiable, Equatable {
+    internal init(name: String, enabled: Bool) {
+        self.name = name
+        self.enabled = enabled
+    }
+    
+    static func == (lhs: BookItem, rhs: BookItem) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    let id = UUID()
+    let name: String
+    @Published var enabled: Bool
+    
+}
 
 struct AdvancedSettingsView: View {
-    @State var items = StatusBarController.shared.sceneMenuBarItems
-    @State var showInMenuBar = false
-    
-//    @ObservedObject var statusItems: StatusItems
-    
+    @ObservedObject var book: BookItem
+    @ObservedObject var helper: Helper
+    @State private var route = false
+
     var body: some View {
         
         Form {
-            ForEach(items, id: \.self) { item in
+            ForEach(helper.scenes.indices,id: \.self){ index in
                 HStack {
-                    Text(item.name)
-                Image(systemName: item.icon)
-                Toggle("Show in Menubar", isOn: $showInMenuBar)
-                    .onChange(of: showInMenuBar) { (newValue) in
-                        print(newValue)
-                        StatusBarController.shared.sceneMenuBarItems[0].showInMenuBar = newValue
-                    }
-
-                KeyboardShortcuts.Recorder(for: .pref)
+                    Text(helper.scenes[index].name)
+                    Spacer()
+                    Toggle("Show in Menubar", isOn: $helper.scenes[index].isInMenuBar)
+                    
+//                    KeyboardShortcuts.Recorder(for: KeyboardShortcuts.Name(scene.id.uuidString))
                 }
             }
+//            ForEach(helper.$scenes, id: \.self) { item in
+//                HStack {
+//                    Text(item.name)
+//                    Image(systemName: item.icon)
+//                    Toggle("Show in Menubar", isOn: $showInMenuBar)
+//                        .onChange(of: showInMenuBar) { (newValue) in
+//                            print(newValue)
+//                            StatusBarController.shared.sceneMenuBarItems[0].showInMenuBar = newValue
+//                        }
 //
-//            HStack {
-//                Text("Brandford")
-//                Image(systemName: "house")
-//                Toggle("Show in Menubar", isOn: $showInMenuBar)
-//                KeyboardShortcuts.Recorder(for: .pref)
+//                    KeyboardShortcuts.Recorder(for: .pref)
+//                }
 //            }
-//            HStack {
-//                Text("Brandford")
-//                Image(systemName: "house")
-//                KeyboardShortcuts.Recorder(for: .pref)
-//            }
-//            HStack {
-//                Text("Brandford")
-//                Image(systemName: "house")
-//                KeyboardShortcuts.Recorder(for: .pref)
-//            }
-//            HStack {
-//                Text("Brandford")
-//                Image(systemName: "house")
-//                KeyboardShortcuts.Recorder(for: .pref)
-//            }
-//            HStack {
-//                Text("Brandford")
-//                Image(systemName: "house")
-//                KeyboardShortcuts.Recorder(for: .pref)
-//            }
-//            HStack {
-//                Text("Brandford")
-//                Image(systemName: "house")
-//                KeyboardShortcuts.Recorder(for: .pref)
-//            }
-//
-            if showInMenuBar {
-                EmptyView()
-            }
+            //
+            //            HStack {
+            //                Text("Brandford")
+            //                Image(systemName: "house")
+            //                Toggle("Show in Menubar", isOn: $showInMenuBar)
+            //                KeyboardShortcuts.Recorder(for: .pref)
+            //            }
+            //            HStack {
+            //                Text("Brandford")
+            //                Image(systemName: "house")
+            //                KeyboardShortcuts.Recorder(for: .pref)
+            //            }
+            //            HStack {
+            //                Text("Brandford")
+            //                Image(systemName: "house")
+            //                KeyboardShortcuts.Recorder(for: .pref)
+            //            }
+            //            HStack {
+            //                Text("Brandford")
+            //                Image(systemName: "house")
+            //                KeyboardShortcuts.Recorder(for: .pref)
+            //            }
+            //            HStack {
+            //                Text("Brandford")
+            //                Image(systemName: "house")
+            //                KeyboardShortcuts.Recorder(for: .pref)
+            //            }
+            //            HStack {
+            //                Text("Brandford")
+            //                Image(systemName: "house")
+            //                KeyboardShortcuts.Recorder(for: .pref)
+            //            }
+            //
+            
         }
     }
     
@@ -80,11 +103,11 @@ struct AdvancedSettingsView: View {
 //    @Published private(set) var showInStatusBar: Bool = false
 //}
 
-struct AdvanceSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AdvancedSettingsView()
-    }
-}
+//struct AdvanceSettingsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AdvancedSettingsView()
+//    }
+//}
 
 extension KeyboardShortcuts.Name {
     static let pref = Self("pref", default: Shortcut(.t, modifiers: [.command,.control,.shift]))
