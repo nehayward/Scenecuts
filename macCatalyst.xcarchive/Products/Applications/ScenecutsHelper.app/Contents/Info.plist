@@ -54,11 +54,11 @@
 	<key>DTXcodeBuild</key>
 	<string>12B5035g</string>
 	<key>LSBackgroundOnly</key>
-	<false/>
+	<true/>
 	<key>LSMinimumSystemVersion</key>
 	<string>11.0</string>
 	<key>LSUIElement</key>
-	<true/>
+	<false/>
 	<key>NSHomeKitUsageDescription</key>
 	<string>Triggers scenes</string>
 	<key>NSSupportsAutomaticTermination</key>

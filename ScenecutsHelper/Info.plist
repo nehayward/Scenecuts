@@ -32,11 +32,11 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSBackgroundOnly</key>
-	<true/>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>LSUIElement</key>
-	<false/>
+	<true/>
 	<key>NSHomeKitUsageDescription</key>
 	<string>Triggers scenes</string>
 	<key>UIApplicationSceneManifest</key>

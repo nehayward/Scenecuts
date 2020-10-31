@@ -106,26 +106,25 @@ class HelperManager {
         }
 //
 //
-//        NSWorkspace.shared.openApplication(at: appURL!, configuration: configuration) { (running, error) in
-//            print(running)
-//            print(error)
-//            if error != nil {
-//                DispatchQueue.main.async {
-//                    let alert = NSAlert()
-//                    alert.messageText = "Access Needed"
-//                    alert.informativeText = "Home"
-//                    alert.alertStyle = .warning
-//                    alert.addButton(withTitle: "Open Privacy Settings")
-//                    alert.addButton(withTitle: "Cancel")
-//                    let buttonClicked = alert.runModal()
-//
-//                    if buttonClicked.rawValue > 0 {
-//                        NSWorkspace.shared.open(appURL!.deletingLastPathComponent())
-//                    }
-//                }
-//
-//            }
-//        }
+        NSWorkspace.shared.openApplication(at: appURL!, configuration: configuration) { (running, error) in
+            print(running)
+            print(error)
+            if error != nil {
+                DispatchQueue.main.async {
+                    let alert = NSAlert()
+                    alert.messageText = "Can't Open Helper App"
+                    alert.informativeText = "Home"
+                    alert.alertStyle = .warning
+                    alert.addButton(withTitle: "Launch Helper App")
+                    let buttonClicked = alert.runModal()
+
+                    if buttonClicked.rawValue > 0 {
+                        NSWorkspace.shared.open(appURL!.deletingLastPathComponent())
+                    }
+                }
+
+            }
+        }
     }
     
     func killHelper() {
