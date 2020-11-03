@@ -7,27 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0104AC87254E0F33004124CD /* AppKitIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 0104AC85254E0F33004124CD /* AppKitIntegration.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0104AC8A254E0F33004124CD /* AppKitIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */; };
+		0104AC8B254E0F33004124CD /* AppKitIntegration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0104AC94254E0F54004124CD /* AppKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0104AC93254E0F54004124CD /* AppKitController.swift */; };
+		0104ACA7254E100D004124CD /* AppKitIntegration.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		010B32672551CF5300F2F228 /* SceneStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B32662551CF5300F2F228 /* SceneStatusBarItem.swift */; };
 		013D3A0E254AFADF0057F24A /* ScenecutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3A0D254AFADF0057F24A /* ScenecutsApp.swift */; };
 		013D3A12254AFADF0057F24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013D3A11254AFADF0057F24A /* Assets.xcassets */; };
 		013D3A15254AFADF0057F24A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013D3A14254AFADF0057F24A /* Preview Assets.xcassets */; };
 		013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3A1E254AFB320057F24A /* StatusBarController.swift */; };
 		013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3A9F254B059C0057F24A /* SettingsView.swift */; };
 		013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */; };
-		01426014254DAF7200821E69 /* URLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426013254DAF7200821E69 /* URLView.swift */; };
 		01426018254DB15300821E69 /* ActionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426017254DB15300821E69 /* ActionSet.swift */; };
 		01426019254DB15300821E69 /* ActionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426017254DB15300821E69 /* ActionSet.swift */; };
+		0155941C254F0D1500468BA5 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155941B254F0D1500468BA5 /* Notification+Extensions.swift */; };
+		0155941F254F0D8300468BA5 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155941B254F0D1500468BA5 /* Notification+Extensions.swift */; };
+		01559421254F0EAC00468BA5 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155941B254F0D1500468BA5 /* Notification+Extensions.swift */; };
 		0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 0177BE82254B1B42008492AB /* KeyboardShortcuts */; };
-		0177BE86254B1B52008492AB /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BE85254B1B52008492AB /* AdvancedSettingsView.swift */; };
+		0177BE86254B1B52008492AB /* SceneSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BE85254B1B52008492AB /* SceneSettingsView.swift */; };
 		0177BF0D254B4293008492AB /* ScenecutsHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */; };
 		0177BF11254B4294008492AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0177BF10254B4294008492AB /* Assets.xcassets */; };
 		0177BF14254B4294008492AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0177BF13254B4294008492AB /* Preview Assets.xcassets */; };
-		0177BF3C254B4671008492AB /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF3B254B4671008492AB /* ServiceManagement.framework */; };
-		0177BF8B254B4F3D008492AB /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF8A254B4F3D008492AB /* HomeManager.swift */; };
+		0177BF8B254B4F3D008492AB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF8A254B4F3D008492AB /* Home.swift */; };
 		0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF8E254B538C008492AB /* HomeKit.framework */; };
 		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0104AC88254E0F33004124CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 013D3A02254AFADF0057F24A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0104AC82254E0F33004124CD;
+			remoteInfo = AppKitIntegration;
+		};
+		0104AC99254E0F6C004124CD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 013D3A02254AFADF0057F24A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0104AC82254E0F33004124CD;
+			remoteInfo = AppKitIntegration;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		0104AC4D254E0E04004124CD /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0104AC72254E0F00004124CD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0104AC8B254E0F33004124CD /* AppKitIntegration.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0104ACA6254E1002004124CD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0104ACA7254E100D004124CD /* AppKitIntegration.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0177BF73254B4A25008492AB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -40,7 +95,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		013D3A0A254AFADF0057F24A /* Scenecuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scenecuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0104AC83254E0F33004124CD /* AppKitIntegration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppKitIntegration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0104AC85254E0F33004124CD /* AppKitIntegration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKitIntegration.h; sourceTree = "<group>"; };
+		0104AC86254E0F33004124CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0104AC8C254E0F33004124CD /* Scenecuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scenecuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0104AC92254E0F48004124CD /* ScenecutsHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenecutsHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0104AC93254E0F54004124CD /* AppKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitController.swift; sourceTree = "<group>"; };
+		010B32662551CF5300F2F228 /* SceneStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStatusBarItem.swift; sourceTree = "<group>"; };
 		013D3A0D254AFADF0057F24A /* ScenecutsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenecutsApp.swift; sourceTree = "<group>"; };
 		013D3A11254AFADF0057F24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		013D3A14254AFADF0057F24A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -49,28 +110,33 @@
 		013D3A1E254AFB320057F24A /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		013D3A9F254B059C0057F24A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
-		01426013254DAF7200821E69 /* URLView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLView.swift; sourceTree = "<group>"; };
 		01426017254DB15300821E69 /* ActionSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionSet.swift; sourceTree = "<group>"; };
-		0177BE85254B1B52008492AB /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
-		0177BF0A254B4293008492AB /* ScenecutsHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenecutsHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0155941B254F0D1500468BA5 /* Notification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extensions.swift"; sourceTree = "<group>"; };
+		0177BE85254B1B52008492AB /* SceneSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSettingsView.swift; sourceTree = "<group>"; };
 		0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenecutsHelperApp.swift; sourceTree = "<group>"; };
 		0177BF10254B4294008492AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0177BF13254B4294008492AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0177BF15254B4294008492AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0177BF1B254B42A3008492AB /* ScenecutsHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScenecutsHelper.entitlements; sourceTree = "<group>"; };
-		0177BF3B254B4671008492AB /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		0177BF8A254B4F3D008492AB /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
+		0177BF8A254B4F3D008492AB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0177BF8E254B538C008492AB /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
 		0177BF92254B60B3008492AB /* HelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0104AC80254E0F33004124CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		013D3A07254AFADF0057F24A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */,
-				0177BF3C254B4671008492AB /* ServiceManagement.framework in Frameworks */,
+				0104AC8A254E0F33004124CD /* AppKitIntegration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,23 +151,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0104AC84254E0F33004124CD /* AppKitIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				0104AC85254E0F33004124CD /* AppKitIntegration.h */,
+				0104AC93254E0F54004124CD /* AppKitController.swift */,
+				0104AC86254E0F33004124CD /* Info.plist */,
+			);
+			path = AppKitIntegration;
+			sourceTree = "<group>";
+		};
+		010B32652551CF4900F2F228 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				010B32662551CF5300F2F228 /* SceneStatusBarItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		013D3A01254AFADF0057F24A = {
 			isa = PBXGroup;
 			children = (
+				0155941A254F0D0600468BA5 /* Shared */,
 				013D3A0C254AFADF0057F24A /* Scenecuts */,
 				0177BF0B254B4293008492AB /* ScenecutsHelper */,
-				013D3A0B254AFADF0057F24A /* Products */,
+				0104AC84254E0F33004124CD /* AppKitIntegration */,
+				0104AC83254E0F33004124CD /* AppKitIntegration.framework */,
+				0104AC8C254E0F33004124CD /* Scenecuts.app */,
+				0104AC92254E0F48004124CD /* ScenecutsHelper.app */,
 				0177BF3A254B4671008492AB /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		013D3A0B254AFADF0057F24A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				013D3A0A254AFADF0057F24A /* Scenecuts.app */,
-				0177BF0A254B4293008492AB /* ScenecutsHelper.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		013D3A0C254AFADF0057F24A /* Scenecuts */ = {
@@ -111,6 +190,7 @@
 				013D3A1E254AFB320057F24A /* StatusBarController.swift */,
 				0177BF92254B60B3008492AB /* HelperManager.swift */,
 				0177BE7E254B0B97008492AB /* Settings */,
+				010B32652551CF4900F2F228 /* Models */,
 				013D3A11254AFADF0057F24A /* Assets.xcassets */,
 				013D3A16254AFADF0057F24A /* Info.plist */,
 				013D3A17254AFADF0057F24A /* Scenecuts.entitlements */,
@@ -127,12 +207,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0143F110254F858D0009B432 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01426017254DB15300821E69 /* ActionSet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0155941A254F0D0600468BA5 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				0155941B254F0D1500468BA5 /* Notification+Extensions.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		0177BE7E254B0B97008492AB /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				013D3A9F254B059C0057F24A /* SettingsView.swift */,
 				013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */,
-				0177BE85254B1B52008492AB /* AdvancedSettingsView.swift */,
+				0177BE85254B1B52008492AB /* SceneSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -142,9 +238,8 @@
 			children = (
 				0177BF1B254B42A3008492AB /* ScenecutsHelper.entitlements */,
 				0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */,
-				0177BF8A254B4F3D008492AB /* HomeManager.swift */,
-				01426017254DB15300821E69 /* ActionSet.swift */,
-				01426013254DAF7200821E69 /* URLView.swift */,
+				0177BF8A254B4F3D008492AB /* Home.swift */,
+				0143F110254F858D0009B432 /* Models */,
 				0177BF10254B4294008492AB /* Assets.xcassets */,
 				0177BF15254B4294008492AB /* Info.plist */,
 				0177BF12254B4294008492AB /* Preview Content */,
@@ -164,14 +259,42 @@
 			isa = PBXGroup;
 			children = (
 				0177BF8E254B538C008492AB /* HomeKit.framework */,
-				0177BF3B254B4671008492AB /* ServiceManagement.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0104AC7E254E0F33004124CD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0104AC87254E0F33004124CD /* AppKitIntegration.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		0104AC82254E0F33004124CD /* AppKitIntegration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0104AC8D254E0F33004124CD /* Build configuration list for PBXNativeTarget "AppKitIntegration" */;
+			buildPhases = (
+				0104AC7E254E0F33004124CD /* Headers */,
+				0104AC7F254E0F33004124CD /* Sources */,
+				0104AC80254E0F33004124CD /* Frameworks */,
+				0104AC81254E0F33004124CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppKitIntegration;
+			productName = AppKitIntegration;
+			productReference = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		013D3A09254AFADF0057F24A /* Scenecuts */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 013D3A1A254AFADF0057F24A /* Build configuration list for PBXNativeTarget "Scenecuts" */;
@@ -181,17 +304,19 @@
 				013D3A08254AFADF0057F24A /* Resources */,
 				0177BF24254B43CF008492AB /* ShellScript */,
 				0177BF73254B4A25008492AB /* CopyFiles */,
+				0104AC72254E0F00004124CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0104AC89254E0F33004124CD /* PBXTargetDependency */,
 			);
 			name = Scenecuts;
 			packageProductDependencies = (
 				0177BE82254B1B42008492AB /* KeyboardShortcuts */,
 			);
 			productName = Scenecuts;
-			productReference = 013D3A0A254AFADF0057F24A /* Scenecuts.app */;
+			productReference = 0104AC8C254E0F33004124CD /* Scenecuts.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0177BF09254B4293008492AB /* ScenecutsHelper */ = {
@@ -201,14 +326,17 @@
 				0177BF06254B4293008492AB /* Sources */,
 				0177BF07254B4293008492AB /* Frameworks */,
 				0177BF08254B4293008492AB /* Resources */,
+				0104AC4D254E0E04004124CD /* Embed PlugIns */,
+				0104ACA6254E1002004124CD /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0104AC9A254E0F6C004124CD /* PBXTargetDependency */,
 			);
 			name = ScenecutsHelper;
 			productName = ScenecutsHelper;
-			productReference = 0177BF0A254B4293008492AB /* ScenecutsHelper.app */;
+			productReference = 0104AC92254E0F48004124CD /* ScenecutsHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -220,6 +348,10 @@
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
+					0104AC82254E0F33004124CD = {
+						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
+					};
 					013D3A09254AFADF0057F24A = {
 						CreatedOnToolsVersion = 12.2;
 					};
@@ -240,17 +372,25 @@
 			packageReferences = (
 				0177BE81254B1B42008492AB /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 			);
-			productRefGroup = 013D3A0B254AFADF0057F24A /* Products */;
+			productRefGroup = 013D3A01254AFADF0057F24A;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				013D3A09254AFADF0057F24A /* Scenecuts */,
 				0177BF09254B4293008492AB /* ScenecutsHelper */,
+				0104AC82254E0F33004124CD /* AppKitIntegration */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0104AC81254E0F33004124CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		013D3A08254AFADF0057F24A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -288,21 +428,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT\"/buildPhase.sh\n";
+			shellScript = "#\"$SRCROOT\"/buildPhase.sh\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0104AC7F254E0F33004124CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0155941F254F0D8300468BA5 /* Notification+Extensions.swift in Sources */,
+				0104AC94254E0F54004124CD /* AppKitController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		013D3A06254AFADF0057F24A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */,
 				013D3A0E254AFADF0057F24A /* ScenecutsApp.swift in Sources */,
+				0155941C254F0D1500468BA5 /* Notification+Extensions.swift in Sources */,
 				013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */,
 				0177BF93254B60B3008492AB /* HelperManager.swift in Sources */,
 				01426018254DB15300821E69 /* ActionSet.swift in Sources */,
-				0177BE86254B1B52008492AB /* AdvancedSettingsView.swift in Sources */,
+				0177BE86254B1B52008492AB /* SceneSettingsView.swift in Sources */,
+				010B32672551CF5300F2F228 /* SceneStatusBarItem.swift in Sources */,
 				013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,15 +463,90 @@
 			buildActionMask = 2147483647;
 			files = (
 				01426019254DB15300821E69 /* ActionSet.swift in Sources */,
-				01426014254DAF7200821E69 /* URLView.swift in Sources */,
-				0177BF8B254B4F3D008492AB /* HomeManager.swift in Sources */,
+				01559421254F0EAC00468BA5 /* Notification+Extensions.swift in Sources */,
+				0177BF8B254B4F3D008492AB /* Home.swift in Sources */,
 				0177BF0D254B4293008492AB /* ScenecutsHelperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0104AC89254E0F33004124CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0104AC82254E0F33004124CD /* AppKitIntegration */;
+			targetProxy = 0104AC88254E0F33004124CD /* PBXContainerItemProxy */;
+		};
+		0104AC9A254E0F6C004124CD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = maccatalyst;
+			target = 0104AC82254E0F33004124CD /* AppKitIntegration */;
+			targetProxy = 0104AC99254E0F6C004124CD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		0104AC8E254E0F33004124CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AppKitIntegration/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nick.AppKitIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0104AC8F254E0F33004124CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = CU49YR9KXZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AppKitIntegration/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nick.AppKitIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		013D3A18254AFADF0057F24A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -439,6 +665,7 @@
 		013D3A1B254AFADF0057F24A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Scenecuts/Scenecuts.entitlements;
@@ -462,6 +689,7 @@
 		013D3A1C254AFADF0057F24A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Scenecuts/Scenecuts.entitlements;
@@ -485,6 +713,7 @@
 		0177BF16254B4294008492AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
@@ -511,6 +740,7 @@
 		0177BF17254B4294008492AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
@@ -538,6 +768,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0104AC8D254E0F33004124CD /* Build configuration list for PBXNativeTarget "AppKitIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0104AC8E254E0F33004124CD /* Debug */,
+				0104AC8F254E0F33004124CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		013D3A05254AFADF0057F24A /* Build configuration list for PBXProject "Scenecuts" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -6,33 +6,33 @@
 //
 
 import SwiftUI
+import KeyboardShortcuts
 
 struct SettingsView: View {
     private enum Tabs: Hashable {
-        case general, advanced
+        case general, advanced, testing
     }
+    
     var body: some View {
         TabView {
             GeneralSettingsView(helper: HelperManager.shared.helper)
-                .frame(width: 375, height: 150)
+                .frame(width: 600)
                 .tabItem {
                     Label("General", systemImage: "gear")
                 }
                 .tag(Tabs.general)
             
-            AdvancedSettingsView(book: BookItem(name: "Testing", enabled: false), helper: HelperManager.shared.helper)
-                .frame(width: 375)
+            SceneSettingsView(helper: HelperManager.shared.helper)
+                .frame(width: 600)
                 .tabItem {
-                    Label("Advanced", systemImage: "star")
+                    Label("Scenes", systemImage: "play.circle")
                 }
                 .tag(Tabs.advanced)
         }
         .padding(20)
-//        .frame(width: 375, height: 150)
-
+        .frame(minWidth: 375)
     }
 }
-
 
 struct SettingsViewTest_Previews: PreviewProvider {
     static var previews: some View {

@@ -16,7 +16,7 @@ class StatusBarController {
     private lazy var mainStatusItem: NSStatusItem = {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         
-        statusItem.button?.image = NSImage(systemSymbolName: "house.fill", accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
+        statusItem.button?.image = NSImage(systemSymbolName: "homekit", accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
         statusItem.button?.target = self
         
         let menu = NSMenu()
@@ -34,9 +34,9 @@ class StatusBarController {
     }()
     
     func createStatusItem(from scene: SceneStatusBarItem) -> NSStatusItem {
-        let image = NSImage(systemSymbolName: scene.icon, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         // MARK: Add Option to add Image
+//        let image = NSImage(systemSymbolName: scene.icon, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
 //        statusItem.button?.image = image
         statusItem.button?.title = scene.name
         statusItem.button?.identifier = NSUserInterfaceItemIdentifier(scene.id.uuidString)
@@ -67,12 +67,7 @@ class StatusBarController {
               let uuid = UUID(uuidString: identifier),
               let id = HelperManager.shared.helper.scenes.first(where: { $0.id == uuid})?.id else { return }
         
-        var components = URLComponents()
-        components.scheme = "scenecutshelper"
-        components.queryItems = [URLQueryItem(name: "uuid", value: id.uuidString)]
-        
-        NSWorkspace.shared.open(components.url!)
-        #warning("Trigger Action, with URL")
+        DistributedNotificationCenter.default().postNotificationName(.triggerScene, object: id.uuidString, userInfo: nil, deliverImmediately: true)
     }
     
     func addMenuItem(for actionSet: ActionSet) {
@@ -88,35 +83,13 @@ class StatusBarController {
             return
         }
         menu.items.insert(menuItem, at: 0)
-        
-    }
-}
-
-class SceneStatusBarItem: Identifiable, Equatable {
-    static func == (lhs: SceneStatusBarItem, rhs: SceneStatusBarItem) -> Bool {
-        lhs.id == rhs.id
     }
     
-    internal init(id: UUID = UUID(), name: String, icon: String, shortcut: String, isInMenuBar: Bool) {
-        self.id = id
-        self.name = name
-        self.icon = icon
-        self.shortcut = shortcut
-        self.isInMenuBar = isInMenuBar
-    }
-    var id: UUID = UUID()
-    let name: String
-    let icon: String
-    let shortcut: String
-    
-    @Published var isInMenuBar: Bool {
-        didSet {
-            UserDefaults.standard.setValue(isInMenuBar, forKey: self.id.uuidString)
-            if isInMenuBar {
-                StatusBarController.shared.statusItems[id] = StatusBarController.shared.createStatusItem(from: self)
-            } else {
-                StatusBarController.shared.statusItems.removeValue(forKey: id)
-            }
+    func removeMenuItem(with id: String) {
+        guard let menu = mainStatusItem.menu else { return }
+       
+        menu.items.removeAll { (menuItem) -> Bool in
+            menuItem.identifier?.rawValue == id
         }
     }
 }

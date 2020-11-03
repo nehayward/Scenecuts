@@ -9,14 +9,11 @@ import SwiftUI
 
 @main
 struct ScenecutsHelperApp: App {
-//    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    init() {
-        Home.shared.setup()
-    }
-    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
-            URLView()
+            EmptyView()
         }
     }
 }
@@ -24,53 +21,33 @@ struct ScenecutsHelperApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
+    static var appKitController:NSObject?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        print(launchOptions)
+        AppDelegate.loadAppKitIntegrationFramework()
         Home.shared.setup()
         return false
     }
     
-    
-//
-//
-//    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-//        URLContexts.forEach { (context) in
-//            print(context.options.sourceApplication)
-//            let url = context.url
-//            // Process the URL.
-//            guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
-//                  let path = components.path,
-//                  let params = components.queryItems else {
-//                print("Invalid URL or path missing")
-//                return
-//            }
-//
-//            print(path)
-//            if let commaSeparatedNames = params.first(where: { $0.name == "names" })?.value {
-//                let names = commaSeparatedNames.components(separatedBy: ",")
-//
-//                return
-//            }
-//
-//            print(Home.shared.homeManager.primaryHome?.actionSets)
-//
-//        }
-//    }
-//
-//    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-//      guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-//        let urlToOpen = userActivity.webpageURL else {
-//          return
-//      }
-//
-//      print(urlToOpen)
-//    }
-//
-//    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-//      self.scene(scene, openURLContexts: connectionOptions.urlContexts)
-//    }
-    
-    
+    class func loadAppKitIntegrationFramework() {
+        if let frameworksPath = Bundle.main.privateFrameworksPath {
+            print(frameworksPath)
+            let bundlePath = "\(frameworksPath)/AppKitIntegration.framework"
+            do {
+                try Bundle(path: bundlePath)?.loadAndReturnError()
+                
+                let bundle = Bundle(path: bundlePath)!
+                NSLog("[APPKIT BUNDLE] Loaded Successfully")
+                
+                if let appKitControllerClass = bundle.classNamed("AppKitIntegration.AppKitController") as? NSObject.Type {
+                    appKitController = appKitControllerClass.init()
+                }
+            }
+            catch {
+                NSLog("[APPKIT BUNDLE] Error loading: \(error)")
+            }
+        }
+    }
 }
 
 
