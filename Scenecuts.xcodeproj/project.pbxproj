@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0104AC87254E0F33004124CD /* AppKitIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 0104AC85254E0F33004124CD /* AppKitIntegration.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0104AC8A254E0F33004124CD /* AppKitIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */; };
-		0104AC8B254E0F33004124CD /* AppKitIntegration.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0104AC94254E0F54004124CD /* AppKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0104AC93254E0F54004124CD /* AppKitController.swift */; };
 		0104ACA7254E100D004124CD /* AppKitIntegration.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		010B32672551CF5300F2F228 /* SceneStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B32662551CF5300F2F228 /* SceneStatusBarItem.swift */; };
@@ -35,13 +33,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0104AC88254E0F33004124CD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 013D3A02254AFADF0057F24A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0104AC82254E0F33004124CD;
-			remoteInfo = AppKitIntegration;
-		};
 		0104AC99254E0F6C004124CD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 013D3A02254AFADF0057F24A /* Project object */;
@@ -60,17 +51,6 @@
 			files = (
 			);
 			name = "Embed PlugIns";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0104AC72254E0F00004124CD /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0104AC8B254E0F33004124CD /* AppKitIntegration.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0104ACA6254E1002004124CD /* CopyFiles */ = {
@@ -136,7 +116,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */,
-				0104AC8A254E0F33004124CD /* AppKitIntegration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,12 +283,10 @@
 				013D3A08254AFADF0057F24A /* Resources */,
 				0177BF24254B43CF008492AB /* ShellScript */,
 				0177BF73254B4A25008492AB /* CopyFiles */,
-				0104AC72254E0F00004124CD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0104AC89254E0F33004124CD /* PBXTargetDependency */,
 			);
 			name = Scenecuts;
 			packageProductDependencies = (
@@ -472,11 +449,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0104AC89254E0F33004124CD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0104AC82254E0F33004124CD /* AppKitIntegration */;
-			targetProxy = 0104AC88254E0F33004124CD /* PBXContainerItemProxy */;
-		};
 		0104AC9A254E0F6C004124CD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			platformFilter = maccatalyst;
