@@ -30,13 +30,6 @@
 		0177BF8B254B4F3D008492AB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF8A254B4F3D008492AB /* Home.swift */; };
 		0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF8E254B538C008492AB /* HomeKit.framework */; };
 		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
-		01F875A225520F32003A362A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F875A125520F32003A362A /* WidgetKit.framework */; };
-		01F875A425520F32003A362A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F875A325520F32003A362A /* SwiftUI.framework */; };
-		01F875A725520F32003A362A /* ScenecutsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F875A625520F32003A362A /* ScenecutsWidget.swift */; };
-		01F875AA25520F33003A362A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01F875A925520F33003A362A /* Assets.xcassets */; };
-		01F875AD25520F34003A362A /* ScenecutsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 01F875A825520F32003A362A /* ScenecutsWidget.intentdefinition */; };
-		01F875AE25520F34003A362A /* ScenecutsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 01F875A825520F32003A362A /* ScenecutsWidget.intentdefinition */; };
-		01F875B225520F34003A362A /* ScenecutsWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 01F875A025520F32003A362A /* ScenecutsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,13 +39,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0104AC82254E0F33004124CD;
 			remoteInfo = AppKitIntegration;
-		};
-		01F875AF25520F34003A362A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 013D3A02254AFADF0057F24A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 01F8759F25520F32003A362A;
-			remoteInfo = ScenecutsWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -83,7 +69,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				01F875B225520F34003A362A /* ScenecutsWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,14 +102,8 @@
 		0177BF8A254B4F3D008492AB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0177BF8E254B538C008492AB /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
 		0177BF92254B60B3008492AB /* HelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
-		01F875A025520F32003A362A /* ScenecutsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScenecutsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		01F875A125520F32003A362A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		01F875A325520F32003A362A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		01F875A625520F32003A362A /* ScenecutsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenecutsWidget.swift; sourceTree = "<group>"; };
-		01F875A825520F32003A362A /* ScenecutsWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ScenecutsWidget.intentdefinition; sourceTree = "<group>"; };
-		01F875A925520F33003A362A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		01F875AB25520F34003A362A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		01F875AC25520F34003A362A /* ScenecutsWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScenecutsWidget.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,15 +127,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01F8759D25520F32003A362A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01F875A425520F32003A362A /* SwiftUI.framework in Frameworks */,
-				01F875A225520F32003A362A /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +156,6 @@
 			children = (
 				0104AC92254E0F48004124CD /* ScenecutsHelper.app */,
 				0104AC83254E0F33004124CD /* AppKitIntegration.framework */,
-				01F875A025520F32003A362A /* ScenecutsWidgetExtension.appex */,
 				0104AC8C254E0F33004124CD /* Scenecuts.app */,
 			);
 			name = Products;
@@ -198,7 +167,6 @@
 			children = (
 				0155941A254F0D0600468BA5 /* Shared */,
 				013D3A0C254AFADF0057F24A /* Scenecuts */,
-				01F875A525520F32003A362A /* ScenecutsWidget */,
 				0177BF0B254B4293008492AB /* ScenecutsHelper */,
 				0104AC84254E0F33004124CD /* AppKitIntegration */,
 				013A8362255212DA00AEC58A /* Products */,
@@ -288,18 +256,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		01F875A525520F32003A362A /* ScenecutsWidget */ = {
-			isa = PBXGroup;
-			children = (
-				01F875A625520F32003A362A /* ScenecutsWidget.swift */,
-				01F875A825520F32003A362A /* ScenecutsWidget.intentdefinition */,
-				01F875A925520F33003A362A /* Assets.xcassets */,
-				01F875AB25520F34003A362A /* Info.plist */,
-				01F875AC25520F34003A362A /* ScenecutsWidget.entitlements */,
-			);
-			path = ScenecutsWidget;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -345,7 +301,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				01F875B025520F34003A362A /* PBXTargetDependency */,
 			);
 			name = Scenecuts;
 			packageProductDependencies = (
@@ -375,23 +330,6 @@
 			productReference = 0104AC92254E0F48004124CD /* ScenecutsHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
-		01F8759F25520F32003A362A /* ScenecutsWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01F875B325520F34003A362A /* Build configuration list for PBXNativeTarget "ScenecutsWidgetExtension" */;
-			buildPhases = (
-				01F8759C25520F32003A362A /* Sources */,
-				01F8759D25520F32003A362A /* Frameworks */,
-				01F8759E25520F32003A362A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ScenecutsWidgetExtension;
-			productName = ScenecutsWidgetExtension;
-			productReference = 01F875A025520F32003A362A /* ScenecutsWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -409,9 +347,6 @@
 						CreatedOnToolsVersion = 12.2;
 					};
 					0177BF09254B4293008492AB = {
-						CreatedOnToolsVersion = 12.2;
-					};
-					01F8759F25520F32003A362A = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -435,7 +370,6 @@
 				013D3A09254AFADF0057F24A /* Scenecuts */,
 				0177BF09254B4293008492AB /* ScenecutsHelper */,
 				0104AC82254E0F33004124CD /* AppKitIntegration */,
-				01F8759F25520F32003A362A /* ScenecutsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -463,14 +397,6 @@
 			files = (
 				0177BF14254B4294008492AB /* Preview Assets.xcassets in Resources */,
 				0177BF11254B4294008492AB /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		01F8759E25520F32003A362A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01F875AA25520F33003A362A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,7 +445,6 @@
 				01426018254DB15300821E69 /* ActionSet.swift in Sources */,
 				0177BE86254B1B52008492AB /* SceneSettingsView.swift in Sources */,
 				010B32672551CF5300F2F228 /* SceneStatusBarItem.swift in Sources */,
-				01F875AE25520F34003A362A /* ScenecutsWidget.intentdefinition in Sources */,
 				013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,15 +460,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		01F8759C25520F32003A362A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01F875AD25520F34003A362A /* ScenecutsWidget.intentdefinition in Sources */,
-				01F875A725520F32003A362A /* ScenecutsWidget.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -552,11 +468,6 @@
 			platformFilter = maccatalyst;
 			target = 0104AC82254E0F33004124CD /* AppKitIntegration */;
 			targetProxy = 0104AC99254E0F6C004124CD /* PBXContainerItemProxy */;
-		};
-		01F875B025520F34003A362A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 01F8759F25520F32003A362A /* ScenecutsWidgetExtension */;
-			targetProxy = 01F875AF25520F34003A362A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -740,7 +651,6 @@
 		013D3A1B254AFADF0057F24A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Scenecuts/Scenecuts.entitlements;
@@ -764,7 +674,6 @@
 		013D3A1C254AFADF0057F24A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Scenecuts/Scenecuts.entitlements;
@@ -840,52 +749,6 @@
 			};
 			name = Release;
 		};
-		01F875B425520F34003A362A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ScenecutsWidget/ScenecutsWidget.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ScenecutsWidget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts.ScenecutsWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		01F875B525520F34003A362A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = ScenecutsWidget/ScenecutsWidget.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = ScenecutsWidget/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@executable_path/../../../../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts.ScenecutsWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -921,15 +784,6 @@
 			buildConfigurations = (
 				0177BF16254B4294008492AB /* Debug */,
 				0177BF17254B4294008492AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		01F875B325520F34003A362A /* Build configuration list for PBXNativeTarget "ScenecutsWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01F875B425520F34003A362A /* Debug */,
-				01F875B525520F34003A362A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
