@@ -34,6 +34,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApp.setActivationPolicy(.prohibited)
         return false
     }
+    
+    func applicationWillTerminate(_ notification: Notification) {
+        HelperManager.shared.terminateHelper()
+    }
 }
 
 

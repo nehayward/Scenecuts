@@ -50,6 +50,38 @@
             endingLineNumber = "48"
             landmarkName = "launchHelper()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "13DE021E-5A2C-45E4-89F5-D14F391997CE - 98480b8252493c1a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Scenecuts.HelperManager.launchHelper() -&gt; ()"
+                  moduleName = "Scenecuts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nick/Library/Mobile%20Documents/com~apple~CloudDocs/Play/SceneCuts/Scenecuts/Scenecuts/HelperManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "645">
+               </Location>
+               <Location
+                  uuid = "13DE021E-5A2C-45E4-89F5-D14F391997CE - 1104f52573028a02"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.NSRunningApplication&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Scenecuts.HelperManager.launchHelper() -&gt; ()"
+                  moduleName = "Scenecuts"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nick/Library/Mobile%20Documents/com~apple~CloudDocs/Play/SceneCuts/Scenecuts/Scenecuts/HelperManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -94,8 +126,8 @@
             filePath = "Scenecuts/HelperManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "updateScenes(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +142,8 @@
             filePath = "Scenecuts/HelperManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "updateScenes(_:)"
             landmarkType = "7">
          </BreakpointContent>

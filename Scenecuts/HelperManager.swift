@@ -64,6 +64,15 @@ class HelperManager {
         }
     }
     
+    func terminateHelper() {
+        guard isActive() else { return }
+        let runningApps = NSWorkspace.shared.runningApplications
+        let helperApp = runningApps.first(where: { (runningApp) -> Bool in
+            runningApp.bundleIdentifier == "com.nick.ScenecutsHelper"
+        })
+        helperApp?.terminate()
+    }
+    
     @objc func updateScenes(_ notification: Notification) {
         guard let jsonEncodedString = notification.object as? String,
               let jsonEncoded = jsonEncodedString.removingPercentEncoding,
