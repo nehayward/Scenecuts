@@ -21,9 +21,9 @@ struct SceneSettingsView: View {
                     Text("Name")
                         .frame(width: 140)
                     Divider()
-//                    Text("Image")
-//                        .frame(width: 60)
-//                    Divider()
+                    Text("Image")
+                        .frame(width: 120)
+                    Divider()
                     Text("Global Shortcut")
                         .frame(width: 160)
                 }
@@ -45,24 +45,29 @@ struct SceneSettingsView: View {
 
 struct SceneConfigurationView: View {
     @ObservedObject var scene: SceneStatusBarItem
-    
+    @State var showImageView = false
+
     var body: some View {
         HStack(spacing: 0) {
             Toggle("", isOn: $scene.isInMenuBar)
                 .frame(width: 120)
             Text(scene.name)
                 .frame(width: 140, alignment: .leading)
-//            if scene.icon == "" {
-//                Button("Set Image", action: {
-//                    print("OKAY")
-//                })
-//                .frame(width: 60)
-//            } else {
-//                Image(systemName: scene.icon)
-//                    .frame(width: 60)
-//            }
+            Button {
+                showImageView.toggle()
+            } label: {
+                if scene.iconName.isEmpty {
+                    Text("Set Image")
+                } else {
+                    Image(systemName: scene.iconName)
+                }
+            }
+            .frame(width: 120)
             KeyboardShortcuts.Recorder(for: KeyboardShortcuts.Name(scene.id.uuidString))
                 .frame(width: 160)
+        }.sheet(isPresented: $showImageView) {
+            IconSelectionView(scene: scene, dismiss: $showImageView)
+                .frame(width: 400, height: 400)
         }
     }
 }

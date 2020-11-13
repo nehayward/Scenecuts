@@ -15,6 +15,14 @@ struct ScenecutsApp: App {
     var body: some Scene {
         Settings {
             SettingsView()
+        }.commands {
+            CommandMenu("File") {
+                Button(action: {
+                    NSApp.mainWindow?.close()
+                }) {
+                    Text("Close")
+                }.keyboardShortcut("w", modifiers: .command)
+            }
         }
     }
 }

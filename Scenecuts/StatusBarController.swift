@@ -36,9 +36,13 @@ class StatusBarController {
     func createStatusItem(from scene: SceneStatusBarItem) -> NSStatusItem {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         // MARK: Add Option to add Image
-//        let image = NSImage(systemSymbolName: scene.icon, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
-//        statusItem.button?.image = image
-        statusItem.button?.title = scene.name
+        if !scene.iconName.isEmpty {
+            let image = NSImage(systemSymbolName: scene.iconName, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
+            statusItem.button?.image = image
+        } else {
+            statusItem.button?.title = scene.name
+        }
+        
         statusItem.button?.identifier = NSUserInterfaceItemIdentifier(scene.id.uuidString)
         statusItem.button?.action = #selector(triggerAction)
         statusItem.button?.target = self

@@ -30,6 +30,7 @@
 		0177BF8B254B4F3D008492AB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF8A254B4F3D008492AB /* Home.swift */; };
 		0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF8E254B538C008492AB /* HomeKit.framework */; };
 		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
+		0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199341C255ED98C002FC872 /* IconSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		0177BF8A254B4F3D008492AB /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		0177BF8E254B538C008492AB /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
 		0177BF92254B60B3008492AB /* HelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
+		0199341C255ED98C002FC872 /* IconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionView.swift; sourceTree = "<group>"; };
 		01F875A125520F32003A362A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		01F875A325520F32003A362A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -220,6 +222,7 @@
 				013D3A9F254B059C0057F24A /* SettingsView.swift */,
 				013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */,
 				0177BE85254B1B52008492AB /* SceneSettingsView.swift */,
+				0199341C255ED98C002FC872 /* IconSelectionView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */,
 				013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */,
 				013D3A0E254AFADF0057F24A /* ScenecutsApp.swift in Sources */,
 				0155941C254F0D1500468BA5 /* Notification+Extensions.swift in Sources */,

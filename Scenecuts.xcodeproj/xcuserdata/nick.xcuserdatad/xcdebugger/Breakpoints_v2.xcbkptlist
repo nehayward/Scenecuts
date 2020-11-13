@@ -46,13 +46,13 @@
             filePath = "Scenecuts/HelperManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "launchHelper()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "13DE021E-5A2C-45E4-89F5-D14F391997CE - 98480b8252493c1a"
+                  uuid = "13DE021E-5A2C-45E4-89F5-D14F391997CE - 98480b8252493c7d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -62,12 +62,12 @@
                   urlString = "file:///Users/nick/Library/Mobile%20Documents/com~apple~CloudDocs/Play/SceneCuts/Scenecuts/Scenecuts/HelperManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
                   offsetFromSymbolStart = "645">
                </Location>
                <Location
-                  uuid = "13DE021E-5A2C-45E4-89F5-D14F391997CE - 1104f52573028a02"
+                  uuid = "13DE021E-5A2C-45E4-89F5-D14F391997CE - 1104f52573028a23"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -77,8 +77,8 @@
                   urlString = "file:///Users/nick/Library/Mobile%20Documents/com~apple~CloudDocs/Play/SceneCuts/Scenecuts/Scenecuts/HelperManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
                   offsetFromSymbolStart = "256">
                </Location>
             </Locations>
@@ -146,6 +146,38 @@
             endingLineNumber = "114"
             landmarkName = "updateScenes(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26BA771E-2C81-4F93-A76E-1C7FD0474E06"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scenecuts/HelperManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "terminateHelper()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5EF5E7A7-D990-487A-AD21-86FF9664925D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scenecuts/Settings/ImageView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

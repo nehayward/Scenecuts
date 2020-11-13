@@ -18,7 +18,7 @@ class HelperManager {
     static let shared = HelperManager()
     public let helper = Helper()
     var runningAppObservers: NSKeyValueObservation?
-
+    
     init() {
         addObservers()
         
@@ -32,7 +32,6 @@ class HelperManager {
     }
     
     func isActive() -> Bool {
-
         let runningApps = NSWorkspace.shared.runningApplications
         let isRunning = runningApps.contains {
             $0.bundleIdentifier == "com.nick.ScenecutsHelper"
@@ -54,12 +53,12 @@ class HelperManager {
                     alert.alertStyle = .warning
                     alert.addButton(withTitle: "Launch Helper App")
                     let buttonClicked = alert.runModal()
-
+                    
                     if buttonClicked.rawValue > 0 {
                         NSWorkspace.shared.open(appURL!.deletingLastPathComponent())
                     }
                 }
-
+                
             }
         }
     }
@@ -78,37 +77,38 @@ class HelperManager {
               let jsonEncoded = jsonEncodedString.removingPercentEncoding,
               let data = jsonEncoded.data(using: .utf8),
               let actionsSets = try? JSONDecoder().decode([ActionSet].self, from: data) else { return }
-
-         actionsSets.forEach { (actionSet) in
-             StatusBarController.shared.addMenuItem(for: actionSet)
+        
+        actionsSets.forEach { (actionSet) in
+            StatusBarController.shared.addMenuItem(for: actionSet)
             
-             let showInMenuBar = UserDefaults.standard.bool(forKey: actionSet.id.uuidString)
+            let showInMenuBar: Bool = SceneStatusBarItem.value(id: actionSet.id, forKey: .isInMenuBar) ?? false
+            let iconName: String = SceneStatusBarItem.value(id: actionSet.id, forKey: .iconName) ?? ""
             
-             let scene = SceneStatusBarItem(id: actionSet.id, name: actionSet.name, icon: "", shortcut: "", isInMenuBar: showInMenuBar)
-             if !HelperManager.shared.helper.scenes.contains(scene) {
-                 HelperManager.shared.helper.scenes.append(scene)
+            let scene = SceneStatusBarItem(id: actionSet.id, name: actionSet.name, iconName: iconName, shortcut: "", isInMenuBar: showInMenuBar)
+            if !HelperManager.shared.helper.scenes.contains(scene) {
+                HelperManager.shared.helper.scenes.append(scene)
                 let name = KeyboardShortcuts.Name(rawValue: scene.id.uuidString)!
-
+                
                 KeyboardShortcuts.onKeyUp(for: name) { [name] in
                     // The user pressed the keyboard shortcut for “unicorn mode”!
                     let id = name.rawValue
                     DistributedNotificationCenter.default().postNotificationName(.triggerScene, object: id, userInfo: nil, deliverImmediately: true)
                 }
-             }
-
-             if showInMenuBar {
-                 StatusBarController.shared.statusItems[scene.id] = StatusBarController.shared.createStatusItem(from: scene)
-             }
-         }
+            }
+            
+            if showInMenuBar {
+                StatusBarController.shared.statusItems[scene.id] = StatusBarController.shared.createStatusItem(from: scene)
+            }
+        }
         
         // MARK: Remove deleted actions
         let updatedIDs = actionsSets.map(\.id.uuidString)
         let existingIDs = HelperManager.shared.helper.scenes.map(\.id.uuidString)
         let idsToDelete = Array(Set(existingIDs).subtracting(Set(updatedIDs)))
-    
+        
         idsToDelete.forEach { (id) in
             StatusBarController.shared.removeMenuItem(with: id)
-          
+            
             for sequence in HelperManager.shared.helper.scenes.enumerated() {
                 if sequence.element.id.uuidString == id {
                     HelperManager.shared.helper.scenes.remove(at: sequence.offset)
@@ -119,7 +119,7 @@ class HelperManager {
             }
         }
     }
-
+    
     func addObservers() {
         // MARK: Needed to observe LSUIElement
         runningAppObservers =    NSWorkspace.shared.observe(\.runningApplications, options: [.initial, .new]) {(model, change) in
