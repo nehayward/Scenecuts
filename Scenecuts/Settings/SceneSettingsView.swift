@@ -21,7 +21,7 @@ struct SceneSettingsView: View {
                     Text("Name")
                         .frame(width: 140)
                     Divider()
-                    Text("Image")
+                    Text("Menu Bar Icon")
                         .frame(width: 120)
                     Divider()
                     Text("Global Shortcut")
@@ -53,13 +53,26 @@ struct SceneConfigurationView: View {
                 .frame(width: 120)
             Text(scene.name)
                 .frame(width: 140, alignment: .leading)
-            Button {
-                showImageView.toggle()
-            } label: {
-                if scene.iconName.isEmpty {
-                    Text("Set Image")
-                } else {
-                    Image(systemName: scene.iconName)
+            HStack {
+                if !scene.iconName.isEmpty {
+                    Button {
+                        scene.iconName = ""
+                        if scene.isInMenuBar {
+                            scene.isInMenuBar.toggle()
+                            scene.isInMenuBar.toggle()
+                        }
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                    }.buttonStyle(BorderlessButtonStyle())
+                }
+                Button {
+                    showImageView.toggle()
+                } label: {
+                    if scene.iconName.isEmpty {
+                        Text("Set Image")
+                    } else {
+                        Image(systemName: scene.iconName)
+                    }
                 }
             }
             .frame(width: 120)

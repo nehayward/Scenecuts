@@ -31,6 +31,7 @@
 		0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF8E254B538C008492AB /* HomeKit.framework */; };
 		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
 		0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199341C255ED98C002FC872 /* IconSelectionView.swift */; };
+		019D948D255F0A0E00A3D48A /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 019D948C255F0A0E00A3D48A /* SFSafeSymbols */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019D948D255F0A0E00A3D48A /* SFSafeSymbols in Frameworks */,
 				0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +310,7 @@
 			name = Scenecuts;
 			packageProductDependencies = (
 				0177BE82254B1B42008492AB /* KeyboardShortcuts */,
+				019D948C255F0A0E00A3D48A /* SFSafeSymbols */,
 			);
 			productName = Scenecuts;
 			productReference = 0104AC8C254E0F33004124CD /* Scenecuts.app */;
@@ -365,6 +368,7 @@
 			mainGroup = 013D3A01254AFADF0057F24A;
 			packageReferences = (
 				0177BE81254B1B42008492AB /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+				019D948B255F0A0E00A3D48A /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = 013A8362255212DA00AEC58A /* Products */;
 			projectDirPath = "";
@@ -803,6 +807,14 @@
 				minimumVersion = 0.6.0;
 			};
 		};
+		019D948B255F0A0E00A3D48A /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/piknotech/SFSafeSymbols.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -810,6 +822,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0177BE81254B1B42008492AB /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		019D948C255F0A0E00A3D48A /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 019D948B255F0A0E00A3D48A /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

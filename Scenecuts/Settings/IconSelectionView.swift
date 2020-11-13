@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import SFSafeSymbols
 
 struct IconSelectionView: View {
     var scene: SceneStatusBarItem
@@ -14,7 +14,7 @@ struct IconSelectionView: View {
     @State var filterText: String = ""
     @State var originalIconName = ""
     
-    let data = (1...1000).map { "Item \($0)" }
+    let data = SFSafeSymbols.SFSymbol.allCases
     
     let columns = [
         GridItem(.adaptive(minimum: 50))
@@ -24,10 +24,9 @@ struct IconSelectionView: View {
         VStack {
             VStack {
                 if !scene.iconName.isEmpty {
+                    Text("Current Icon").padding(.bottom, 2)
                     Image(systemName: scene.iconName)
                         .font(.system(size: 60))
-                        .padding()
-                    Text("Current Icon")
                     Button("Clear") {
                         scene.iconName = ""
                     }
@@ -44,14 +43,18 @@ struct IconSelectionView: View {
 
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(data.filter{$0.lowercased().hasPrefix(filterText.lowercased()) || filterText.lowercased() == ""}, id: \.self) { item in
+                    ForEach(data.filter{$0.rawValue.lowercased().hasPrefix(filterText.lowercased()) || filterText.lowercased() == ""}, id: \.self) { item in
                         Button (action: {
-                            scene.iconName = "gamecontroller"
+                            scene.iconName = item.rawValue
                         }) {
                             VStack {
-                                Image(systemName: "gamecontroller")
+                                Image(systemSymbol: item)
                                     .font(.title)
-                                Text(item)
+                                Text(item.rawValue)
+                                    .font(.caption)
+                                    .minimumScaleFactor(0.005)
+                                    .lineLimit(1)
+                                    .frame(width: 50)
                             }
                         }
                         .buttonStyle(BorderlessButtonStyle())
@@ -69,7 +72,7 @@ struct IconSelectionView: View {
                 }.keyboardShortcut(.cancelAction)
                 Button("Apply") {
                     // MARK: Reset Menubar State
-                    if scene.isInMenuBar, !scene.iconName.isEmpty {
+                    if scene.isInMenuBar {
                         scene.isInMenuBar.toggle()
                         scene.isInMenuBar.toggle()
                     }
