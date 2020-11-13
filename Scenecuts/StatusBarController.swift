@@ -96,4 +96,14 @@ class StatusBarController {
             menuItem.identifier?.rawValue == id
         }
     }
+    
+    func clearHomeKitScenes() {
+        guard let menu = mainStatusItem.menu else { return }
+        
+        HelperManager.shared.helper.scenes.forEach { (scene) in
+            menu.items.removeAll { (menu) -> Bool in
+                menu.identifier?.rawValue == scene.id.uuidString
+            }
+        }
+    }
 }

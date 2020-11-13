@@ -26,6 +26,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         AppDelegate.loadAppKitIntegrationFramework()
         Home.shared.setup()
+        NotificationCenter.default.addObserver(self, selector: #selector(terminate), name: .terminateHelper, object: nil)
         return false
     }
     
@@ -47,6 +48,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                 NSLog("[APPKIT BUNDLE] Error loading: \(error)")
             }
         }
+    }
+    
+    @objc func terminate() {
+        exit(1)
     }
 }
 

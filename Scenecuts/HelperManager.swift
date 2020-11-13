@@ -15,9 +15,17 @@ class Helper: ObservableObject {
 }
 
 class HelperManager {
+    static let helperAppName = "com.nick.ScenecutsHelper"
     static let shared = HelperManager()
     public let helper = Helper()
     var runningAppObservers: NSKeyValueObservation?
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.doesRelativeDateFormatting = true
+        dateFormatter.dateStyle = .medium
+        return dateFormatter
+    }()
     
     init() {
         addObservers()
@@ -34,14 +42,30 @@ class HelperManager {
     func isActive() -> Bool {
         let runningApps = NSWorkspace.shared.runningApplications
         let isRunning = runningApps.contains {
-            $0.bundleIdentifier == "com.nick.ScenecutsHelper"
+            $0.bundleIdentifier == Self.helperAppName
         }
         return isRunning
     }
     
+    var helperAppInformation: String {
+        let runningApps = NSWorkspace.shared.runningApplications
+        
+        guard let helperApp = runningApps.first(where: {
+            $0.bundleIdentifier == Self.helperAppName
+        }) else { return "" }
+
+        guard let bundleURL = helperApp.bundleURL,
+              let bundle = Bundle(url: bundleURL),
+              let launchDate = helperApp.launchDate,
+              let helperAppName = helperApp.localizedName,
+              let version = bundle.infoDictionary!["CFBundleVersion"] else { return "ScenecutsHelper\nVersion ?\nActive Since ?" }
+        
+        return "\(helperAppName)\nVersion \(version)\nActive Since \(dateFormatter.string(from: launchDate))"
+    }
+    
     func launchHelper() {
         if isActive() { return }
-        let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.nick.ScenecutsHelper")
+        let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: Self.helperAppName)
         let configuration = NSWorkspace.OpenConfiguration()
         
         NSWorkspace.shared.openApplication(at: appURL!, configuration: configuration) { (running, error) in
@@ -65,11 +89,9 @@ class HelperManager {
     
     func terminateHelper() {
         guard isActive() else { return }
-        let runningApps = NSWorkspace.shared.runningApplications
-        let helperApp = runningApps.first(where: { (runningApp) -> Bool in
-            runningApp.bundleIdentifier == "com.nick.ScenecutsHelper"
-        })
-        helperApp?.terminate()
+        DistributedNotificationCenter.default().postNotificationName(.terminateHelper, object: nil, userInfo: nil, options: .deliverImmediately)
+        StatusBarController.shared.clearHomeKitScenes()
+        helper.scenes.removeAll()
     }
     
     @objc func updateScenes(_ notification: Notification) {

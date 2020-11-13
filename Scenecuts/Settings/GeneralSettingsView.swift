@@ -17,11 +17,18 @@ struct GeneralSettingsView: View {
                     Text("Helper App: ")
                         .frame(width: 100, alignment: .trailing)
                     VStack(alignment: .leading) {
-                        Text(helper.helperAppIsRunning ? "Is Active": "Not Active")
+                        if helper.helperAppIsRunning {
+                            Text(HelperManager.shared.helperAppInformation)
+                                .frame(height: 50, alignment: .topLeading)
+                                .lineLimit(3)
+                        }
                         if !helper.helperAppIsRunning {
                             Button("Start Helper") {
-                                #warning("TODO: Add restart for launcher")
                                 HelperManager.shared.launchHelper()
+                            }
+                        } else {
+                            Button("Terminate Helper") {
+                                HelperManager.shared.terminateHelper()
                             }
                         }
                     }

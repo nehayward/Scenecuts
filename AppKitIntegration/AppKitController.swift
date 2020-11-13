@@ -30,7 +30,7 @@ extension NSWindow {
         
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(triggerScene), name: .triggerScene, object: nil)
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(requestScenes), name: .requestScenes, object: nil)
-
+        DistributedNotificationCenter.default().addObserver(self, selector: #selector(terminateApp), name: .terminateHelper, object: nil)
     }
     
     @objc func triggerScene(_ notification: Notification) {
@@ -59,5 +59,9 @@ extension NSWindow {
     
     @objc func requestScenes() {
         NotificationCenter.default.post(name: .requestScenes, object: nil)
+    }
+    
+    @objc func terminateApp() {
+        NotificationCenter.default.post(name: .terminateHelper, object: nil)
     }
 }

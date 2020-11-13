@@ -17,4 +17,7 @@ extension NSNotification.Name {
     
     /// Request Scenes with `message` containing an array of scene names and UUIDs
     static let requestScenes = Self("RequestScenes")
+    
+    /// Terminate Helper app
+    static let terminateHelper = Self("TerminateHelper")
 }
