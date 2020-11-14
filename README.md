@@ -6,7 +6,7 @@ A simple menubar app to trigger HomeKit scenes. Huge shoutout to [@steventrought
 
 ## Installation
 
-You need to install and run both the main app and the helper app. [Download Here](https://github.com/nehayward/Scenecuts/releases/download/2020.1/Scenecuts.zip)
+You need to install and run both the main app and the helper app. [Download Here](https://github.com/nehayward/Scenecuts/releases/download/2020.2/Scenecuts.zip)
 
 *macOS Big Sur required
 
