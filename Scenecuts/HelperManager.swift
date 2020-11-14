@@ -57,8 +57,8 @@ class HelperManager {
         guard let bundleURL = helperApp.bundleURL,
               let bundle = Bundle(url: bundleURL),
               let launchDate = helperApp.launchDate,
-              let helperAppName = helperApp.localizedName,
-              let version = bundle.infoDictionary!["CFBundleVersion"] else { return "ScenecutsHelper\nVersion ?\nActive Since ?" }
+              let helperAppName = bundle.infoDictionary!["CFBundleDisplayName"],
+              let version = bundle.infoDictionary!["CFBundleShortVersionString"] else { return "Scenecuts Helper\nVersion ?\nActive Since ?" }
         
         return "\(helperAppName)\nVersion \(version)\nActive Since \(dateFormatter.string(from: launchDate))"
     }
