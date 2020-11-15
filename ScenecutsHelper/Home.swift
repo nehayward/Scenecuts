@@ -22,7 +22,7 @@ class Home: NSObject {
         homeManager.delegate = self
         
         if homeManager.authorizationStatus == .determined {
-            let fixPermissionSelector : Selector = NSSelectorFromString("fixPermission")
+            let fixPermissionSelector: Selector = NSSelectorFromString("fixPermission")
             AppDelegate.appKitController?.performSelector(onMainThread: fixPermissionSelector, with: nil, waitUntilDone: false)
             return
         }

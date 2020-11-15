@@ -31,9 +31,9 @@ struct IconButton: View {
     }
 }
 
-struct Icon_Previews: PreviewProvider {
+struct IconButton_Previews: PreviewProvider {
     static var previews: some View {
-        Icon(scene: SceneStatusBarItem(id: UUID(),
+        IconButton(scene: SceneStatusBarItem(id: UUID(),
                                        name: "TV",
                                        iconName: "tv",
                                        shortcut: "",

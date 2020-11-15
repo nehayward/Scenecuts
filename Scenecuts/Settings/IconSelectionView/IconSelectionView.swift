@@ -14,13 +14,14 @@ struct IconSelectionView: View {
     @State var filterText: String = ""
     @State var originalIconName = ""
     
-    let data = SFSafeSymbols.SFSymbol.allCases
+    var symbols: [Symbol] = {
+        let symbols = SFSafeSymbols.SFSymbol.allCases.map { (symbol) in
+            Symbol(symbol: symbol)
+        }
+        return symbols
+    }()
     
-    let columns = [
-        GridItem(.fixed(50)),
-        GridItem(.fixed(50)),
-        GridItem(.fixed(50)),
-    ]
+    var rows: [GridItem] = Array(repeating: .init(.fixed(50)), count: 3)
     
     var body: some View {
         VStack {
@@ -44,24 +45,9 @@ struct IconSelectionView: View {
             }).textFieldStyle(RoundedBorderTextFieldStyle())
 
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(data.filter{$0.rawValue.lowercased().hasPrefix(filterText.lowercased()) || filterText.lowercased() == ""}, id: \.self) { item in
-                        Button (action: {
-                            scene.iconName = item.rawValue
-                        }) {
-                            VStack {
-                                Image(systemSymbol: item)
-                                    .font(.title)
-                                Text(item.rawValue)
-                                    .font(.caption)
-                                    .minimumScaleFactor(0.005)
-                                    .lineLimit(1)
-                                    .frame(width: 50)
-                            }
-                        }
-                        .buttonStyle(BorderlessButtonStyle())
-                        .frame(width: 50, height: 50)
-                        .id(UUID())
+                LazyVGrid(columns: rows) {
+                    ForEach(symbols.filter{$0.symbol.rawValue.lowercased().hasPrefix(filterText.lowercased()) || filterText.lowercased() == ""}) { symbol in
+                        IconButton(scene: scene, symbol: symbol.symbol)
                     }
                     .padding(.horizontal)
                 }
@@ -90,6 +76,11 @@ struct IconSelectionView: View {
     }
 }
 
+struct Symbol: Identifiable, Hashable {
+    var id = UUID()
+    var symbol: SFSymbol
+}
+
 struct IconSelectionView_Previews: PreviewProvider {
     static var previews: some View {
         IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
@@ -100,3 +91,4 @@ struct IconSelectionView_Previews: PreviewProvider {
         dismiss: .constant(true))
     }
 }
+

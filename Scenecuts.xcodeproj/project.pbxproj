@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		0104AC87254E0F33004124CD /* AppKitIntegration.h in Headers */ = {isa = PBXBuildFile; fileRef = 0104AC85254E0F33004124CD /* AppKitIntegration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0104AC94254E0F54004124CD /* AppKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0104AC93254E0F54004124CD /* AppKitController.swift */; };
-		0104ACA7254E100D004124CD /* AppKitIntegration.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0104ACA7254E100D004124CD /* AppKitIntegration.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		010B32672551CF5300F2F228 /* SceneStatusBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B32662551CF5300F2F228 /* SceneStatusBarItem.swift */; };
+		0119DF2A2561AE0E00FF7A01 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0119DF292561AE0E00FF7A01 /* IconButton.swift */; };
 		013D3A0E254AFADF0057F24A /* ScenecutsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3A0D254AFADF0057F24A /* ScenecutsApp.swift */; };
 		013D3A12254AFADF0057F24A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013D3A11254AFADF0057F24A /* Assets.xcassets */; };
 		013D3A15254AFADF0057F24A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013D3A14254AFADF0057F24A /* Preview Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
 		0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199341C255ED98C002FC872 /* IconSelectionView.swift */; };
 		019D948D255F0A0E00A3D48A /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 019D948C255F0A0E00A3D48A /* SFSafeSymbols */; };
+		01E3C71725603DB000CF2ED8 /* Scenecuts.app in Embed Helper App */ = {isa = PBXBuildFile; fileRef = 0104AC8C254E0F33004124CD /* Scenecuts.app */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0104AC82254E0F33004124CD;
 			remoteInfo = AppKitIntegration;
+		};
+		014CCCED256182040005FE49 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 013D3A02254AFADF0057F24A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 013D3A09254AFADF0057F24A;
+			remoteInfo = Scenecuts;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,14 +64,26 @@
 			name = "Embed PlugIns";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0104ACA6254E1002004124CD /* CopyFiles */ = {
+		0104ACA6254E1002004124CD /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0104ACA7254E100D004124CD /* AppKitIntegration.framework in CopyFiles */,
+				0104ACA7254E100D004124CD /* AppKitIntegration.framework in Copy Files */,
 			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		01E3C71625603D9F00CF2ED8 /* Embed Helper App */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				01E3C71725603DB000CF2ED8 /* Scenecuts.app in Embed Helper App */,
+			);
+			name = "Embed Helper App";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		01F875B125520F34003A362A /* Embed App Extensions */ = {
@@ -82,9 +103,10 @@
 		0104AC85254E0F33004124CD /* AppKitIntegration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKitIntegration.h; sourceTree = "<group>"; };
 		0104AC86254E0F33004124CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0104AC8C254E0F33004124CD /* Scenecuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scenecuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0104AC92254E0F48004124CD /* ScenecutsHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScenecutsHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0104AC92254E0F48004124CD /* Scenecuts Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scenecuts Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0104AC93254E0F54004124CD /* AppKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitController.swift; sourceTree = "<group>"; };
 		010B32662551CF5300F2F228 /* SceneStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStatusBarItem.swift; sourceTree = "<group>"; };
+		0119DF292561AE0E00FF7A01 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		013D3A0D254AFADF0057F24A /* ScenecutsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenecutsApp.swift; sourceTree = "<group>"; };
 		013D3A11254AFADF0057F24A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		013D3A14254AFADF0057F24A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -155,10 +177,27 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		0119DF272561AE0E00FF7A01 /* IconSelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0199341C255ED98C002FC872 /* IconSelectionView.swift */,
+				0119DF282561AE0E00FF7A01 /* Views */,
+			);
+			path = IconSelectionView;
+			sourceTree = "<group>";
+		};
+		0119DF282561AE0E00FF7A01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0119DF292561AE0E00FF7A01 /* IconButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		013A8362255212DA00AEC58A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0104AC92254E0F48004124CD /* ScenecutsHelper.app */,
+				0104AC92254E0F48004124CD /* Scenecuts Helper.app */,
 				0104AC83254E0F33004124CD /* AppKitIntegration.framework */,
 				0104AC8C254E0F33004124CD /* Scenecuts.app */,
 			);
@@ -224,7 +263,7 @@
 				013D3A9F254B059C0057F24A /* SettingsView.swift */,
 				013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */,
 				0177BE85254B1B52008492AB /* SceneSettingsView.swift */,
-				0199341C255ED98C002FC872 /* IconSelectionView.swift */,
+				0119DF272561AE0E00FF7A01 /* IconSelectionView */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -316,24 +355,26 @@
 			productReference = 0104AC8C254E0F33004124CD /* Scenecuts.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0177BF09254B4293008492AB /* ScenecutsHelper */ = {
+		0177BF09254B4293008492AB /* Scenecuts Helper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0177BF18254B4294008492AB /* Build configuration list for PBXNativeTarget "ScenecutsHelper" */;
+			buildConfigurationList = 0177BF18254B4294008492AB /* Build configuration list for PBXNativeTarget "Scenecuts Helper" */;
 			buildPhases = (
 				0177BF06254B4293008492AB /* Sources */,
 				0177BF07254B4293008492AB /* Frameworks */,
 				0177BF08254B4293008492AB /* Resources */,
 				0104AC4D254E0E04004124CD /* Embed PlugIns */,
-				0104ACA6254E1002004124CD /* CopyFiles */,
+				0104ACA6254E1002004124CD /* Copy Files */,
+				01E3C71625603D9F00CF2ED8 /* Embed Helper App */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				014CCCEE256182040005FE49 /* PBXTargetDependency */,
 				0104AC9A254E0F6C004124CD /* PBXTargetDependency */,
 			);
-			name = ScenecutsHelper;
+			name = "Scenecuts Helper";
 			productName = ScenecutsHelper;
-			productReference = 0104AC92254E0F48004124CD /* ScenecutsHelper.app */;
+			productReference = 0104AC92254E0F48004124CD /* Scenecuts Helper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -375,7 +416,7 @@
 			projectRoot = "";
 			targets = (
 				013D3A09254AFADF0057F24A /* Scenecuts */,
-				0177BF09254B4293008492AB /* ScenecutsHelper */,
+				0177BF09254B4293008492AB /* Scenecuts Helper */,
 				0104AC82254E0F33004124CD /* AppKitIntegration */,
 			);
 		};
@@ -454,6 +495,7 @@
 				0177BE86254B1B52008492AB /* SceneSettingsView.swift in Sources */,
 				010B32672551CF5300F2F228 /* SceneStatusBarItem.swift in Sources */,
 				013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */,
+				0119DF2A2561AE0E00FF7A01 /* IconButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +518,12 @@
 			platformFilter = maccatalyst;
 			target = 0104AC82254E0F33004124CD /* AppKitIntegration */;
 			targetProxy = 0104AC99254E0F6C004124CD /* PBXContainerItemProxy */;
+		};
+		014CCCEE256182040005FE49 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = maccatalyst;
+			target = 013D3A09254AFADF0057F24A /* Scenecuts */;
+			targetProxy = 014CCCED256182040005FE49 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -666,11 +714,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Scenecuts/Scenecuts.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
-				DEVELOPMENT_TEAM = 7XH9HTMNVC;
+				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Scenecuts/Info.plist;
@@ -682,6 +731,8 @@
 				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -692,11 +743,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Scenecuts/Scenecuts.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
-				DEVELOPMENT_TEAM = 7XH9HTMNVC;
+				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Scenecuts/Info.plist;
@@ -708,6 +760,8 @@
 				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -717,10 +771,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Helper";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -747,10 +802,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Helper";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -803,7 +859,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0177BF18254B4294008492AB /* Build configuration list for PBXNativeTarget "ScenecutsHelper" */ = {
+		0177BF18254B4294008492AB /* Build configuration list for PBXNativeTarget "Scenecuts Helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0177BF16254B4294008492AB /* Debug */,

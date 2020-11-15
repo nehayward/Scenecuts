@@ -144,7 +144,7 @@ class HelperManager {
     
     func addObservers() {
         // MARK: Needed to observe LSUIElement
-        runningAppObservers =    NSWorkspace.shared.observe(\.runningApplications, options: [.initial, .new]) {(model, change) in
+        runningAppObservers =  NSWorkspace.shared.observe(\.runningApplications, options: [.initial, .new]) {(model, change) in
             // runningApplications changed, so update your UI or something else
             self.helper.helperAppIsRunning = self.isActive()
         }

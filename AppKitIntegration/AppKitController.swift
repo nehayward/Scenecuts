@@ -31,6 +31,12 @@ extension NSWindow {
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(triggerScene), name: .triggerScene, object: nil)
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(requestScenes), name: .requestScenes, object: nil)
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(terminateApp), name: .terminateHelper, object: nil)
+        
+        guard let scenecutsURL = Bundle.main.builtInPlugInsURL?.appendingPathComponent("Scenecuts.app") else {
+            return
+        }
+        
+        NSWorkspace.shared.openApplication(at: scenecutsURL, configuration: NSWorkspace.OpenConfiguration(), completionHandler: nil)
     }
     
     @objc func triggerScene(_ notification: Notification) {
@@ -53,6 +59,21 @@ extension NSWindow {
         }
     }
     
+    @objc func errorLaunchingScenecuts() {
+        let alert = NSAlert()
+        alert.messageText = "Scenecuts"
+        alert.informativeText = "Home"
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "Open Privacy Settings")
+        alert.addButton(withTitle: "Cancel")
+        let buttonClicked = alert.runModal()
+        
+        if buttonClicked.rawValue == 1000  {
+            let url = "x-apple.systempreferences:com.apple.preference.security?Privacy_HomeKit" // Update as needed
+            NSWorkspace.shared.open(URL(string: url)!)
+        }
+    }
+    
     @objc func updateScenes(message: String) {
         DistributedNotificationCenter.default().postNotificationName(.updateScene, object: message, userInfo: nil, deliverImmediately: true)
     }
@@ -63,5 +84,13 @@ extension NSWindow {
     
     @objc func terminateApp() {
         NotificationCenter.default.post(name: .terminateHelper, object: nil)
+    }
+    
+    @objc func openScenecuts() {
+        guard let scenecutsURL = Bundle.main.builtInPlugInsURL?.appendingPathComponent("Scenecuts.app") else {
+            return
+        }
+        
+        NSWorkspace.shared.openApplication(at: scenecutsURL, configuration: NSWorkspace.OpenConfiguration(), completionHandler: nil)
     }
 }

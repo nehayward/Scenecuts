@@ -32,7 +32,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     class func loadAppKitIntegrationFramework() {
         if let frameworksPath = Bundle.main.privateFrameworksPath {
-            print(frameworksPath)
             let bundlePath = "\(frameworksPath)/AppKitIntegration.framework"
             do {
                 try Bundle(path: bundlePath)?.loadAndReturnError()
