@@ -17,7 +17,9 @@ struct IconSelectionView: View {
     let data = SFSafeSymbols.SFSymbol.allCases
     
     let columns = [
-        GridItem(.adaptive(minimum: 50))
+        GridItem(.fixed(50)),
+        GridItem(.fixed(50)),
+        GridItem(.fixed(50)),
     ]
     
     var body: some View {
@@ -59,9 +61,10 @@ struct IconSelectionView: View {
                         }
                         .buttonStyle(BorderlessButtonStyle())
                         .frame(width: 50, height: 50)
+                        .id(UUID())
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
             }
             Spacer()
             HStack {
