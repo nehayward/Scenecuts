@@ -28,7 +28,7 @@ struct ScenecutsApp: App {
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    var statusBar: StatusBarController!
+    var statusBar: StatusBarController?
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         // MARK: Have option to disable this in settings.

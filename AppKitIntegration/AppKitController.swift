@@ -54,8 +54,9 @@ extension NSWindow {
         let buttonClicked = alert.runModal()
         
         if buttonClicked.rawValue == 1000  {
-            let url = "x-apple.systempreferences:com.apple.preference.security?Privacy_HomeKit" // Update as needed
-            NSWorkspace.shared.open(URL(string: url)!)
+            // MARK: Update as needed
+            guard let privacyURL = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_HomeKit") else { return }
+            NSWorkspace.shared.open(privacyURL)
         }
     }
     
@@ -69,8 +70,7 @@ extension NSWindow {
         let buttonClicked = alert.runModal()
         
         if buttonClicked.rawValue == 1000  {
-            let url = "x-apple.systempreferences:com.apple.preference.security?Privacy_HomeKit" // Update as needed
-            NSWorkspace.shared.open(URL(string: url)!)
+           
         }
     }
     

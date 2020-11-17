@@ -103,7 +103,7 @@
 		0104AC85254E0F33004124CD /* AppKitIntegration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKitIntegration.h; sourceTree = "<group>"; };
 		0104AC86254E0F33004124CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0104AC8C254E0F33004124CD /* Scenecuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scenecuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0104AC92254E0F48004124CD /* Scenecuts Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scenecuts Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0104AC92254E0F48004124CD /* Scenecuts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scenecuts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0104AC93254E0F54004124CD /* AppKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitController.swift; sourceTree = "<group>"; };
 		010B32662551CF5300F2F228 /* SceneStatusBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStatusBarItem.swift; sourceTree = "<group>"; };
 		0119DF292561AE0E00FF7A01 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		013A8362255212DA00AEC58A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0104AC92254E0F48004124CD /* Scenecuts Helper.app */,
+				0104AC92254E0F48004124CD /* Scenecuts.app */,
 				0104AC83254E0F33004124CD /* AppKitIntegration.framework */,
 				0104AC8C254E0F33004124CD /* Scenecuts.app */,
 			);
@@ -374,7 +374,7 @@
 			);
 			name = "Scenecuts Helper";
 			productName = ScenecutsHelper;
-			productReference = 0104AC92254E0F48004124CD /* Scenecuts Helper.app */;
+			productReference = 0104AC92254E0F48004124CD /* Scenecuts.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -717,7 +717,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -746,7 +746,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -775,7 +775,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -788,7 +788,7 @@
 				);
 				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Scenecuts;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				SUPPORTS_MACCATALYST = YES;
@@ -806,7 +806,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -819,7 +819,7 @@
 				);
 				MARKETING_VERSION = 2020.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Scenecuts;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				SUPPORTS_MACCATALYST = YES;

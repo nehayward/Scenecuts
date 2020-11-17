@@ -31,7 +31,9 @@ class Home: NSObject {
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
         homeManager.primaryHome?.delegate = self
 
-        for accessory in homeManager.primaryHome!.accessories {
+        // MARK: Check for accessories
+        guard let accessories = homeManager.primaryHome?.accessories else { return }
+        for accessory in accessories {
             accessory.delegate = self
         }
         
