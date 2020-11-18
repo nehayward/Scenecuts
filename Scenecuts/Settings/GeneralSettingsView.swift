@@ -31,6 +31,9 @@ struct GeneralSettingsView: View {
                                 HelperManager.shared.terminateHelper()
                             }
                         }
+                        Text("The helper app is used to communicate with HomeKit, this\nneeds to be running in order for Scenecuts to work properly.")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
                     }
                 }
             }

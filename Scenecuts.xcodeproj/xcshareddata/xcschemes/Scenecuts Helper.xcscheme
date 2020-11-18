@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0177BF09254B4293008492AB"
-               BuildableName = "Scenecuts Helper.app"
+               BuildableName = "Scenecuts.app"
                BlueprintName = "Scenecuts Helper"
                ReferencedContainer = "container:Scenecuts.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0177BF09254B4293008492AB"
-            BuildableName = "Scenecuts Helper.app"
+            BuildableName = "Scenecuts.app"
             BlueprintName = "Scenecuts Helper"
             ReferencedContainer = "container:Scenecuts.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0177BF09254B4293008492AB"
-            BuildableName = "Scenecuts Helper.app"
+            BuildableName = "Scenecuts.app"
             BlueprintName = "Scenecuts Helper"
             ReferencedContainer = "container:Scenecuts.xcodeproj">
          </BuildableReference>

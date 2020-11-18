@@ -16,7 +16,7 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             GeneralSettingsView(helper: HelperManager.shared.helper)
-                .frame(width: 600)
+                .frame(width: 600, height: 200)
                 .tabItem {
                     Label("General", systemImage: "gear")
                 }
