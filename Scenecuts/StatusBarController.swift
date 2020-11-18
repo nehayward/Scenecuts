@@ -54,12 +54,23 @@ class StatusBarController {
     }
 
     @objc func openPreferences() {
-        NSApp.setActivationPolicy(.regular)
-
         // MARK: This could probably be improved, currently a work around for showing preference window.
         guard let preferenceItem = NSApplication.shared.mainMenu?.items[0].submenu?.items[0] else { return }
-        NSApp.mainWindow?.makeKeyAndOrderFront(nil)
         NSApp.sendAction(preferenceItem.action!, to: preferenceItem.target, from: preferenceItem)
+        
+        // MARK: Workaround - https://stackoverflow.com/questions/41340071/macos-menubar-application-main-menu-not-being-displayed
+        NSApp.setActivationPolicy(.regular)
+            NSApp.activate(ignoringOtherApps: true)
+            NSApp.mainWindow?.makeKeyAndOrderFront(nil)
+
+           if let isRunning = NSRunningApplication.runningApplications(withBundleIdentifier: "com.apple.dock").first?.activate(options: []),
+              isRunning {
+               let deadlineTime = DispatchTime.now() + .milliseconds(200)
+               DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+               NSApp.setActivationPolicy(.regular)
+                    NSApp.activate(ignoringOtherApps: true)
+               }
+           }
     }
     
     @objc func quit() {
