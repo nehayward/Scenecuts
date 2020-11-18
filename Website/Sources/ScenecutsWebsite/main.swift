@@ -14,7 +14,7 @@ struct ScenecutsWebsite: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://scenecuts.app")!
+    var url = URL(string: "https://nehayward.github.io/Scenecuts")!
     var name = "Scenecuts"
     var description = "A simple menu bar app to control HomeKit"
     var language: Language { .english }
