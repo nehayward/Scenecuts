@@ -22,8 +22,7 @@ struct ScenecutsWebsite: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try ScenecutsWebsite().publish(using: [
-     .generateHTML(withTheme: .foundation),
-     .deploy(using: .gitHub("nehayward/scenecuts"))
-     ]
+try ScenecutsWebsite().publish(
+     withTheme: .foundation,
+     deployedUsing: .gitHub("nehayward/Scenecuts", useSSH: false)
 )
