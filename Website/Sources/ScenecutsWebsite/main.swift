@@ -14,7 +14,7 @@ struct ScenecutsWebsite: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://nehayward.github.io/scenecuts")!
+    var url = URL(string: "https://nehayward.github.io/Scenecuts")!
     var name = "Scenecuts"
     var description = "A simple menu bar app to control HomeKit"
     var language: Language { .english }
@@ -23,6 +23,5 @@ struct ScenecutsWebsite: Website {
 
 // This will generate your website using the built-in Foundation theme:
 try ScenecutsWebsite().publish(
-     withTheme: .foundation,
-     deployedUsing: .gitHub("nehayward/scenecuts", useSSH: false)
+     withTheme: .foundation
 )
