@@ -20,4 +20,7 @@ extension NSNotification.Name {
     
     /// Terminate Helper app
     static let terminateHelper = Self("TerminateHelper")
+    
+    /// Open Scenecuts
+    static let openScenecuts = Self("OpenScenecuts")
 }

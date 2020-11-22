@@ -32,11 +32,7 @@ extension NSWindow {
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(requestScenes), name: .requestScenes, object: nil)
         DistributedNotificationCenter.default().addObserver(self, selector: #selector(terminateApp), name: .terminateHelper, object: nil)
         
-        guard let scenecutsURL = Bundle.main.builtInPlugInsURL?.appendingPathComponent("Scenecuts.app") else {
-            return
-        }
-        
-        NSWorkspace.shared.openApplication(at: scenecutsURL, configuration: NSWorkspace.OpenConfiguration(), completionHandler: nil)
+        openScenecuts()
     }
     
     @objc func triggerScene(_ notification: Notification) {

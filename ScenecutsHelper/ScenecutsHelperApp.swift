@@ -27,6 +27,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         AppDelegate.loadAppKitIntegrationFramework()
         Home.shared.setup()
         NotificationCenter.default.addObserver(self, selector: #selector(terminate), name: .terminateHelper, object: nil)
+        
+        // MARK: Handle Reopening
+        NotificationCenter.default.addObserver(self, selector: #selector(handleReopen), name: NSNotification.Name("NSApplicationDidBecomeActiveNotification"),object: nil)
         return false
     }
     
@@ -52,6 +55,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     @objc func terminate() {
         exit(1)
     }
+    
+    @objc func handleReopen() {
+        let openScenecutsSelector = NSSelectorFromString("openScenecuts")
+        AppDelegate.appKitController?.performSelector(onMainThread: openScenecutsSelector, with: nil, waitUntilDone: true)
+    }
 }
-
-
