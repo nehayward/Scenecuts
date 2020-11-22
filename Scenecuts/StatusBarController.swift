@@ -55,10 +55,10 @@ class StatusBarController {
 
     @objc func openPreferences() {
         // MARK: This could probably be improved, currently a work around for showing preference window.
-        guard let preferenceItem = NSApp.mainMenu?.items[0].submenu?.items[0] else { return }
+        guard let preferenceItem = NSApp.mainMenu?.items[0].submenu?.items[2] else { return }
         NSApp.sendAction(preferenceItem.action!, to: nil, from: nil)
         
-        // MARK: Workaround - https://stackoverflow.com/questions/41340071/macos-menubar-application-main-menu-not-being-displayed
+        // MARK: Workaround for frozen status bar- https://stackoverflow.com/questions/41340071/macos-menubar-application-main-menu-not-being-displayed
         NSApp.setActivationPolicy(.regular)
             NSApp.activate(ignoringOtherApps: true)
             NSApp.mainWindow?.makeKeyAndOrderFront(nil)

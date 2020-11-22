@@ -16,18 +16,40 @@ struct ScenecutsApp: App {
         Settings {
             SettingsView()
         }.commands {
+            // MARK: App Menu
+            CommandGroup(after: CommandGroupPlacement.appInfo) {
+                Button(action: {
+                    NSApp.orderFrontStandardAboutPanel()
+                }) {
+                    Text("About Scenecuts")
+                }
+            }
+            
+            CommandGroup(after: CommandGroupPlacement.appTermination) {
+                Button(action: {
+                    NSApp.terminate(nil)
+                }) {
+                    Text("Quit")
+                }.keyboardShortcut("q", modifiers: .command)
+            }
+            
+            // MARK: Help Menu
+            CommandGroup(after: CommandGroupPlacement.help) {
+                Button(action: {
+                    #warning("TODO: Add help local help book option")
+//                    NSApp.showHelp(nil)
+                    NSWorkspace.shared.open(URL(string: "https://nehayward.github.io/Scenecuts/pages/help")!)
+                }) {
+                    Text("Scenecuts Help")
+                }
+            }
+            
             CommandMenu("File") {
                 Button(action: {
                     NSApp.mainWindow?.close()
                 }) {
                     Text("Close")
                 }.keyboardShortcut("w", modifiers: .command)
-                Divider()
-                Button(action: {
-                    NSApp.terminate(nil)
-                }) {
-                    Text("Quit")
-                }.keyboardShortcut("q", modifiers: .command)
             }
         }
     }
@@ -43,7 +65,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        NSApp.setActivationPolicy(.prohibited)
+        NSApp.setActivationPolicy(.accessory)
         return false
     }
     
