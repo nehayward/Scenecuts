@@ -18,7 +18,7 @@ struct IconButton: View {
         }) {
             VStack {
                 Image(systemSymbol: symbol)
-                    .font(.title)
+                    .font(.system(size: 50))
                 Text(symbol.rawValue)
                     .font(.caption)
                     .minimumScaleFactor(0.005)
@@ -27,7 +27,7 @@ struct IconButton: View {
             }
         }
         .buttonStyle(BorderlessButtonStyle())
-        .frame(width: 50, height: 50)
+        .frame(width: 80, height: 80)
     }
 }
 

@@ -14,6 +14,7 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
     let shortcut: String
     @Published var iconName: String {
         didSet {
+            StatusBarController.shared.updateMenuItems()
             store(value: iconName, forKey: .iconName)
         }
     }

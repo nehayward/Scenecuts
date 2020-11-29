@@ -8,6 +8,7 @@
 import Foundation
 import Cocoa
 import SwiftUI
+import KeyboardShortcuts
 
 class StatusBarController {
     static var shared = StatusBarController()
@@ -16,7 +17,7 @@ class StatusBarController {
     private lazy var mainStatusItem: NSStatusItem = {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         
-        statusItem.button?.image = NSImage(systemSymbolName: "homekit", accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
+        statusItem.button?.image = NSImage(systemSymbolName: "homekit", accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 14, weight: .regular))
         statusItem.button?.target = self
         
         let menu = NSMenu()
@@ -37,7 +38,7 @@ class StatusBarController {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         // MARK: Add Option to add Image
         if !scene.iconName.isEmpty {
-            let image = NSImage(systemSymbolName: scene.iconName, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 16, weight: .regular))
+            let image = NSImage(systemSymbolName: scene.iconName, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 14, weight: .regular))
             statusItem.button?.image = image
         } else {
             statusItem.button?.title = scene.name
@@ -90,6 +91,20 @@ class StatusBarController {
         let menuItem = NSMenuItem(title: actionSet.name, action: #selector(triggerAction), keyEquivalent: "")
         menuItem.identifier = NSUserInterfaceItemIdentifier(actionSet.id.uuidString)
         menuItem.target = self
+        menuItem.setShortcut(for: KeyboardShortcuts.Name(rawValue: actionSet.id.uuidString))
+        
+        let iconName: String = SceneStatusBarItem.value(id: actionSet.id, forKey: .iconName) ?? ""
+        if !iconName.isEmpty {
+            let image = NSImage(systemSymbolName: iconName, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 13, weight: .regular))
+            
+            let menuAttributedTitle = NSMutableAttributedString(string: "\(actionSet.name) ")
+            let iconAttachment = NSTextAttachment()
+            iconAttachment.image = image
+            menuAttributedTitle.append(NSAttributedString(attachment: iconAttachment))
+            menuItem.attributedTitle = menuAttributedTitle
+        }
+        
+        menuItem.toolTip = "Trigger HomeKit scene named \(actionSet.name)."
         
         // MARK: Don't add duplicates
         if menu.items.contains(where: { (item) -> Bool in
@@ -116,5 +131,10 @@ class StatusBarController {
                 menu.identifier?.rawValue == scene.id.uuidString
             }
         }
+    }
+    
+    func updateMenuItems() {
+        StatusBarController.shared.clearHomeKitScenes()
+        HelperManager.shared.getScenes()
     }
 }

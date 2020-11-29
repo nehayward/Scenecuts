@@ -113,7 +113,7 @@ class HelperManager {
                 let name = KeyboardShortcuts.Name(rawValue: scene.id.uuidString)!
                 
                 KeyboardShortcuts.onKeyUp(for: name) { [name] in
-                    // The user pressed the keyboard shortcut for “unicorn mode”!
+                    // MARK: Trigger scene for id.
                     let id = name.rawValue
                     DistributedNotificationCenter.default().postNotificationName(.triggerScene, object: id, userInfo: nil, deliverImmediately: true)
                 }
@@ -151,5 +151,10 @@ class HelperManager {
         }
         
         DistributedNotificationCenter.default.addObserver(self, selector: #selector(updateScenes), name: .updateScene, object: nil)
+    }
+    
+    func getScenes() {
+        // MARK: Ask for scenes from helper
+        DistributedNotificationCenter.default().postNotificationName(.requestScenes, object: nil, userInfo: nil, deliverImmediately: true)
     }
 }

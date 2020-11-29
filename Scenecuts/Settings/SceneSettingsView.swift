@@ -30,10 +30,11 @@ struct SceneSettingsView: View {
                 .frame(height: 30)
                 .border(SeparatorShapeStyle())
                 
-                
-                ForEach(helper.scenes, id: \.self){ scene in
-                    SceneConfigurationView(scene: scene)
-                }
+                ScrollView {
+                    ForEach(helper.scenes, id: \.self){ scene in
+                        SceneConfigurationView(scene: scene)
+                    }
+                }.frame(minHeight: 400)
                 
             }
         }
@@ -80,7 +81,7 @@ struct SceneConfigurationView: View {
                 .frame(width: 160)
         }.sheet(isPresented: $showImageView) {
             IconSelectionView(scene: scene, dismiss: $showImageView)
-                .frame(width: 400, height: 400)
+                .frame(width: 500, height: 400)
         }
     }
 }

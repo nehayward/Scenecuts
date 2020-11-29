@@ -10,7 +10,7 @@ import KeyboardShortcuts
 
 struct SettingsView: View {
     private enum Tabs: Hashable {
-        case general, advanced, testing
+        case general, scenes, advanced
     }
     
     var body: some View {
@@ -26,6 +26,13 @@ struct SettingsView: View {
                 .frame(width: 600)
                 .tabItem {
                     Label("Scenes", systemImage: "play.circle")
+                }
+                .tag(Tabs.scenes)
+            
+            AdvancedSettingsView()
+                .frame(width: 600)
+                .tabItem {
+                    Label("Advanced", systemImage: "cpu")
                 }
                 .tag(Tabs.advanced)
         }

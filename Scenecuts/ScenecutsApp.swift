@@ -57,11 +57,11 @@ struct ScenecutsApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
-        // MARK: Have option to disable this in settings.
-        StatusBarController.shared.openPreferences()
+        if !UserDefaults.standard.hidePreferencesOnLaunch {
+            StatusBarController.shared.openPreferences()
+        }
 
-        // MARK: Ask for scenes from helper
-        DistributedNotificationCenter.default().postNotificationName(.requestScenes, object: nil, userInfo: nil, deliverImmediately: true)
+        HelperManager.shared.getScenes()
     }
     
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {

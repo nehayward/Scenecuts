@@ -33,6 +33,8 @@
 		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
 		0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199341C255ED98C002FC872 /* IconSelectionView.swift */; };
 		019D948D255F0A0E00A3D48A /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 019D948C255F0A0E00A3D48A /* SFSafeSymbols */; };
+		01DEC0D92572C9140044C6D5 /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC0D82572C9140044C6D5 /* AdvancedSettingsView.swift */; };
+		01DEC0DD2572CFB70044C6D5 /* UserDefaults+Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC0DC2572CFB70044C6D5 /* UserDefaults+Preferences.swift */; };
 		01E3C71725603DB000CF2ED8 /* Scenecuts.app in Embed Helper App */ = {isa = PBXBuildFile; fileRef = 0104AC8C254E0F33004124CD /* Scenecuts.app */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -117,6 +119,8 @@
 		0177BF8E254B538C008492AB /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.2.sdk/System/Library/Frameworks/HomeKit.framework; sourceTree = DEVELOPER_DIR; };
 		0177BF92254B60B3008492AB /* HelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
 		0199341C255ED98C002FC872 /* IconSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSelectionView.swift; sourceTree = "<group>"; };
+		01DEC0D82572C9140044C6D5 /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
+		01DEC0DC2572CFB70044C6D5 /* UserDefaults+Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Preferences.swift"; sourceTree = "<group>"; };
 		01F875A125520F32003A362A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		01F875A325520F32003A362A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -215,6 +219,7 @@
 				0177BF92254B60B3008492AB /* HelperManager.swift */,
 				0177BE7E254B0B97008492AB /* Settings */,
 				010B32652551CF4900F2F228 /* Models */,
+				01DEC0DC2572CFB70044C6D5 /* UserDefaults+Preferences.swift */,
 				013D3A11254AFADF0057F24A /* Assets.xcassets */,
 				013D3A16254AFADF0057F24A /* Info.plist */,
 				013D3A17254AFADF0057F24A /* Scenecuts.entitlements */,
@@ -253,6 +258,7 @@
 				013D3A9F254B059C0057F24A /* SettingsView.swift */,
 				013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */,
 				0177BE85254B1B52008492AB /* SceneSettingsView.swift */,
+				01DEC0D82572C9140044C6D5 /* AdvancedSettingsView.swift */,
 				0119DF272561AE0E00FF7A01 /* IconSelectionView */,
 			);
 			path = Settings;
@@ -497,9 +503,11 @@
 				0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */,
 				013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */,
 				013D3A0E254AFADF0057F24A /* ScenecutsApp.swift in Sources */,
+				01DEC0DD2572CFB70044C6D5 /* UserDefaults+Preferences.swift in Sources */,
 				0155941C254F0D1500468BA5 /* Notification+Extensions.swift in Sources */,
 				013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */,
 				0177BF93254B60B3008492AB /* HelperManager.swift in Sources */,
+				01DEC0D92572C9140044C6D5 /* AdvancedSettingsView.swift in Sources */,
 				01426018254DB15300821E69 /* ActionSet.swift in Sources */,
 				0177BE86254B1B52008492AB /* SceneSettingsView.swift in Sources */,
 				010B32672551CF5300F2F228 /* SceneStatusBarItem.swift in Sources */,
@@ -726,7 +734,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -737,7 +745,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2020.2;
+				MARKETING_VERSION = 2020.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -755,7 +763,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -766,7 +774,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2020.2;
+				MARKETING_VERSION = 2020.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -784,7 +792,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -795,7 +803,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.2;
+				MARKETING_VERSION = 2020.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
 				PRODUCT_NAME = Scenecuts;
 				SDKROOT = iphoneos;
@@ -815,7 +823,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -826,7 +834,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.2;
+				MARKETING_VERSION = 2020.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
 				PRODUCT_NAME = Scenecuts;
 				SDKROOT = iphoneos;

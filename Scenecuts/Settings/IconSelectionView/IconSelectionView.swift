@@ -21,7 +21,7 @@ struct IconSelectionView: View {
         return symbols
     }()
     
-    var rows: [GridItem] = Array(repeating: .init(.fixed(50)), count: 3)
+    var rows: [GridItem] = Array(repeating: .init(.fixed(80)), count: 5)
     
     var body: some View {
         VStack {
@@ -38,11 +38,7 @@ struct IconSelectionView: View {
                         .font(.title)
                 }
             }
-            TextField("Search for SFSymbols...", text: $filterText, onEditingChanged: { isEditing in
-              
-            }, onCommit: {
-                print("onCommit")
-            }).textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField("Search for SFSymbols...", text: $filterText).textFieldStyle(RoundedBorderTextFieldStyle())
 
             ScrollView {
                 LazyVGrid(columns: rows) {
