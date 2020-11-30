@@ -15,10 +15,10 @@ extension UserDefaults {
     // MARK: - HidePreferencesOnLaunch
     var hidePreferencesOnLaunch: Bool {
         set {
-            UserDefaults.standard.setValue(newValue, forKey: UserDefaults.Keys.hidePreferencesOnLaunch.rawValue)
+            set(newValue, forKey: UserDefaults.Keys.hidePreferencesOnLaunch.rawValue)
         }
         get {
-            UserDefaults.standard.bool(forKey: UserDefaults.Keys.hidePreferencesOnLaunch.rawValue)
+            bool(forKey: UserDefaults.Keys.hidePreferencesOnLaunch.rawValue)
         }
     }
 }
