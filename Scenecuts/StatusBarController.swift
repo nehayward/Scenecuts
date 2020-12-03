@@ -21,16 +21,17 @@ class StatusBarController {
         statusItem.button?.target = self
         
         let menu = NSMenu()
-        let menuItem = menu.addItem(withTitle: "Preferences...", action: #selector(openPreferences), keyEquivalent: ",")
-        menuItem.target = self
-        statusItem.menu = menu
         
         // MARK: Add separator
         menu.addItem(NSMenuItem.separator())
+
+        let menuItem = menu.addItem(withTitle: "Preferences…", action: #selector(openPreferences), keyEquivalent: ",")
+        menuItem.target = self
         
         let quitMenuItem = menu.addItem(withTitle: "Quit", action: #selector(quit), keyEquivalent: "q")
         quitMenuItem.target = self
         
+        statusItem.menu = menu
         return statusItem
     }()
     
