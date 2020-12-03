@@ -96,12 +96,7 @@ class StatusBarController {
         let iconName: String = SceneStatusBarItem.value(id: actionSet.id, forKey: .iconName) ?? ""
         if !iconName.isEmpty {
             let image = NSImage(systemSymbolName: iconName, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 13, weight: .regular))
-            
-            let menuAttributedTitle = NSMutableAttributedString(string: "\(actionSet.name) ")
-            let iconAttachment = NSTextAttachment()
-            iconAttachment.image = image
-            menuAttributedTitle.append(NSAttributedString(attachment: iconAttachment))
-            menuItem.attributedTitle = menuAttributedTitle
+            menuItem.image = image
         }
         
         menuItem.toolTip = "Trigger HomeKit scene named \(actionSet.name)."
