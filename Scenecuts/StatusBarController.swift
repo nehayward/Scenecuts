@@ -92,14 +92,15 @@ class StatusBarController {
         menuItem.identifier = NSUserInterfaceItemIdentifier(actionSet.id.uuidString)
         menuItem.target = self
         menuItem.setShortcut(for: KeyboardShortcuts.Name(rawValue: actionSet.id.uuidString))
-        
-        let iconName: String = SceneStatusBarItem.value(id: actionSet.id, forKey: .iconName) ?? ""
-        if !iconName.isEmpty {
-            let image = NSImage(systemSymbolName: iconName, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 13, weight: .regular))
-            menuItem.image = image
+                
+        var iconName: String = SceneStatusBarItem.value(id: actionSet.id, forKey: .iconName) ?? ""
+        if iconName.isEmpty {
+            iconName = actionSet.defaultSymbol.rawValue
         }
-        
-        menuItem.toolTip = "Trigger HomeKit scene named \(actionSet.name)."
+        let iconImage = NSImage(systemSymbolName: iconName, accessibilityDescription: nil)
+        print(actionSet.name, actionSet.type, iconName)
+        menuItem.image = iconImage?.withSymbolConfiguration(.init(pointSize: 13, weight: .regular))
+        menuItem.toolTip = "Trigger HomeKit scene ”\(actionSet.name)”"
         
         // MARK: Don't add duplicates
         if menu.items.contains(where: { (item) -> Bool in
