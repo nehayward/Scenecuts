@@ -18,11 +18,11 @@
 		013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3A1E254AFB320057F24A /* StatusBarController.swift */; };
 		013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3A9F254B059C0057F24A /* SettingsView.swift */; };
 		013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013D3AA2254B05B60057F24A /* GeneralSettingsView.swift */; };
-		01426018254DB15300821E69 /* ActionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426017254DB15300821E69 /* ActionSet.swift */; };
 		01426019254DB15300821E69 /* ActionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426017254DB15300821E69 /* ActionSet.swift */; };
 		0155941C254F0D1500468BA5 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155941B254F0D1500468BA5 /* Notification+Extensions.swift */; };
 		0155941F254F0D8300468BA5 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155941B254F0D1500468BA5 /* Notification+Extensions.swift */; };
 		01559421254F0EAC00468BA5 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155941B254F0D1500468BA5 /* Notification+Extensions.swift */; };
+		015BA337257C3C0700FA20A6 /* ActionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01426017254DB15300821E69 /* ActionSet.swift */; };
 		0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = 0177BE82254B1B42008492AB /* KeyboardShortcuts */; };
 		0177BE86254B1B52008492AB /* SceneSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BE85254B1B52008492AB /* SceneSettingsView.swift */; };
 		0177BF0D254B4293008492AB /* ScenecutsHelperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */; };
@@ -31,6 +31,7 @@
 		0177BF8B254B4F3D008492AB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF8A254B4F3D008492AB /* Home.swift */; };
 		0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF8E254B538C008492AB /* HomeKit.framework */; };
 		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
+		0189DA15257C493200AE32B9 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 0189DA14257C493200AE32B9 /* SFSafeSymbols */; };
 		0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199341C255ED98C002FC872 /* IconSelectionView.swift */; };
 		019D948D255F0A0E00A3D48A /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 019D948C255F0A0E00A3D48A /* SFSafeSymbols */; };
 		01DEC0D92572C9140044C6D5 /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC0D82572C9140044C6D5 /* AdvancedSettingsView.swift */; };
@@ -146,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0189DA15257C493200AE32B9 /* SFSafeSymbols in Frameworks */,
 				0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +249,7 @@
 		0155941A254F0D0600468BA5 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				0143F110254F858D0009B432 /* Models */,
 				0155941B254F0D1500468BA5 /* Notification+Extensions.swift */,
 			);
 			path = Shared;
@@ -270,7 +273,6 @@
 				0177BF1B254B42A3008492AB /* ScenecutsHelper.entitlements */,
 				0177BF0C254B4293008492AB /* ScenecutsHelperApp.swift */,
 				0177BF8A254B4F3D008492AB /* Home.swift */,
-				0143F110254F858D0009B432 /* Models */,
 				0177BF10254B4294008492AB /* Assets.xcassets */,
 				0177BF15254B4294008492AB /* Info.plist */,
 				0177BF12254B4294008492AB /* Preview Content */,
@@ -324,6 +326,8 @@
 			dependencies = (
 			);
 			name = AppKitIntegration;
+			packageProductDependencies = (
+			);
 			productName = AppKitIntegration;
 			productReference = 0104AC83254E0F33004124CD /* AppKitIntegration.framework */;
 			productType = "com.apple.product-type.framework";
@@ -369,6 +373,9 @@
 				0104AC9A254E0F6C004124CD /* PBXTargetDependency */,
 			);
 			name = "Scenecuts Helper";
+			packageProductDependencies = (
+				0189DA14257C493200AE32B9 /* SFSafeSymbols */,
+			);
 			productName = ScenecutsHelper;
 			productReference = 0104AC92254E0F48004124CD /* Scenecuts.app */;
 			productType = "com.apple.product-type.application";
@@ -504,11 +511,11 @@
 				013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */,
 				013D3A0E254AFADF0057F24A /* ScenecutsApp.swift in Sources */,
 				01DEC0DD2572CFB70044C6D5 /* UserDefaults+Preferences.swift in Sources */,
+				015BA337257C3C0700FA20A6 /* ActionSet.swift in Sources */,
 				0155941C254F0D1500468BA5 /* Notification+Extensions.swift in Sources */,
 				013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */,
 				0177BF93254B60B3008492AB /* HelperManager.swift in Sources */,
 				01DEC0D92572C9140044C6D5 /* AdvancedSettingsView.swift in Sources */,
-				01426018254DB15300821E69 /* ActionSet.swift in Sources */,
 				0177BE86254B1B52008492AB /* SceneSettingsView.swift in Sources */,
 				010B32672551CF5300F2F228 /* SceneStatusBarItem.swift in Sources */,
 				013D3AA3254B05B60057F24A /* GeneralSettingsView.swift in Sources */,
@@ -913,6 +920,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0177BE81254B1B42008492AB /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
+		};
+		0189DA14257C493200AE32B9 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 019D948B255F0A0E00A3D48A /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
 		};
 		019D948C255F0A0E00A3D48A /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;

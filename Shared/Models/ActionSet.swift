@@ -6,13 +6,10 @@
 //
 
 import Foundation
+import SFSafeSymbols
 
 #if canImport(HomeKit)
 import HomeKit
-#endif
-
-#if canImport(SFSafeSymbols)
-import SFSafeSymbols
 #endif
 
 struct ActionSet: Codable {
@@ -37,14 +34,13 @@ struct ActionSet: Codable {
     #endif
 }
 
-#if canImport(SFSafeSymbols)
 extension ActionSet {
     var defaultSymbol: SFSymbol {
         switch self.type {
         case .homeArrival:
             return .figureWalk
         case .homeDeparture:
-            return .figureWalk
+            return .figureWave
         case .sleep:
             return .moonFill
         case .wakeUp:
@@ -54,7 +50,6 @@ extension ActionSet {
         }
     }
 }
-#endif
 
 #if canImport(HomeKit)
 extension ActionSet.ActionType {
