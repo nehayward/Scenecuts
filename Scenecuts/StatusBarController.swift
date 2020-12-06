@@ -21,14 +21,14 @@ class StatusBarController {
         statusItem.button?.target = self
         
         let menu = NSMenu()
-        let menuItem = menu.addItem(withTitle: "Preferences...", action: #selector(openPreferences), keyEquivalent: ",")
+        let menuItem = menu.addItem(withTitle: "\(Localized.preferences.localizedCapitalized)...", action: #selector(openPreferences), keyEquivalent: ",")
         menuItem.target = self
         statusItem.menu = menu
         
         // MARK: Add separator
         menu.addItem(NSMenuItem.separator())
         
-        let quitMenuItem = menu.addItem(withTitle: "Quit", action: #selector(quit), keyEquivalent: "q")
+        let quitMenuItem = menu.addItem(withTitle: "\(Localized.quit.localizedCapitalized)", action: #selector(quit), keyEquivalent: "q")
         quitMenuItem.target = self
         
         return statusItem
@@ -100,7 +100,7 @@ class StatusBarController {
         let iconImage = NSImage(systemSymbolName: iconName, accessibilityDescription: nil)
         print(actionSet.name, actionSet.type, iconName)
         menuItem.image = iconImage?.withSymbolConfiguration(.init(pointSize: 13, weight: .regular))
-        menuItem.toolTip = "Trigger HomeKit scene ”\(actionSet.name)”"
+        menuItem.toolTip = "\(Localized.triggerHomeKitScene) ”\(actionSet.name)”"
         
         // MARK: Don't add duplicates
         if menu.items.contains(where: { (item) -> Bool in
@@ -132,5 +132,21 @@ class StatusBarController {
     func updateMenuItems() {
         StatusBarController.shared.clearHomeKitScenes()
         HelperManager.shared.getScenes()
+    }
+}
+
+extension StatusBarController {
+    enum Localized {
+        static var preferences: String {
+            .localizedStringWithFormat(NSLocalizedString("Preferences", comment: "A button that opens preferences window"))
+        }
+        
+        static var quit: String {
+            .localizedStringWithFormat(NSLocalizedString("Quit", comment: "A button that quits the app."))
+        }
+        
+        static var triggerHomeKitScene: String {
+            .localizedStringWithFormat(NSLocalizedString("Trigger HomeKit scene", comment: "A message explaining the buttons action that will trigger/execute Homekit scene"))
+        }
     }
 }

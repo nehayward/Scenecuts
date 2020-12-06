@@ -31,7 +31,7 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSHomeKitUsageDescription</key>
-	<string>Triggers scenes</string>
+	<string>Access is needed in order to triggers HomeKit scenes</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

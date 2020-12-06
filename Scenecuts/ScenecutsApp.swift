@@ -21,7 +21,7 @@ struct ScenecutsApp: App {
                 Button(action: {
                     NSApp.orderFrontStandardAboutPanel()
                 }) {
-                    Text("About Scenecuts")
+                    Text(Localized.aboutScenecuts.localizedCapitalized)
                 }
             }
             
@@ -29,7 +29,7 @@ struct ScenecutsApp: App {
                 Button(action: {
                     NSApp.terminate(nil)
                 }) {
-                    Text("Quit")
+                    Text(Localized.quit.localizedCapitalized)
                 }.keyboardShortcut("q", modifiers: .command)
             }
             
@@ -40,15 +40,15 @@ struct ScenecutsApp: App {
 //                    NSApp.showHelp(nil)
                     NSWorkspace.shared.open(URL(string: "https://nehayward.github.io/Scenecuts/pages/help")!)
                 }) {
-                    Text("Scenecuts Help")
+                    Text(Localized.scenecutsHelp.localizedCapitalized)
                 }
             }
             
-            CommandMenu("File") {
+            CommandMenu(Localized.file.localizedCapitalized) {
                 Button(action: {
                     NSApp.mainWindow?.close()
                 }) {
-                    Text("Close")
+                    Text(Localized.close.localizedCapitalized)
                 }.keyboardShortcut("w", modifiers: .command)
             }
         }
@@ -80,3 +80,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 
+
+extension ScenecutsApp {
+    enum Localized {
+        static var quit: String {
+            .localizedStringWithFormat(NSLocalizedString("Quit", comment: "A button that quits the app."))
+        }
+        
+        static var aboutScenecuts: String {
+            .localizedStringWithFormat(NSLocalizedString("About Scenecuts", comment: "A button that opens about screen of the app."))
+        }
+        
+        static var scenecutsHelp: String {
+            .localizedStringWithFormat(NSLocalizedString("Scenecuts Help", comment: "A button that opens up the help website."))
+        }
+        
+        static var file: String {
+            .localizedStringWithFormat(NSLocalizedString("File", comment: "A menu title for File, not sure if this is translated?"))
+        }
+        
+        static var close: String {
+            .localizedStringWithFormat(NSLocalizedString("Close", comment: "A file menu item to close top level window."))
+        }
+    }
+}

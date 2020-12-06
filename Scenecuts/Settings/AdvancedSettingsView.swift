@@ -14,11 +14,11 @@ struct AdvancedSettingsView: View {
         Form {
             VStack(alignment:.leading, spacing: 20) {
                 HStack(alignment: .top) {
-                    Text("Advanced: ")
+                    Text("\(Localized.advanced.localizedCapitalized): ")
                         .frame(width: 100, alignment: .trailing)
                     VStack(alignment: .leading) {
-                        Toggle("Hide Preferences on Launch", isOn: $hidePreferencesOnLaunch)
-                        Text("Enabling this will always hide the preference window on first app launch.")
+                        Toggle(Localized.hidePreferencesOnLaunch, isOn: $hidePreferencesOnLaunch)
+                        Text(Localized.hidePreferencesOnLaunchFooterInformation)
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
@@ -27,6 +27,23 @@ struct AdvancedSettingsView: View {
         }
     }
 }
+
+extension AdvancedSettingsView {
+    enum Localized {
+        static var advanced: String {
+            .localizedStringWithFormat(NSLocalizedString("Advanced", comment: "A label listing advanced configuration options."))
+        }
+        
+        static var hidePreferencesOnLaunch: String {
+            .localizedStringWithFormat(NSLocalizedString("Hide Preferences on Launch", comment: "A toggle label that will enable/disable showing preferences screen on application launch"))
+        }
+        
+        static var hidePreferencesOnLaunchFooterInformation: String {
+            .localizedStringWithFormat(NSLocalizedString("Enabling this will always hide the preference window on first app launch.", comment: "Explanation of 'Hide Preferences on Launch' toggle."))
+        }
+    }
+}
+
 
 struct AdvancedSettingsView_Previews: PreviewProvider {
     static var previews: some View {

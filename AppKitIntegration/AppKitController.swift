@@ -42,7 +42,7 @@ extension NSWindow {
  
     @objc func fixPermission() {
         let alert = NSAlert()
-        alert.messageText = "Access Needed"
+        alert.messageText = "HomeKit Access Needed"
         alert.informativeText = "Home"
         alert.alertStyle = .warning
         alert.addButton(withTitle: "Open Privacy Settings")
@@ -88,5 +88,22 @@ extension NSWindow {
         }
         
         NSWorkspace.shared.openApplication(at: scenecutsURL, configuration: NSWorkspace.OpenConfiguration(), completionHandler: nil)
+    }
+}
+
+
+extension AppKitController {
+    enum Localized {
+        static var preferences: String {
+            .localizedStringWithFormat(NSLocalizedString("Preferences", comment: "A button that opens preferences window"))
+        }
+        
+        static var quit: String {
+            .localizedStringWithFormat(NSLocalizedString("Quit", comment: "A button that quits the app."))
+        }
+        
+        static var triggerHomeKitScene: String {
+            .localizedStringWithFormat(NSLocalizedString("Trigger HomeKit scene", comment: "A message explaining the buttons action that will trigger/execute HomeKit scene"))
+        }
     }
 }

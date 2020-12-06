@@ -1,48 +1,12 @@
 //
-//  AdvanceSettingsView.swift
+//  SceneConfigurationView.swift
 //  Scenecuts
 //
-//  Created by Nick Hayward on 10/29/20.
+//  Created by Nick Hayward on 12/5/20.
 //
 
 import SwiftUI
 import KeyboardShortcuts
-
-struct SceneSettingsView: View {
-    @ObservedObject var helper: Helper
-    
-    var body: some View {
-        Form {
-            VStack(spacing: 10) {
-                HStack(alignment: .center, spacing: 0) {
-                    Text("Show in Menu Bar")
-                        .frame(width: 120)
-                    Divider()
-                    Text("Name")
-                        .frame(width: 140)
-                    Divider()
-                    Text("Menu Bar Icon")
-                        .frame(width: 120)
-                    Divider()
-                    Text("Global Shortcut")
-                        .frame(width: 160)
-                }
-                .frame(height: 30)
-                .border(SeparatorShapeStyle())
-                
-                ScrollView {
-                    ForEach(helper.scenes, id: \.self){ scene in
-                        SceneConfigurationView(scene: scene)
-                    }
-                }.frame(minHeight: 400)
-                
-            }
-        }
-        .padding(.bottom, 20)
-        .border(SeparatorShapeStyle())
-    }
-}
-
 
 struct SceneConfigurationView: View {
     @ObservedObject var scene: SceneStatusBarItem
@@ -70,7 +34,7 @@ struct SceneConfigurationView: View {
                     showImageView.toggle()
                 } label: {
                     if scene.iconName.isEmpty {
-                        Text("Set Image")
+                        Text(Localized.setImage.localizedCapitalized)
                     } else {
                         Image(systemName: scene.iconName)
                     }
@@ -86,9 +50,20 @@ struct SceneConfigurationView: View {
     }
 }
 
+extension SceneConfigurationView {
+    enum Localized {
+        static var setImage: String {
+            .localizedStringWithFormat(NSLocalizedString("Set Image", comment: "A button that opens a view to assign an icon/image to the scene."))
+        }
+    }
+}
 
-struct SceneSettingsView_Previews: PreviewProvider {
+struct SceneConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
-        SceneSettingsView(helper: HelperManager.shared.helper)
+        SceneConfigurationView(scene: SceneStatusBarItem(id: UUID(),
+                                                         name: "",
+                                                         iconName: "",
+                                                         shortcut: "",
+                                                         isInMenuBar: false))
     }
 }

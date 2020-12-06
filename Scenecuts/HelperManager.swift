@@ -22,6 +22,7 @@ class HelperManager {
     
     private lazy var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
+        dateFormatter.locale = .current
         dateFormatter.doesRelativeDateFormatting = true
         dateFormatter.dateStyle = .medium
         return dateFormatter
@@ -61,7 +62,7 @@ class HelperManager {
               let helperAppName = infoDictionary["CFBundleDisplayName"],
               let version = infoDictionary["CFBundleShortVersionString"] else { return "Scenecuts Helper\nVersion ?\nActive Since ?" }
         
-        return "\(helperAppName)\nVersion \(version)\nActive Since \(dateFormatter.string(from: launchDate))"
+        return "\(helperAppName)\nVersion \(version)\n\(Localized.activeSince) \(dateFormatter.string(from: launchDate))"
     }
     
     func launchHelper() {
@@ -73,10 +74,10 @@ class HelperManager {
             if error != nil {
                 DispatchQueue.main.async {
                     let alert = NSAlert()
-                    alert.messageText = "Can't Open Helper App"
-                    alert.informativeText = "Home"
+                    alert.messageText = Localized.launchHelperAppErrorMessage.localizedCapitalized
+                    alert.informativeText = Localized.helperAppError.localizedCapitalized
                     alert.alertStyle = .warning
-                    alert.addButton(withTitle: "Launch Helper App")
+                    alert.addButton(withTitle: Localized.launchHelperApp.localizedCapitalized)
                     let buttonClicked = alert.runModal()
                     
                     if buttonClicked.rawValue > 0 {
@@ -156,5 +157,25 @@ class HelperManager {
     func getScenes() {
         // MARK: Ask for scenes from helper
         DistributedNotificationCenter.default().postNotificationName(.requestScenes, object: nil, userInfo: nil, deliverImmediately: true)
+    }
+}
+
+extension HelperManager {
+    enum Localized {
+        static var activeSince: String {
+            .localizedStringWithFormat(NSLocalizedString("Active Since", comment: "A date indicating how long the app has been active"))
+        }
+        
+        static var helperAppError: String {
+            .localizedStringWithFormat(NSLocalizedString("Helper App Error", comment: "A header for error message"))
+        }
+        
+        static var launchHelperApp: String {
+            .localizedStringWithFormat(NSLocalizedString("Launch Helper App", comment: "A button to launch helper app."))
+        }
+        
+        static var launchHelperAppErrorMessage: String {
+            .localizedStringWithFormat(NSLocalizedString("Can't Open Helper App", comment: "A message explaining helper app wasn't launched."))
+        }
     }
 }

@@ -18,26 +18,42 @@ struct SettingsView: View {
             GeneralSettingsView(helper: HelperManager.shared.helper)
                 .frame(width: 600, height: 200)
                 .tabItem {
-                    Label("General", systemImage: "gear")
+                    Label(Localized.general.localizedCapitalized, systemImage: "gear")
                 }
                 .tag(Tabs.general)
             
             SceneSettingsView(helper: HelperManager.shared.helper)
                 .frame(width: 600)
                 .tabItem {
-                    Label("Scenes", systemImage: "play.circle")
+                    Label(Localized.scenes.localizedCapitalized, systemImage: "play.circle")
                 }
                 .tag(Tabs.scenes)
             
             AdvancedSettingsView()
                 .frame(width: 600)
                 .tabItem {
-                    Label("Advanced", systemImage: "cpu")
+                    Label(Localized.advanced.localizedCapitalized, systemImage: "cpu")
                 }
                 .tag(Tabs.advanced)
         }
         .padding(20)
         .frame(minWidth: 375)
+    }
+}
+
+extension SettingsView {
+    enum Localized {
+        static var general: String {
+            .localizedStringWithFormat(NSLocalizedString("General", comment: "A settings tab for all general settings"))
+        }
+        
+        static var scenes: String {
+            .localizedStringWithFormat(NSLocalizedString("Scenes", comment: "A tab for all scenes settings"))
+        }
+        
+        static var advanced: String {
+            .localizedStringWithFormat(NSLocalizedString("Advanced", comment: "A tab for all advanced settings"))
+        }
     }
 }
 

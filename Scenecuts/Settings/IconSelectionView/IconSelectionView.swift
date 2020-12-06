@@ -27,18 +27,18 @@ struct IconSelectionView: View {
         VStack {
             VStack {
                 if !scene.iconName.isEmpty {
-                    Text("Current Icon").padding(.bottom, 2)
+                    Text(Localized.currentIcon.localizedCapitalized).padding(.bottom, 2)
                     Image(systemName: scene.iconName)
                         .font(.system(size: 60))
-                    Button("Clear") {
+                    Button(Localized.clear.localizedCapitalized) {
                         scene.iconName = ""
                     }
                 } else {
-                    Text("Select an Icon")
+                    Text(Localized.selectAnIcon)
                         .font(.title)
                 }
             }
-            TextField("Search for SFSymbols...", text: $filterText).textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField("\(Localized.searchPromptPlaceholder)...", text: $filterText).textFieldStyle(RoundedBorderTextFieldStyle())
 
             ScrollView {
                 LazyVGrid(columns: rows) {
@@ -50,12 +50,12 @@ struct IconSelectionView: View {
             }
             Spacer()
             HStack {
-                Button("Cancel") {
+                Button(Localized.cancel.localizedCapitalized) {
                     // MARK: Reset State
                     scene.iconName = originalIconName
                     dismiss = false
                 }.keyboardShortcut(.cancelAction)
-                Button("Apply") {
+                Button(Localized.apply.localizedCapitalized) {
                     // MARK: Reset Menubar State
                     if scene.isInMenuBar {
                         scene.isInMenuBar.toggle()
@@ -77,14 +77,50 @@ struct Symbol: Identifiable, Hashable {
     var symbol: SFSymbol
 }
 
+extension IconSelectionView {
+    enum Localized {
+        static var currentIcon: String {
+            .localizedStringWithFormat(NSLocalizedString("Current Icon", comment: "A header label for current icon selected"))
+        }
+        
+        static var clear: String {
+            .localizedStringWithFormat(NSLocalizedString("Clear", comment: "A button to clear icon image selection"))
+        }
+        
+        static var selectAnIcon: String {
+            .localizedStringWithFormat(NSLocalizedString("Select an Icon", comment: "A header label that indicates icon can be selected"))
+        }
+        
+        static var searchPromptPlaceholder: String {
+            .localizedStringWithFormat(NSLocalizedString("Search for SFSymbols", comment: "A placeholder for searching for SFSymbols"))
+        }
+        
+        static var cancel: String {
+            .localizedStringWithFormat(NSLocalizedString("Cancel", comment: "A button that cancels selected icon change."))
+        }
+        
+        static var apply: String {
+            .localizedStringWithFormat(NSLocalizedString("Apply", comment: "A button that applies selected icon change."))
+        }
+    }
+}
+
 struct IconSelectionView_Previews: PreviewProvider {
     static var previews: some View {
-        IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
-                                                    name: "Test",
-                                                    iconName: "tv",
-                                                    shortcut: "",
-                                                    isInMenuBar: false),
-        dismiss: .constant(true))
+        Group {
+            IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
+                                                        name: "Test",
+                                                        iconName: "tv",
+                                                        shortcut: "",
+                                                        isInMenuBar: false),
+                              dismiss: .constant(true))
+            IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
+                                                        name: "",
+                                                        iconName: "",
+                                                        shortcut: "",
+                                                        isInMenuBar: false),
+                              dismiss: .constant(true))
+        }
     }
 }
 

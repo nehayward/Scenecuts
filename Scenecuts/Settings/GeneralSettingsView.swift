@@ -14,7 +14,7 @@ struct GeneralSettingsView: View {
         Form {
             VStack(alignment:.leading, spacing: 20) {
                 HStack(alignment: .top) {
-                    Text("Helper App: ")
+                    Text(Localized.helperApp.localizedCapitalized + ": ")
                         .frame(width: 100, alignment: .trailing)
                     VStack(alignment: .leading) {
                         if helper.helperAppIsRunning {
@@ -23,20 +23,41 @@ struct GeneralSettingsView: View {
                                 .lineLimit(3)
                         }
                         if !helper.helperAppIsRunning {
-                            Button("Start Helper") {
+                            Button(Localized.startHelperApp.localizedCapitalized) {
                                 HelperManager.shared.launchHelper()
                             }
                         } else {
-                            Button("Terminate Helper") {
+                            Button(Localized.terminateHelperApp.localizedCapitalized) {
                                 HelperManager.shared.terminateHelper()
                             }
                         }
-                        Text("The helper app is used to communicate with HomeKit, this\nneeds to be running in order for Scenecuts to work properly.")
+                        Text(Localized.helperAppButtonInfo)
+                            .frame(width: 300, alignment: .leading)
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
                 }
             }
+        }
+    }
+}
+
+extension GeneralSettingsView {
+    enum Localized {
+        static var helperApp: String {
+            .localizedStringWithFormat(NSLocalizedString("Helper App", comment: "The name for a helper app"))
+        }
+        
+        static var startHelperApp: String {
+            .localizedStringWithFormat(NSLocalizedString("Start App", comment: "A button to start helper app."))
+        }
+        
+        static var terminateHelperApp: String {
+            .localizedStringWithFormat(NSLocalizedString("Terminate App", comment: "A button to terminate helper app."))
+        }
+        
+        static var helperAppButtonInfo: String {
+            .localizedStringWithFormat(NSLocalizedString("The helper app is used to communicate with HomeKit, this needs to be running in order for Scenecuts to work properly.", comment: "A brief message explaining that Helper App must be running for Scenecuts to work properly"))
         }
     }
 }
