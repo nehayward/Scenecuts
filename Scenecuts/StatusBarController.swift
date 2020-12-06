@@ -8,6 +8,7 @@
 import Foundation
 import Cocoa
 import SwiftUI
+import SFSafeSymbols
 import KeyboardShortcuts
 
 class StatusBarController {
@@ -17,20 +18,21 @@ class StatusBarController {
     private lazy var mainStatusItem: NSStatusItem = {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         
-        statusItem.button?.image = NSImage(systemSymbolName: "homekit", accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 14, weight: .regular))
+        statusItem.button?.image = NSImage(systemSymbolName: SFSymbol.homekit.rawValue, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 14, weight: .regular))
         statusItem.button?.target = self
         
         let menu = NSMenu()
-        let menuItem = menu.addItem(withTitle: "\(Localized.preferences.localizedCapitalized)...", action: #selector(openPreferences), keyEquivalent: ",")
-        menuItem.target = self
-        statusItem.menu = menu
         
         // MARK: Add separator
         menu.addItem(NSMenuItem.separator())
-        
+
+        let menuItem = menu.addItem(withTitle: "\(Localized.preferences.localizedCapitalized)…", action: #selector(openPreferences), keyEquivalent: ",")
+        menuItem.target = self
+                
         let quitMenuItem = menu.addItem(withTitle: "\(Localized.quit.localizedCapitalized)", action: #selector(quit), keyEquivalent: "q")
         quitMenuItem.target = self
         
+        statusItem.menu = menu
         return statusItem
     }()
     
