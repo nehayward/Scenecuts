@@ -83,6 +83,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 extension ScenecutsApp {
     enum Localized {
+        
+        // MARK: Need to figure out how to translate CommandGroups or Open SwiftUI Scenes.
+        static var preferences: String {
+            .localizedStringWithFormat(NSLocalizedString("Preferences", comment: "A button that opens preferences window"))
+        }
+        
         static var quit: String {
             .localizedStringWithFormat(NSLocalizedString("Quit", comment: "A button that quits the app."))
         }
