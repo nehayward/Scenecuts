@@ -16,21 +16,21 @@ struct SettingsView: View {
     var body: some View {
         TabView {
             GeneralSettingsView(helper: HelperManager.shared.helper)
-                .frame(width: 600, height: 200)
+                .frame(width: 650, height: 200)
                 .tabItem {
                     Label(Localized.general.localizedCapitalized, systemImage: "gear")
                 }
                 .tag(Tabs.general)
             
             SceneSettingsView(helper: HelperManager.shared.helper)
-                .frame(width: 600)
+                .frame(width: 650)
                 .tabItem {
                     Label(Localized.scenes.localizedCapitalized, systemImage: "play.circle")
                 }
                 .tag(Tabs.scenes)
             
             AdvancedSettingsView()
-                .frame(width: 600)
+                .frame(width: 650)
                 .tabItem {
                     Label(Localized.advanced.localizedCapitalized, systemImage: "cpu")
                 }

@@ -19,22 +19,6 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
         }
     }
     
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-    
-    static func == (lhs: SceneStatusBarItem, rhs: SceneStatusBarItem) -> Bool {
-        lhs.id == rhs.id
-    }
-    
-    internal init(id: UUID = UUID(), name: String, iconName: String, shortcut: String, isInMenuBar: Bool) {
-        self.id = id
-        self.name = name
-        self.iconName = iconName
-        self.shortcut = shortcut
-        self.isInMenuBar = isInMenuBar
-    }
-    
     @Published var isInMenuBar: Bool {
         didSet {
             store(value: isInMenuBar, forKey: .isInMenuBar)
@@ -44,6 +28,34 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
                 StatusBarController.shared.statusItems.removeValue(forKey: id)
             }
         }
+    }
+    
+    @Published var showInMenuList: Bool {
+        didSet {
+            store(value: showInMenuList, forKey: .showInMenuList)
+            if showInMenuList {
+                StatusBarController.shared.updateMenuItems()
+            } else {
+                StatusBarController.shared.removeMenuItem(with: id.uuidString)
+            }
+        }
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: SceneStatusBarItem, rhs: SceneStatusBarItem) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    internal init(id: UUID = UUID(), name: String, iconName: String, shortcut: String, isInMenuBar: Bool, showInMenuList: Bool) {
+        self.id = id
+        self.name = name
+        self.iconName = iconName
+        self.shortcut = shortcut
+        self.isInMenuBar = isInMenuBar
+        self.showInMenuList = showInMenuList
     }
 }
 
@@ -59,5 +71,6 @@ extension SceneStatusBarItem {
     enum Keys: String {
         case iconName
         case isInMenuBar
+        case showInMenuList
     }
 }

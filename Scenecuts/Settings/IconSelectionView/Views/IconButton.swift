@@ -37,6 +37,7 @@ struct IconButton_Previews: PreviewProvider {
                                        name: "TV",
                                        iconName: "tv",
                                        shortcut: "",
-                                       isInMenuBar: false), symbol: .tv)
+                                       isInMenuBar: false,
+                                       showInMenuList: true), symbol: .tv)
     }
 }

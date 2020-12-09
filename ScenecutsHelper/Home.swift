@@ -67,7 +67,7 @@ class Home: NSObject {
     @objc func sendScene() {
         guard let actionSets = self.homeManager.primaryHome?.actionSets else { return }
 
-        let actions = actionSets.sorted(by: { $0.name > $1.name }).map {
+        let actions = actionSets.sorted(by: { $0.name < $1.name }).map {
             ActionSet(name: $0.name, id: $0.uniqueIdentifier, type: $0.actionSetType)
         }
         

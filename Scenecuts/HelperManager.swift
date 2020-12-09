@@ -30,7 +30,6 @@ class HelperManager {
     
     init() {
         addObservers()
-        
         helper.scenes.forEach { (scene) in
             if scene.isInMenuBar {
                 StatusBarController.shared.statusItems[scene.id] = StatusBarController.shared.createStatusItem(from: scene)
@@ -62,7 +61,7 @@ class HelperManager {
               let helperAppName = infoDictionary["CFBundleDisplayName"],
               let version = infoDictionary["CFBundleShortVersionString"] else { return "Scenecuts Helper\nVersion ?\nActive Since ?" }
         
-        return "\(helperAppName)\nVersion \(version)\n\(Localized.activeSince) \(dateFormatter.string(from: launchDate))"
+        return "\(helperAppName)\n\(Localized.version) \(version)\n\(Localized.activeSince) \(dateFormatter.string(from: launchDate))"
     }
     
     func launchHelper() {
@@ -103,12 +102,11 @@ class HelperManager {
               let actionsSets = try? JSONDecoder().decode([ActionSet].self, from: data) else { return }
         
         actionsSets.forEach { (actionSet) in
-            StatusBarController.shared.addMenuItem(for: actionSet)
-            
             let showInMenuBar: Bool = SceneStatusBarItem.value(id: actionSet.id, forKey: .isInMenuBar) ?? false
             let iconName: String = SceneStatusBarItem.value(id: actionSet.id, forKey: .iconName) ?? ""
-            
-            let scene = SceneStatusBarItem(id: actionSet.id, name: actionSet.name, iconName: iconName, shortcut: "", isInMenuBar: showInMenuBar)
+            let showInMenuList: Bool = SceneStatusBarItem.value(id: actionSet.id, forKey: .showInMenuList) ?? true
+
+            let scene = SceneStatusBarItem(id: actionSet.id, name: actionSet.name, iconName: iconName, shortcut: "", isInMenuBar: showInMenuBar, showInMenuList: showInMenuList)
             if !HelperManager.shared.helper.scenes.contains(scene) {
                 HelperManager.shared.helper.scenes.append(scene)
                 let name = KeyboardShortcuts.Name(rawValue: scene.id.uuidString)!
@@ -122,6 +120,10 @@ class HelperManager {
             
             if showInMenuBar {
                 StatusBarController.shared.statusItems[scene.id] = StatusBarController.shared.createStatusItem(from: scene)
+            }
+            
+            if showInMenuList {
+                StatusBarController.shared.addMenuItem(for: actionSet)
             }
         }
         
@@ -142,6 +144,8 @@ class HelperManager {
                 }
             }
         }
+        
+        StatusBarController.shared.updateMenuItemLocations()
     }
     
     func addObservers() {
@@ -164,6 +168,10 @@ extension HelperManager {
     enum Localized {
         static var activeSince: String {
             .localizedStringWithFormat(NSLocalizedString("Active Since", comment: "A date indicating how long the app has been active"))
+        }
+        
+        static var version: String {
+            .localizedStringWithFormat(NSLocalizedString("Version", comment: "Current version number"))
         }
         
         static var helperAppError: String {

@@ -112,13 +112,15 @@ struct IconSelectionView_Previews: PreviewProvider {
                                                         name: "Test",
                                                         iconName: "tv",
                                                         shortcut: "",
-                                                        isInMenuBar: false),
+                                                        isInMenuBar: false,
+                                                        showInMenuList: true),
                               dismiss: .constant(true))
             IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
                                                         name: "",
                                                         iconName: "",
                                                         shortcut: "",
-                                                        isInMenuBar: false),
+                                                        isInMenuBar: false,
+                                                        showInMenuList: true),
                               dismiss: .constant(true))
         }
     }
