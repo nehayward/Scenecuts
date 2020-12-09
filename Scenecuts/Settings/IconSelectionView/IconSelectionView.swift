@@ -29,6 +29,8 @@ struct IconSelectionView: View {
                 if !scene.iconName.isEmpty {
                     Text(Localized.currentIcon.localizedCapitalized).padding(.bottom, 2)
                     Image(systemName: scene.iconName)
+                        .renderingMode(.template)
+                        .foregroundColor(.primary)
                         .font(.system(size: 60))
                     Button(Localized.clear.localizedCapitalized) {
                         scene.iconName = ""
@@ -54,7 +56,10 @@ struct IconSelectionView: View {
                     // MARK: Reset State
                     scene.iconName = originalIconName
                     dismiss = false
-                }.keyboardShortcut(.cancelAction)
+                }
+                .foregroundColor(.primary)
+                .keyboardShortcut(.cancelAction)
+                
                 Button(Localized.apply.localizedCapitalized) {
                     // MARK: Reset Menubar State
                     if scene.isInMenuBar {
@@ -63,6 +68,7 @@ struct IconSelectionView: View {
                     }
                     dismiss = false
                 }
+                .foregroundColor(.primary)
                 .keyboardShortcut(.defaultAction)
             }
         }.padding()

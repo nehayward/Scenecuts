@@ -7,8 +7,10 @@
 
 import SwiftUI
 import KeyboardShortcuts
+import SFSafeSymbols
 
 struct SceneConfigurationView: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @ObservedObject var scene: SceneStatusBarItem
     @State var showImageView = false
 
@@ -27,7 +29,9 @@ struct SceneConfigurationView: View {
                             scene.isInMenuBar.toggle()
                         }
                     } label: {
-                        Image(systemName: "xmark.circle.fill")
+                        Image(systemSymbol: .xmarkCircleFill)
+                            .renderingMode(.template)
+                            .foregroundColor(.primary)
                     }.buttonStyle(BorderlessButtonStyle())
                 }
                 Button {
@@ -35,8 +39,11 @@ struct SceneConfigurationView: View {
                 } label: {
                     if scene.iconName.isEmpty {
                         Text(Localized.setImage.localizedCapitalized)
+                            .foregroundColor(.primary)
                     } else {
                         Image(systemName: scene.iconName)
+                            .renderingMode(.template)
+                            .foregroundColor(.primary)
                     }
                 }
             }

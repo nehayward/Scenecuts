@@ -18,8 +18,11 @@ struct IconButton: View {
         }) {
             VStack {
                 Image(systemSymbol: symbol)
+                    .renderingMode(.template)
+                    .foregroundColor(.primary)
                     .font(.system(size: 50))
                 Text(symbol.rawValue)
+                    .foregroundColor(.primary)
                     .font(.caption)
                     .minimumScaleFactor(0.005)
                     .lineLimit(1)

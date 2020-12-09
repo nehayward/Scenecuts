@@ -18,7 +18,7 @@ class StatusBarController {
     private lazy var mainStatusItem: NSStatusItem = {
         let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
-        statusItem.button?.image = NSImage(systemSymbolName: SFSymbol.homekit.rawValue, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 14, weight: .regular))
+        statusItem.button?.image = NSImage(systemSymbol: SFSymbol.homekit, accessibilityDescription: nil)?.withSymbolConfiguration(.init(pointSize: 14, weight: .regular))
         statusItem.button?.target = self
 
         let menu = NSMenu()

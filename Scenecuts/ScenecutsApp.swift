@@ -77,6 +77,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         StatusBarController.shared.openPreferences()
         return true
     }
+    
+    func applicationDidBecomeActive(_ notification: Notification) {
+        print("Here")
+    }
 }
 
 
