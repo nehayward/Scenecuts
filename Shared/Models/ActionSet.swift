@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SFSafeSymbols
 
 #if canImport(HomeKit)
 import HomeKit
@@ -34,6 +33,8 @@ struct ActionSet: Codable {
     #endif
 }
 
+#if canImport(SFSafeSymbols)
+import SFSafeSymbols
 extension ActionSet {
     var defaultSymbol: SFSymbol {
         switch self.type {
@@ -50,6 +51,7 @@ extension ActionSet {
         }
     }
 }
+#endif
 
 #if canImport(HomeKit)
 extension ActionSet.ActionType {

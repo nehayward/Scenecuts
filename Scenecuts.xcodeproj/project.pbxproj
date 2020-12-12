@@ -31,7 +31,6 @@
 		0177BF8B254B4F3D008492AB /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF8A254B4F3D008492AB /* Home.swift */; };
 		0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0177BF8E254B538C008492AB /* HomeKit.framework */; };
 		0177BF93254B60B3008492AB /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0177BF92254B60B3008492AB /* HelperManager.swift */; };
-		0189DA15257C493200AE32B9 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 0189DA14257C493200AE32B9 /* SFSafeSymbols */; };
 		0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199341C255ED98C002FC872 /* IconSelectionView.swift */; };
 		019D948D255F0A0E00A3D48A /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 019D948C255F0A0E00A3D48A /* SFSafeSymbols */; };
 		01AA288F257C5B74003A3B08 /* SceneConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AA288E257C5B74003A3B08 /* SceneConfigurationView.swift */; };
@@ -160,7 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0189DA15257C493200AE32B9 /* SFSafeSymbols in Frameworks */,
 				0177BF8F254B538C008492AB /* HomeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,7 +396,6 @@
 			);
 			name = "Scenecuts Helper";
 			packageProductDependencies = (
-				0189DA14257C493200AE32B9 /* SFSafeSymbols */,
 			);
 			productName = ScenecutsHelper;
 			productReference = 0104AC92254E0F48004124CD /* Scenecuts.app */;
@@ -617,7 +614,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2020.11.28;
+				CURRENT_PROJECT_VERSION = 2020.12.12;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -632,7 +629,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2020.3;
+				MARKETING_VERSION = 2020.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.AppKitIntegration;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -651,7 +648,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2020.11.28;
+				CURRENT_PROJECT_VERSION = 2020.12.12;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -666,7 +663,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2020.3;
+				MARKETING_VERSION = 2020.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.AppKitIntegration;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -801,7 +798,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2020.11.28;
+				CURRENT_PROJECT_VERSION = 2020.12.12;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -812,7 +809,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2020.3;
+				MARKETING_VERSION = 2020.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -830,7 +827,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2020.11.28;
+				CURRENT_PROJECT_VERSION = 2020.12.12;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -841,7 +838,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2020.3;
+				MARKETING_VERSION = 2020.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -859,7 +856,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.11.28;
+				CURRENT_PROJECT_VERSION = 2020.12.12;
 				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -870,7 +867,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.3;
+				MARKETING_VERSION = 2020.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
 				PRODUCT_NAME = Scenecuts;
 				SDKROOT = iphoneos;
@@ -890,7 +887,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ScenecutsHelper/ScenecutsHelper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2020.11.28;
+				CURRENT_PROJECT_VERSION = 2020.12.12;
 				DEVELOPMENT_ASSET_PATHS = "\"ScenecutsHelper/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -901,7 +898,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2020.3;
+				MARKETING_VERSION = 2020.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.ScenecutsHelper;
 				PRODUCT_NAME = Scenecuts;
 				SDKROOT = iphoneos;
@@ -978,11 +975,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0177BE81254B1B42008492AB /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
 			productName = KeyboardShortcuts;
-		};
-		0189DA14257C493200AE32B9 /* SFSafeSymbols */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 019D948B255F0A0E00A3D48A /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
-			productName = SFSafeSymbols;
 		};
 		019D948C255F0A0E00A3D48A /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
