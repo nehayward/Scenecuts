@@ -1,1 +1,1 @@
-NSHomeKitUsageDescription = "Access is needed in order to triggers HomeKit scenes";
+NSHomeKitUsageDescription = "Se necesito accesso para poder controlar ambientes de HomeKit.";
