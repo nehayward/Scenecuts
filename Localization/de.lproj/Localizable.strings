@@ -1,4 +1,4 @@
-﻿/* A button that opens about screen of the app. */
+/* A button that opens about screen of the app. */
 "About Scenecuts" = "Über Scenecuts";
 
 /* A date indicating how long the app has been active */
@@ -84,7 +84,7 @@
 "Start App" = "Starten";
 
 /* A button to terminate helper app. */
-"Terminate App" = "Beenden;
+"Terminate App" = "Beenden";
 
 /* A brief message explaining that Helper App must be running for Scenecuts to work properly */
 "The helper app is used to communicate with HomeKit, this needs to be running in order for Scenecuts to work properly." = "Das Hilfsprogramm kommuniziert mit HomeKit und wird benötigt damit Scenecuts funktioniert.";
