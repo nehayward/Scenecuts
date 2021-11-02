@@ -136,6 +136,8 @@
 		01DEC0DC2572CFB70044C6D5 /* UserDefaults+Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Preferences.swift"; sourceTree = "<group>"; };
 		01F875A125520F32003A362A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		01F875A325520F32003A362A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		C1CF32B926BBEDF7006218A4 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C1CF32BA26BBEDF7006218A4 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,6 +434,7 @@
 				nl,
 				es,
 				de,
+				pl,
 			);
 			mainGroup = 013D3A01254AFADF0057F24A;
 			packageReferences = (
@@ -587,6 +590,7 @@
 				01AA28EA257C817B003A3B08 /* nl */,
 				01AA28ED257C81D5003A3B08 /* de */,
 				01AA28EE257C81D6003A3B08 /* es */,
+				C1CF32B926BBEDF7006218A4 /* pl */,
 			);
 			name = Localizable.strings;
 			path = Localization;
@@ -599,6 +603,7 @@
 				01AA28EF257C81DD003A3B08 /* nl */,
 				01AA28F0257C81E7003A3B08 /* de */,
 				01AA28F1257C81E8003A3B08 /* es */,
+				C1CF32BA26BBEDF7006218A4 /* pl */,
 			);
 			name = InfoPlist.strings;
 			path = Localization;
