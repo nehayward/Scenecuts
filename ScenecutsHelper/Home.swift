@@ -6,6 +6,7 @@
 //
 
 import HomeKit
+import StoreKit
 
 class Home: NSObject {
     static let shared = Home()
@@ -51,7 +52,11 @@ class Home: NSObject {
               }) else { return }
         
         homeManager.primaryHome?.executeActionSet(action, completionHandler: { (error) in
-            guard let error = error as NSError? else { return }
+            guard let error = error as NSError? else {
+                NSLog("Success")
+                RequestReviewManager.shared.requestReview()
+                return
+            }
             
             // MARK: Action doesn't exist anymore.
             if error.code == 25 {
@@ -73,7 +78,7 @@ class Home: NSObject {
         
         guard let encoded = try? JSONEncoder().encode(actions),
               let jsonString = String(data: encoded, encoding: .utf8) else { return }
-        
+
         let encodedString = jsonString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let updateSceneSelector = NSSelectorFromString("updateScenesWithMessage:")
         AppDelegate.appKitController?.performSelector(onMainThread: updateSceneSelector, with: encodedString, waitUntilDone: false)

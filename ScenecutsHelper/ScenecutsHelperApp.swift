@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 @main
 struct ScenecutsHelperApp: App {
@@ -13,14 +14,26 @@ struct ScenecutsHelperApp: App {
 
     var body: some Scene {
         WindowGroup {
-            EmptyView()
+            EmptyView().onOpenURL { url in
+                guard let urlResolved = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return }
+                switch urlResolved.host {
+                    case "scene":
+                        guard let sceneQuery = urlResolved.queryItems?.first(where: { queryItem in
+                            queryItem.name == "id"
+                        }) else { return }
+                        DistributedNotificationCenter.default().postNotificationName(.triggerScene, object: sceneQuery.value!, userInfo: nil, deliverImmediately: true)
+                        AppDelegate.widgetTrigger = (false, 0)
+                    default:
+                        break
+                }
+            }
         }
     }
 }
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    
+    static var widgetTrigger: (Bool, Int) = (false, 0)
     static var appKitController:NSObject?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -32,7 +45,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(handleReopen), name: NSNotification.Name("NSApplicationDidBecomeActiveNotification"),object: nil)
         return false
     }
-    
+
     class func loadAppKitIntegrationFramework() {
         if let frameworksPath = Bundle.main.privateFrameworksPath {
             let bundlePath = "\(frameworksPath)/AppKitIntegration.framework"

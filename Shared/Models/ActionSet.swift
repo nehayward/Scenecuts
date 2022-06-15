@@ -53,6 +53,26 @@ extension ActionSet {
 }
 #endif
 
+#if canImport(SFSafeSymbols)
+import SFSafeSymbols
+extension ActionSet.ActionType {
+    var defaultSymbol: SFSymbol {
+        switch self {
+            case .homeArrival:
+                return .figureWalk
+            case .homeDeparture:
+                return .figureWave
+            case .sleep:
+                return .moonFill
+            case .wakeUp:
+                return .sunMaxFill
+            case .userDefined:
+                return .houseFill
+        }
+    }
+}
+#endif
+
 #if canImport(HomeKit)
 extension ActionSet.ActionType {
     internal init(_ rawValue: String) {

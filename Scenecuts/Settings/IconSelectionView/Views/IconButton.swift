@@ -37,10 +37,11 @@ struct IconButton: View {
 struct IconButton_Previews: PreviewProvider {
     static var previews: some View {
         IconButton(scene: SceneStatusBarItem(id: UUID(),
-                                       name: "TV",
-                                       iconName: "tv",
-                                       shortcut: "",
-                                       isInMenuBar: false,
-                                       showInMenuList: true), symbol: .tv)
+                                             name: "TV",
+                                             iconName: "tv",
+                                             shortcut: "",
+                                             actionType: .userDefined,
+                                             isInMenuBar: false,
+                                             showInMenuList: true), symbol: .tv)
     }
 }
