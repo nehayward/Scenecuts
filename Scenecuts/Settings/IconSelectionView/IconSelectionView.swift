@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SFSafeSymbols
+import WidgetKit
 
 struct IconSelectionView: View {
     var scene: SceneStatusBarItem
@@ -67,6 +68,24 @@ struct IconSelectionView: View {
                         scene.isInMenuBar.toggle()
                     }
                     dismiss = false
+
+                    // MARK: Reload widget
+                    WidgetCenter.shared.reloadAllTimelines()
+
+//                    WidgetCenter.shared.getCurrentConfigurations { result in
+//                        guard case .success(let widgets) = result else { return }
+//
+//                        // Iterate over the WidgetInfo elements to find one that matches
+//                        // the character from the push notification.
+//                        if let widget = widgets.first(
+//                            where: { widget in
+//                                let intent = widget.configuration as? ConfigurationIntent
+//                                return intent?.HomekitScene?.first?.iconName
+//                            }
+//                        ) {
+//                            WidgetCenter.shared.reloadTimelines(ofKind: widget.kind)
+//                        }
+//                    }
                 }
                 .foregroundColor(.primary)
                 .keyboardShortcut(.defaultAction)
@@ -118,6 +137,7 @@ struct IconSelectionView_Previews: PreviewProvider {
                                                         name: "Test",
                                                         iconName: "tv",
                                                         shortcut: "",
+                                                        actionType: .userDefined,
                                                         isInMenuBar: false,
                                                         showInMenuList: true),
                               dismiss: .constant(true))
@@ -125,6 +145,7 @@ struct IconSelectionView_Previews: PreviewProvider {
                                                         name: "",
                                                         iconName: "",
                                                         shortcut: "",
+                                                        actionType: .userDefined,
                                                         isInMenuBar: false,
                                                         showInMenuList: true),
                               dismiss: .constant(true))

@@ -12,6 +12,8 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
     var id: UUID = UUID()
     let name: String
     let shortcut: String
+    let actionType: ActionSet.ActionType
+
     @Published var iconName: String {
         didSet {
             StatusBarController.shared.updateMenuItems()
@@ -49,11 +51,12 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
         lhs.id == rhs.id
     }
     
-    internal init(id: UUID = UUID(), name: String, iconName: String, shortcut: String, isInMenuBar: Bool, showInMenuList: Bool) {
+    internal init(id: UUID = UUID(), name: String, iconName: String, shortcut: String, actionType: ActionSet.ActionType, isInMenuBar: Bool, showInMenuList: Bool) {
         self.id = id
         self.name = name
-        self.iconName = iconName
         self.shortcut = shortcut
+        self.actionType = actionType
+        self.iconName = iconName
         self.isInMenuBar = isInMenuBar
         self.showInMenuList = showInMenuList
     }

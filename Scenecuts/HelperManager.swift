@@ -106,7 +106,16 @@ class HelperManager {
             let iconName: String = SceneStatusBarItem.value(id: actionSet.id, forKey: .iconName) ?? ""
             let showInMenuList: Bool = SceneStatusBarItem.value(id: actionSet.id, forKey: .showInMenuList) ?? true
 
-            let scene = SceneStatusBarItem(id: actionSet.id, name: actionSet.name, iconName: iconName, shortcut: "", isInMenuBar: showInMenuBar, showInMenuList: showInMenuList)
+            let scene = SceneStatusBarItem(
+                id: actionSet.id,
+                name: actionSet.name,
+                iconName: iconName,
+                shortcut: "",
+                actionType: actionSet.type,
+                isInMenuBar: showInMenuBar,
+                showInMenuList: showInMenuList
+            )
+            
             if !HelperManager.shared.helper.scenes.contains(scene) {
                 HelperManager.shared.helper.scenes.append(scene)
                 let name = KeyboardShortcuts.Name(rawValue: scene.id.uuidString)!
@@ -156,11 +165,43 @@ class HelperManager {
         }
         
         DistributedNotificationCenter.default.addObserver(self, selector: #selector(updateScenes), name: .updateScene, object: nil)
+        DistributedNotificationCenter.default.addObserver(self, selector: #selector(sendScenes), name: .getScenes, object: nil)
+        DistributedNotificationCenter.default.addObserver(self, selector: #selector(sendTimelineScenes), name: .getScenesTimeline, object: nil)
     }
     
     func getScenes() {
         // MARK: Ask for scenes from helper
         DistributedNotificationCenter.default().postNotificationName(.requestScenes, object: nil, userInfo: nil, deliverImmediately: true)
+    }
+
+    @objc func sendScenes() {
+        let widgetInfo = helper.scenes.map { scene -> WidgetInfo in
+            var iconName = scene.iconName
+            if scene.iconName.isEmpty {
+                iconName = scene.actionType.defaultSymbol.rawValue
+            }
+            return WidgetInfo(name: scene.name, id: scene.id, imageName: iconName)
+        }
+
+        guard let encoded = try? JSONEncoder().encode(widgetInfo),
+              let jsonString = String(data: encoded, encoding: .utf8) else { return }
+
+        DistributedNotificationCenter.default().postNotificationName(.widgetScenes, object: jsonString, userInfo: nil, deliverImmediately: true)
+    }
+
+    @objc func sendTimelineScenes() {
+        let widgetInfo = helper.scenes.map { scene -> WidgetInfo in
+            var iconName = scene.iconName
+            if scene.iconName.isEmpty {
+                iconName = scene.actionType.defaultSymbol.rawValue
+            }
+            return WidgetInfo(name: scene.name, id: scene.id, imageName: iconName)
+        }
+
+        guard let encoded = try? JSONEncoder().encode(widgetInfo),
+              let jsonString = String(data: encoded, encoding: .utf8) else { return }
+
+        DistributedNotificationCenter.default().postNotificationName(.widgetTimelineScenes, object: jsonString, userInfo: nil, deliverImmediately: true)
     }
 }
 

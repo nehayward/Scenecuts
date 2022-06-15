@@ -73,6 +73,7 @@ struct SceneConfigurationView_Previews: PreviewProvider {
                                                          name: "",
                                                          iconName: "",
                                                          shortcut: "",
+                                                         actionType: .userDefined,
                                                          isInMenuBar: false,
                                                          showInMenuList: true))
     }

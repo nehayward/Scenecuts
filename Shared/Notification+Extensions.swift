@@ -23,4 +23,16 @@ extension NSNotification.Name {
     
     /// Open Scenecuts
     static let openScenecuts = Self("OpenScenecuts")
+
+    /// Request Scenes with `message`containing an array of scene names and UUIDs
+    static let getScenes = Self("GetScenes")
+
+    /// Request Scenes with `message`containing an array of scene names and UUIDs
+    static let widgetScenes = Self("WidgetScenes")
+
+    /// Request Scenes with `message`containing an array of scene names and UUIDs
+    static let widgetTimelineScenes = Self("WidgetTimelineScenes")
+
+    /// Request Scenes with `message`containing an array of scene names and UUIDs
+    static let getScenesTimeline = Self("GetScenesTimeline")
 }
