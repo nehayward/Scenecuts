@@ -48,7 +48,7 @@ struct SceneConfigurationView: View {
                 }
             }
             .frame(width: 120)
-            KeyboardShortcuts.Recorder(for: KeyboardShortcuts.Name(scene.id.uuidString))
+            KeyboardShortcuts.Recorder(for: KeyboardShortcuts.Name(scene.name))
                 .frame(width: 160)
             Toggle("", isOn: $scene.showInMenuList)
                 .frame(width: 120)

@@ -32,9 +32,9 @@ class HelperManager {
         addObservers()
         helper.scenes.forEach { (scene) in
             if scene.isInMenuBar {
-                StatusBarController.shared.statusItems[scene.id] = StatusBarController.shared.createStatusItem(from: scene)
+                StatusBarController.shared.statusItems[scene.name] = StatusBarController.shared.createStatusItem(from: scene)
             } else {
-                StatusBarController.shared.statusItems.removeValue(forKey: scene.id)
+                StatusBarController.shared.statusItems.removeValue(forKey: scene.name)
             }
         }
     }
@@ -102,9 +102,9 @@ class HelperManager {
               let actionsSets = try? JSONDecoder().decode([ActionSet].self, from: data) else { return }
         
         actionsSets.forEach { (actionSet) in
-            let showInMenuBar: Bool = SceneStatusBarItem.value(id: actionSet.id, forKey: .isInMenuBar) ?? false
-            let iconName: String = SceneStatusBarItem.value(id: actionSet.id, forKey: .iconName) ?? ""
-            let showInMenuList: Bool = SceneStatusBarItem.value(id: actionSet.id, forKey: .showInMenuList) ?? true
+            let showInMenuBar: Bool = SceneStatusBarItem.value(name: actionSet.name, forKey: .isInMenuBar) ?? false
+            let iconName: String = SceneStatusBarItem.value(name: actionSet.name, forKey: .iconName) ?? ""
+            let showInMenuList: Bool = SceneStatusBarItem.value(name: actionSet.name, forKey: .showInMenuList) ?? true
 
             let scene = SceneStatusBarItem(
                 id: actionSet.id,
@@ -118,17 +118,19 @@ class HelperManager {
             
             if !HelperManager.shared.helper.scenes.contains(scene) {
                 HelperManager.shared.helper.scenes.append(scene)
-                let name = KeyboardShortcuts.Name(rawValue: scene.id.uuidString)!
+                let name = KeyboardShortcuts.Name(rawValue: scene.name)!
                 
                 KeyboardShortcuts.onKeyUp(for: name) { [name] in
                     // MARK: Trigger scene for id.
-                    let id = name.rawValue
+                    let name = name.rawValue
+                    guard let id = HelperManager.shared.helper.scenes.first(where: { $0.name == name})?.id.uuidString else { return }
+
                     DistributedNotificationCenter.default().postNotificationName(.triggerScene, object: id, userInfo: nil, deliverImmediately: true)
                 }
             }
             
             if showInMenuBar {
-                StatusBarController.shared.statusItems[scene.id] = StatusBarController.shared.createStatusItem(from: scene)
+                StatusBarController.shared.statusItems[scene.name] = StatusBarController.shared.createStatusItem(from: scene)
             }
             
             if showInMenuList {
@@ -137,17 +139,17 @@ class HelperManager {
         }
         
         // MARK: Remove deleted actions
-        let updatedIDs = actionsSets.map(\.id.uuidString)
-        let existingIDs = HelperManager.shared.helper.scenes.map(\.id.uuidString)
+        let updatedIDs = actionsSets.map(\.name)
+        let existingIDs = HelperManager.shared.helper.scenes.map(\.name)
         let idsToDelete = Array(Set(existingIDs).subtracting(Set(updatedIDs)))
         
-        idsToDelete.forEach { (id) in
-            StatusBarController.shared.removeMenuItem(with: id)
+        idsToDelete.forEach { (name) in
+            StatusBarController.shared.removeMenuItem(with: name)
             
             for sequence in HelperManager.shared.helper.scenes.enumerated() {
-                if sequence.element.id.uuidString == id {
+                if sequence.element.name == name {
                     HelperManager.shared.helper.scenes.remove(at: sequence.offset)
-                    let name = KeyboardShortcuts.Name(rawValue: sequence.element.id.uuidString)!
+                    let name = KeyboardShortcuts.Name(rawValue: sequence.element.name)!
                     KeyboardShortcuts.disable(name)
                     return
                 }
