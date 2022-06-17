@@ -25,9 +25,9 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
         didSet {
             store(value: isInMenuBar, forKey: .isInMenuBar)
             if isInMenuBar {
-                StatusBarController.shared.statusItems[id] = StatusBarController.shared.createStatusItem(from: self)
+                StatusBarController.shared.statusItems[name] = StatusBarController.shared.createStatusItem(from: self)
             } else {
-                StatusBarController.shared.statusItems.removeValue(forKey: id)
+                StatusBarController.shared.statusItems.removeValue(forKey: name)
             }
         }
     }
@@ -38,17 +38,17 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
             if showInMenuList {
                 StatusBarController.shared.updateMenuItems()
             } else {
-                StatusBarController.shared.removeMenuItem(with: id.uuidString)
+                StatusBarController.shared.removeMenuItem(with: name)
             }
         }
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+        hasher.combine(name)
     }
     
     static func == (lhs: SceneStatusBarItem, rhs: SceneStatusBarItem) -> Bool {
-        lhs.id == rhs.id
+        lhs.name == rhs.name
     }
     
     internal init(id: UUID = UUID(), name: String, iconName: String, shortcut: String, actionType: ActionSet.ActionType, isInMenuBar: Bool, showInMenuList: Bool) {
@@ -64,11 +64,11 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
 
 extension SceneStatusBarItem {
     func store<T>(value: T, forKey key: Keys) {
-        UserDefaults.standard.setValue(value, forKey: "\(id.uuidString).\(key.rawValue)")
+        UserDefaults.standard.setValue(value, forKey: "\(name).\(key.rawValue)")
     }
     
-    static func value<T>(id: UUID, forKey key: Keys) -> T? {
-        UserDefaults.standard.value(forKey: "\(id.uuidString).\(key.rawValue)") as? T
+    static func value<T>(name: String, forKey key: Keys) -> T? {
+        UserDefaults.standard.value(forKey: "\(name).\(key.rawValue)") as? T
     }
     
     enum Keys: String {

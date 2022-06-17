@@ -49,7 +49,10 @@ class Home: NSObject {
         guard let actionUUID = UUID(uuidString: id),
               let action = homeManager.primaryHome?.actionSets.first(where: { (action) -> Bool in
                 action.uniqueIdentifier == actionUUID
-              }) else { return }
+              }) else {
+                  sendScene()
+                  return
+              }
         
         homeManager.primaryHome?.executeActionSet(action, completionHandler: { (error) in
             guard let error = error as NSError? else {
@@ -110,8 +113,13 @@ extension Home: HMAccessoryDelegate {
 
 extension Home: HMHomeDelegate {
     func home(_ home: HMHome, didRemove actionSet: HMActionSet) {
-        // MARK: ActionSet Removed
-        sendScene()
+        home.removeActionSet(actionSet) { erorr in
+            // MARK: Slight delay needed to ensure home updates actionset
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) { [weak self] in
+                self?.sendScene()
+            }
+        }
+  
     }
     
     func home(_ home: HMHome, didAdd actionSet: HMActionSet) {
