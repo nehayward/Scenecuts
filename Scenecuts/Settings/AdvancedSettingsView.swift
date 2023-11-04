@@ -1,10 +1,4 @@
-//
-//  AdvanceSettingsView.swift
-//  Scenecuts
-//
-//  Created by Nick Hayward on 11/28/20.
-//
-
+import LaunchAtLogin
 import SwiftUI
 
 struct AdvancedSettingsView: View {
@@ -21,6 +15,7 @@ struct AdvancedSettingsView: View {
                         Text(Localized.hidePreferencesOnLaunchFooterInformation)
                             .font(.footnote)
                             .foregroundColor(.secondary)
+                        LaunchAtLogin.Toggle()
                     }
                 }
             }

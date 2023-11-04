@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,7 +42,7 @@
 		01AA28E1257C80CD003A3B08 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01AA28E3257C80CD003A3B08 /* InfoPlist.strings */; };
 		01AE3CF32731C24300DD6569 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F875A125520F32003A362A /* WidgetKit.framework */; platformFilters = (maccatalyst, macos, ); };
 		01AE3CF42731C24300DD6569 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F875A325520F32003A362A /* SwiftUI.framework */; platformFilters = (maccatalyst, macos, ); };
-		01AE3CF72731C24300DD6569 /* ScenecutsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AE3CF62731C24300DD6569 /* ScenecutsWidget.swift */; };
+		01AE3CF72731C24300DD6569 /* WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AE3CF62731C24300DD6569 /* WidgetBundle.swift */; };
 		01AE3CFD2731C24300DD6569 /* ScenecutsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 01AE3CF82731C24300DD6569 /* ScenecutsWidget.intentdefinition */; };
 		01AE3D072731C43300DD6569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01AE3CF92731C24300DD6569 /* Assets.xcassets */; };
 		01C6BCE72731C62900DA7C00 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155941B254F0D1500468BA5 /* Notification+Extensions.swift */; };
@@ -50,14 +50,18 @@
 		01C6BD602732BCAA00DA7C00 /* WidgetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C6BD5D2732BC3C00DA7C00 /* WidgetInfo.swift */; };
 		01DA5BA327344EEA0034F959 /* ScenecutsWidgetExtension.appex in Embed Helper App */ = {isa = PBXBuildFile; fileRef = 01AE3CF22731C24300DD6569 /* ScenecutsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		01DA5BAB27344FE10034F959 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C6BCED2731D68A00DA7C00 /* Intents.framework */; platformFilter = maccatalyst; };
-		01DA5BAE27344FE10034F959 /* HomekitIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA5BAD27344FE10034F959 /* HomekitIntentHandler.swift */; };
-		01DA5BBA27344FFB0034F959 /* HomekitIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA5BAD27344FE10034F959 /* HomekitIntentHandler.swift */; };
+		01DA5BAE27344FE10034F959 /* HomeKitIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA5BAD27344FE10034F959 /* HomeKitIntentHandler.swift */; };
+		01DA5BBA27344FFB0034F959 /* HomeKitIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DA5BAD27344FE10034F959 /* HomeKitIntentHandler.swift */; };
 		01DA5BBB273450E80034F959 /* WidgetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C6BD5D2732BC3C00DA7C00 /* WidgetInfo.swift */; };
 		01DA5BBC273450F00034F959 /* Notification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155941B254F0D1500468BA5 /* Notification+Extensions.swift */; };
 		01DA5BBD273451720034F959 /* ScenecutsWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 01AE3CF82731C24300DD6569 /* ScenecutsWidget.intentdefinition */; };
 		01DEC0D92572C9140044C6D5 /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC0D82572C9140044C6D5 /* AdvancedSettingsView.swift */; };
 		01DEC0DD2572CFB70044C6D5 /* UserDefaults+Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DEC0DC2572CFB70044C6D5 /* UserDefaults+Preferences.swift */; };
 		01E3C71725603DB000CF2ED8 /* Scenecuts.app in Embed Helper App */ = {isa = PBXBuildFile; fileRef = 0104AC8C254E0F33004124CD /* Scenecuts.app */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E90789FF2AE88D810025F6B4 /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E90789FE2AE88D810025F6B4 /* LaunchAtLogin */; };
+		E9443CE52AF5668B00E0280E /* WindowPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9443CE42AF5668B00E0280E /* WindowPosition.swift */; };
+		E94DAB792AF55BD600FC60B5 /* ScenePillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DAB782AF55BD600FC60B5 /* ScenePillView.swift */; };
+		E9C00BD42AF6811E009054B2 /* SceneTableSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C00BD32AF6811E009054B2 /* SceneTableSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +162,7 @@
 		01AA28F0257C81E7003A3B08 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01AA28F1257C81E8003A3B08 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		01AE3CF22731C24300DD6569 /* ScenecutsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ScenecutsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		01AE3CF62731C24300DD6569 /* ScenecutsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenecutsWidget.swift; sourceTree = "<group>"; };
+		01AE3CF62731C24300DD6569 /* WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetBundle.swift; sourceTree = "<group>"; };
 		01AE3CF82731C24300DD6569 /* ScenecutsWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ScenecutsWidget.intentdefinition; sourceTree = "<group>"; };
 		01AE3CF92731C24300DD6569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01AE3CFB2731C24300DD6569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -167,7 +171,7 @@
 		01C6BD2F2731EBEF00DA7C00 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
 		01C6BD5D2732BC3C00DA7C00 /* WidgetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetInfo.swift; sourceTree = "<group>"; };
 		01DA5BAA27344FE10034F959 /* SceneTriggerHandler.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SceneTriggerHandler.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		01DA5BAD27344FE10034F959 /* HomekitIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitIntentHandler.swift; sourceTree = "<group>"; };
+		01DA5BAD27344FE10034F959 /* HomeKitIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitIntentHandler.swift; sourceTree = "<group>"; };
 		01DA5BAF27344FE10034F959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01DA5BB327344FE10034F959 /* SceneTriggerHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SceneTriggerHandler.entitlements; sourceTree = "<group>"; };
 		01DEC0D82572C9140044C6D5 /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
@@ -176,6 +180,9 @@
 		01F875A325520F32003A362A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		C1CF32B926BBEDF7006218A4 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C1CF32BA26BBEDF7006218A4 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9443CE42AF5668B00E0280E /* WindowPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowPosition.swift; sourceTree = "<group>"; };
+		E94DAB782AF55BD600FC60B5 /* ScenePillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenePillView.swift; sourceTree = "<group>"; };
+		E9C00BD32AF6811E009054B2 /* SceneTableSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTableSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90789FF2AE88D810025F6B4 /* LaunchAtLogin in Frameworks */,
 				019D948D255F0A0E00A3D48A /* SFSafeSymbols in Frameworks */,
 				0177BE83254B1B42008492AB /* KeyboardShortcuts in Frameworks */,
 			);
@@ -245,17 +253,9 @@
 			isa = PBXGroup;
 			children = (
 				0199341C255ED98C002FC872 /* IconSelectionView.swift */,
-				0119DF282561AE0E00FF7A01 /* Views */,
-			);
-			path = IconSelectionView;
-			sourceTree = "<group>";
-		};
-		0119DF282561AE0E00FF7A01 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				0119DF292561AE0E00FF7A01 /* IconButton.swift */,
 			);
-			path = Views;
+			path = IconSelectionView;
 			sourceTree = "<group>";
 		};
 		013A8362255212DA00AEC58A /* Products */ = {
@@ -278,7 +278,7 @@
 				013D3A0C254AFADF0057F24A /* Scenecuts */,
 				0177BF0B254B4293008492AB /* ScenecutsHelper */,
 				0104AC84254E0F33004124CD /* AppKitIntegration */,
-				01AE3CF52731C24300DD6569 /* ScenecutsWidget */,
+				01AE3CF52731C24300DD6569 /* Widget */,
 				01DA5BAC27344FE10034F959 /* SceneTriggerHandler */,
 				013A8362255212DA00AEC58A /* Products */,
 				0177BF3A254B4671008492AB /* Frameworks */,
@@ -289,8 +289,10 @@
 			isa = PBXGroup;
 			children = (
 				013D3A0D254AFADF0057F24A /* ScenecutsApp.swift */,
+				E9443CE42AF5668B00E0280E /* WindowPosition.swift */,
 				013D3A1E254AFB320057F24A /* StatusBarController.swift */,
 				0177BF92254B60B3008492AB /* HelperManager.swift */,
+				E94DAB782AF55BD600FC60B5 /* ScenePillView.swift */,
 				0177BE7E254B0B97008492AB /* Settings */,
 				010B32652551CF4900F2F228 /* Models */,
 				01DEC0DC2572CFB70044C6D5 /* UserDefaults+Preferences.swift */,
@@ -380,28 +382,29 @@
 			isa = PBXGroup;
 			children = (
 				0177BE85254B1B52008492AB /* SceneSettingsView.swift */,
+				E9C00BD32AF6811E009054B2 /* SceneTableSettingsView.swift */,
 				01AA288E257C5B74003A3B08 /* SceneConfigurationView.swift */,
 			);
 			path = SceneSettings;
 			sourceTree = "<group>";
 		};
-		01AE3CF52731C24300DD6569 /* ScenecutsWidget */ = {
+		01AE3CF52731C24300DD6569 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				01AE3CF62731C24300DD6569 /* ScenecutsWidget.swift */,
+				01AE3CF62731C24300DD6569 /* WidgetBundle.swift */,
 				01AE3CF82731C24300DD6569 /* ScenecutsWidget.intentdefinition */,
 				01AE3CF92731C24300DD6569 /* Assets.xcassets */,
 				01AE3CFB2731C24300DD6569 /* Info.plist */,
 				01AE3CFC2731C24300DD6569 /* ScenecutsWidget.entitlements */,
 			);
-			path = ScenecutsWidget;
+			path = Widget;
 			sourceTree = "<group>";
 		};
 		01DA5BAC27344FE10034F959 /* SceneTriggerHandler */ = {
 			isa = PBXGroup;
 			children = (
 				01DA5BB327344FE10034F959 /* SceneTriggerHandler.entitlements */,
-				01DA5BAD27344FE10034F959 /* HomekitIntentHandler.swift */,
+				01DA5BAD27344FE10034F959 /* HomeKitIntentHandler.swift */,
 				01DA5BAF27344FE10034F959 /* Info.plist */,
 			);
 			path = SceneTriggerHandler;
@@ -458,6 +461,7 @@
 			packageProductDependencies = (
 				0177BE82254B1B42008492AB /* KeyboardShortcuts */,
 				019D948C255F0A0E00A3D48A /* SFSafeSymbols */,
+				E90789FE2AE88D810025F6B4 /* LaunchAtLogin */,
 			);
 			productName = Scenecuts;
 			productReference = 0104AC8C254E0F33004124CD /* Scenecuts.app */;
@@ -551,7 +555,7 @@
 				};
 			};
 			buildConfigurationList = 013D3A05254AFADF0057F24A /* Build configuration list for PBXProject "Scenecuts" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -566,6 +570,7 @@
 			packageReferences = (
 				0177BE81254B1B42008492AB /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
 				019D948B255F0A0E00A3D48A /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				E90789FD2AE88D810025F6B4 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */,
 			);
 			productRefGroup = 013A8362255212DA00AEC58A /* Products */;
 			projectDirPath = "";
@@ -683,11 +688,14 @@
 				0199341D255ED98C002FC872 /* IconSelectionView.swift in Sources */,
 				013D3AA0254B059C0057F24A /* SettingsView.swift in Sources */,
 				01AA288F257C5B74003A3B08 /* SceneConfigurationView.swift in Sources */,
+				E9C00BD42AF6811E009054B2 /* SceneTableSettingsView.swift in Sources */,
 				013D3A0E254AFADF0057F24A /* ScenecutsApp.swift in Sources */,
+				E9443CE52AF5668B00E0280E /* WindowPosition.swift in Sources */,
 				01DEC0DD2572CFB70044C6D5 /* UserDefaults+Preferences.swift in Sources */,
 				015BA337257C3C0700FA20A6 /* ActionSet.swift in Sources */,
 				0155941C254F0D1500468BA5 /* Notification+Extensions.swift in Sources */,
 				013D3A1F254AFB320057F24A /* StatusBarController.swift in Sources */,
+				E94DAB792AF55BD600FC60B5 /* ScenePillView.swift in Sources */,
 				0177BF93254B60B3008492AB /* HelperManager.swift in Sources */,
 				01DEC0D92572C9140044C6D5 /* AdvancedSettingsView.swift in Sources */,
 				0177BE86254B1B52008492AB /* SceneSettingsView.swift in Sources */,
@@ -718,8 +726,8 @@
 				01AE3CFD2731C24300DD6569 /* ScenecutsWidget.intentdefinition in Sources */,
 				01C6BCE72731C62900DA7C00 /* Notification+Extensions.swift in Sources */,
 				01C6BD602732BCAA00DA7C00 /* WidgetInfo.swift in Sources */,
-				01DA5BBA27344FFB0034F959 /* HomekitIntentHandler.swift in Sources */,
-				01AE3CF72731C24300DD6569 /* ScenecutsWidget.swift in Sources */,
+				01DA5BBA27344FFB0034F959 /* HomeKitIntentHandler.swift in Sources */,
+				01AE3CF72731C24300DD6569 /* WidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -728,7 +736,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01DA5BBD273451720034F959 /* ScenecutsWidget.intentdefinition in Sources */,
-				01DA5BAE27344FE10034F959 /* HomekitIntentHandler.swift in Sources */,
+				01DA5BAE27344FE10034F959 /* HomeKitIntentHandler.swift in Sources */,
 				01DA5BBC273450F00034F959 /* Notification+Extensions.swift in Sources */,
 				01DA5BBB273450E80034F959 /* WidgetInfo.swift in Sources */,
 			);
@@ -982,7 +990,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2022.6.16;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -992,8 +1000,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2022.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1011,7 +1019,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2022.6.16;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Scenecuts/Preview Content\"";
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1021,8 +1029,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 2022.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.5;
+				MARKETING_VERSION = 2023.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nick.Scenecuts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1046,7 +1054,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ScenecutsHelper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1077,7 +1085,7 @@
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ScenecutsHelper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1102,14 +1110,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_ENTITLEMENTS = ScenecutsWidget/ScenecutsWidget.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Widget/ScenecutsWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2022.6.16;
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScenecutsWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ScenecutsWidget;
+				INFOPLIST_FILE = Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Scenecuts;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1136,14 +1144,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
-				CODE_SIGN_ENTITLEMENTS = ScenecutsWidget/ScenecutsWidget.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Widget/ScenecutsWidget.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2022.6.16;
 				DEVELOPMENT_TEAM = Z9QV6PA2TY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ScenecutsWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = ScenecutsWidget;
+				INFOPLIST_FILE = Widget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Scenecuts;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1296,7 +1304,15 @@
 			repositoryURL = "https://github.com/piknotech/SFSafeSymbols.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.3;
+				minimumVersion = 4.1.1;
+			};
+		};
+		E90789FD2AE88D810025F6B4 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin-Modern";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1311,6 +1327,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 019D948B255F0A0E00A3D48A /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
+		};
+		E90789FE2AE88D810025F6B4 /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E90789FD2AE88D810025F6B4 /* XCRemoteSwiftPackageReference "LaunchAtLogin-Modern" */;
+			productName = LaunchAtLogin;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

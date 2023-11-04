@@ -12,32 +12,40 @@ struct SettingsView: View {
     private enum Tabs: Hashable {
         case general, scenes, advanced
     }
-    
+
+    @State var size: Double = 375
+
     var body: some View {
         TabView {
             GeneralSettingsView(helper: HelperManager.shared.helper)
-                .frame(width: 650, height: 200)
                 .tabItem {
                     Label(Localized.general.localizedCapitalized, systemImage: "gear")
                 }
                 .tag(Tabs.general)
-            
+                .onAppear {
+                    size = 375
+                }
+
             SceneSettingsView(helper: HelperManager.shared.helper)
-                .frame(width: 650)
                 .tabItem {
-                    Label(Localized.scenes.localizedCapitalized, systemImage: "play.circle")
+                    Label(Localized.scenes.localizedCapitalized, systemImage: "gearshape.arrow.triangle.2.circlepath")
                 }
                 .tag(Tabs.scenes)
-            
+                .onAppear {
+                    size = 800
+                }
+
             AdvancedSettingsView()
-                .frame(width: 650)
                 .tabItem {
                     Label(Localized.advanced.localizedCapitalized, systemImage: "cpu")
                 }
                 .tag(Tabs.advanced)
+                .padding()
+                .onAppear {
+                    size = 375
+                }
         }
-        .padding(20)
-        .frame(minWidth: 375)
+        .frame(minWidth: size)
     }
 }
 
@@ -57,8 +65,6 @@ extension SettingsView {
     }
 }
 
-struct SettingsViewTest_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
-    }
+#Preview {
+    SettingsView()
 }

@@ -1,10 +1,3 @@
-//
-//  AdvanceSettingsView.swift
-//  Scenecuts
-//
-//  Created by Nick Hayward on 10/29/20.
-//
-
 import SwiftUI
 
 struct SceneSettingsView: View {
@@ -74,12 +67,21 @@ extension SceneSettingsView {
         static var showInMenuList: String {
             .localizedStringWithFormat(NSLocalizedString("Show in Menu List", comment: "A column header that shows a list of toggles to show/hide scenes in menu list."))
         }
+
+        static var setImage: String {
+            .localizedStringWithFormat(NSLocalizedString("Set Image", comment: "A button that opens a view to assign an icon/image to the scene."))
+        }
     }
 }
 
 
-struct SceneSettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SceneSettingsView(helper: HelperManager.shared.helper)
-    }
+#Preview {
+    SceneSettingsView(helper: HelperManager.shared.helper)
+        .onAppear {
+            HelperManager.shared.getScenes()
+        }
+}
+
+#Preview {
+    SceneSettingsView(helper: HelperManager.shared.helper)
 }

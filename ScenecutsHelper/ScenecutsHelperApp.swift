@@ -22,7 +22,6 @@ struct ScenecutsHelperApp: App {
                             queryItem.name == "id"
                         }) else { return }
                         DistributedNotificationCenter.default().postNotificationName(.triggerScene, object: sceneQuery.value!, userInfo: nil, deliverImmediately: true)
-                        AppDelegate.widgetTrigger = (false, 0)
                     default:
                         break
                 }
@@ -33,7 +32,6 @@ struct ScenecutsHelperApp: App {
 
 
 class AppDelegate: NSObject, UIApplicationDelegate {
-    static var widgetTrigger: (Bool, Int) = (false, 0)
     static var appKitController:NSObject?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {

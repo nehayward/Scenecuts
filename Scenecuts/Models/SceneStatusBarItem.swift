@@ -1,18 +1,12 @@
-//
-//  File.swift
-//  Scenecuts
-//
-//  Created by Nick Hayward on 11/3/20.
-//
-
 import Foundation
 
-class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
-    
+final class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
+
     var id: UUID = UUID()
     let name: String
     let shortcut: String
     let actionType: ActionSet.ActionType
+    var sortPosition: Int? = nil
 
     @Published var iconName: String {
         didSet {
@@ -45,10 +39,17 @@ class SceneStatusBarItem: Identifiable, Equatable, Hashable, ObservableObject {
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(name)
+        hasher.combine(iconName)
+        hasher.combine(isInMenuBar)
+        hasher.combine(showInMenuList)
     }
     
     static func == (lhs: SceneStatusBarItem, rhs: SceneStatusBarItem) -> Bool {
-        lhs.name == rhs.name
+        lhs.name == rhs.name &&
+        lhs.iconName == rhs.iconName &&
+        lhs.shortcut == rhs.shortcut &&
+        lhs.isInMenuBar == rhs.isInMenuBar &&
+        lhs.showInMenuList == rhs.showInMenuList
     }
     
     internal init(id: UUID = UUID(), name: String, iconName: String, shortcut: String, actionType: ActionSet.ActionType, isInMenuBar: Bool, showInMenuList: Bool) {

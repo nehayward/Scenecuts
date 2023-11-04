@@ -10,25 +10,25 @@ import StoreKit
 
 class Home: NSObject {
     static let shared = Home()
-    
-    let homeManager = HMHomeManager()
-    
+
+    private let homeManager = HMHomeManager()
+
     func setup() {
         NotificationCenter.default.addObserver(self, selector: #selector(triggerScene), name: .triggerScene, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(sendScene), name: .requestScenes, object: nil)
     }
-    
+
     override init() {
         super.init()
         homeManager.delegate = self
-        
+
         if homeManager.authorizationStatus == .determined {
             let fixPermissionSelector: Selector = NSSelectorFromString("fixPermission")
             AppDelegate.appKitController?.performSelector(onMainThread: fixPermissionSelector, with: nil, waitUntilDone: false)
             return
         }
     }
-    
+
     func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
         homeManager.primaryHome?.delegate = self
 
@@ -37,30 +37,32 @@ class Home: NSObject {
         for accessory in accessories {
             accessory.delegate = self
         }
-        
+
         // MARK: Update Scenes if needed
         sendScene()
     }
-    
-    
+
+
     @objc func triggerScene(_ notification: Notification) {
         guard let id = notification.userInfo?["id"] as? String else { return }
-        
+
         guard let actionUUID = UUID(uuidString: id),
               let action = homeManager.primaryHome?.actionSets.first(where: { (action) -> Bool in
-                action.uniqueIdentifier == actionUUID
+                  getUUID(actionSet: action) == actionUUID
               }) else {
-                  sendScene()
-                  return
-              }
-        
+            sendScene()
+            return
+        }
+
+
         homeManager.primaryHome?.executeActionSet(action, completionHandler: { (error) in
             guard let error = error as NSError? else {
                 NSLog("Success")
-                RequestReviewManager.shared.requestReview()
+                // MARK: Fix later
+                //                RequestReviewManager.shared.requestReview()
                 return
             }
-            
+
             // MARK: Action doesn't exist anymore.
             if error.code == 25 {
                 self.homeManager.primaryHome?.removeActionSet(action, completionHandler: { (error) in
@@ -71,20 +73,28 @@ class Home: NSObject {
             }
         })
     }
-    
+
     @objc func sendScene() {
         guard let actionSets = self.homeManager.primaryHome?.actionSets else { return }
 
-        let actions = actionSets.sorted(by: { $0.name < $1.name }).map {
-            ActionSet(name: $0.name, id: $0.uniqueIdentifier, type: $0.actionSetType)
+        homeManager.primaryHome?.builtinActionSet(ofType: <#T##String#>)
+        let actions: [ActionSet] = actionSets.sorted(by: { $0.name < $1.name }).compactMap { actionSet in
+            guard let id = getUUID(actionSet: actionSet) else { return nil }
+            return ActionSet(name: actionSet.name, id: id, type: actionSet.actionSetType)
         }
-        
+
         guard let encoded = try? JSONEncoder().encode(actions),
               let jsonString = String(data: encoded, encoding: .utf8) else { return }
 
         let encodedString = jsonString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         let updateSceneSelector = NSSelectorFromString("updateScenesWithMessage:")
         AppDelegate.appKitController?.performSelector(onMainThread: updateSceneSelector, with: encodedString, waitUntilDone: false)
+    }
+
+    private func getUUID(actionSet: HMActionSet) -> UUID? {
+        let selector = NSSelectorFromString("uuid")
+        guard let uuid = actionSet.perform(selector).takeUnretainedValue() as? UUID else { return nil }
+        return uuid
     }
 }
 
@@ -102,12 +112,12 @@ extension Home: HMHomeManagerDelegate {
             break
         }
     }
-    
+
 }
 
 extension Home: HMAccessoryDelegate {
     func accessory(_ accessory: HMAccessory, service: HMService, didUpdateValueFor characteristic: HMCharacteristic) {
-        #warning("Add Support for Accessories")
+#warning("Add Support for Accessories")
     }
 }
 
@@ -119,17 +129,17 @@ extension Home: HMHomeDelegate {
                 self?.sendScene()
             }
         }
-  
+
     }
-    
+
     func home(_ home: HMHome, didAdd actionSet: HMActionSet) {
         sendScene()
     }
-    
+
     func home(_ home: HMHome, didUpdateActionsFor actionSet: HMActionSet) {
         print(actionSet)
     }
-    
+
     func home(_ home: HMHome, didUpdateNameFor actionSet: HMActionSet) {
         print(actionSet)
     }

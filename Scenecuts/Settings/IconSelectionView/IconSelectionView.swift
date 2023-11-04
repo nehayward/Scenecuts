@@ -10,20 +10,19 @@ import SFSafeSymbols
 import WidgetKit
 
 struct IconSelectionView: View {
-    var scene: SceneStatusBarItem
-    @Binding var dismiss: Bool
+    @Environment(\.dismiss) var dismiss
+    @ObservedObject var scene: SceneStatusBarItem
     @State var filterText: String = ""
     @State var originalIconName = ""
-    
-    var symbols: [Symbol] = {
-        let symbols = SFSafeSymbols.SFSymbol.allCases.map { (symbol) in
-            Symbol(symbol: symbol)
-        }
-        return symbols
+
+    var symbols: [SFSymbol] = {
+        SFSafeSymbols.SFSymbol.allSymbols.sorted(by: { a, b in
+            a.rawValue < b.rawValue
+        })
     }()
-    
-    var rows: [GridItem] = Array(repeating: .init(.fixed(80)), count: 5)
-    
+
+    var rows: [GridItem] = Array(repeating: .init(.fixed(200)), count: 6)
+
     var body: some View {
         VStack {
             VStack {
@@ -36,17 +35,19 @@ struct IconSelectionView: View {
                     Button(Localized.clear.localizedCapitalized) {
                         scene.iconName = ""
                     }
+                    .transition(.scale)
                 } else {
                     Text(Localized.selectAnIcon)
                         .font(.title)
                 }
             }
-            TextField("\(Localized.searchPromptPlaceholder)...", text: $filterText).textFieldStyle(RoundedBorderTextFieldStyle())
+
+            TextField("\(Localized.searchPromptPlaceholder)...", text: $filterText)
 
             ScrollView {
                 LazyVGrid(columns: rows) {
-                    ForEach(symbols.filter{$0.symbol.rawValue.lowercased().hasPrefix(filterText.lowercased()) || filterText.lowercased() == ""}) { symbol in
-                        IconButton(scene: scene, symbol: symbol.symbol)
+                    ForEach(symbols.filter{$0.rawValue.lowercased().hasPrefix(filterText.lowercased()) || filterText.lowercased() == ""}, id: \.self) { symbol in
+                        IconButton(scene: scene, symbol: symbol)
                     }
                     .padding(.horizontal)
                 }
@@ -56,50 +57,32 @@ struct IconSelectionView: View {
                 Button(Localized.cancel.localizedCapitalized) {
                     // MARK: Reset State
                     scene.iconName = originalIconName
-                    dismiss = false
+                    dismiss()
                 }
                 .foregroundColor(.primary)
                 .keyboardShortcut(.cancelAction)
-                
+
                 Button(Localized.apply.localizedCapitalized) {
                     // MARK: Reset Menubar State
                     if scene.isInMenuBar {
                         scene.isInMenuBar.toggle()
                         scene.isInMenuBar.toggle()
                     }
-                    dismiss = false
+                    dismiss()
 
                     // MARK: Reload widget
                     WidgetCenter.shared.reloadAllTimelines()
-
-//                    WidgetCenter.shared.getCurrentConfigurations { result in
-//                        guard case .success(let widgets) = result else { return }
-//
-//                        // Iterate over the WidgetInfo elements to find one that matches
-//                        // the character from the push notification.
-//                        if let widget = widgets.first(
-//                            where: { widget in
-//                                let intent = widget.configuration as? ConfigurationIntent
-//                                return intent?.HomekitScene?.first?.iconName
-//                            }
-//                        ) {
-//                            WidgetCenter.shared.reloadTimelines(ofKind: widget.kind)
-//                        }
-//                    }
                 }
                 .foregroundColor(.primary)
                 .keyboardShortcut(.defaultAction)
             }
-        }.padding()
+        }
+        .padding()
         .onAppear {
             originalIconName = scene.iconName
         }
+        .animation(.spring, value: scene)
     }
-}
-
-struct Symbol: Identifiable, Hashable {
-    var id = UUID()
-    var symbol: SFSymbol
 }
 
 extension IconSelectionView {
@@ -107,49 +90,47 @@ extension IconSelectionView {
         static var currentIcon: String {
             .localizedStringWithFormat(NSLocalizedString("Current Icon", comment: "A header label for current icon selected"))
         }
-        
+
         static var clear: String {
             .localizedStringWithFormat(NSLocalizedString("Clear", comment: "A button to clear icon image selection"))
         }
-        
+
         static var selectAnIcon: String {
             .localizedStringWithFormat(NSLocalizedString("Select an Icon", comment: "A header label that indicates icon can be selected"))
         }
-        
+
         static var searchPromptPlaceholder: String {
             .localizedStringWithFormat(NSLocalizedString("Search for SFSymbols", comment: "A placeholder for searching for SFSymbols"))
         }
-        
+
         static var cancel: String {
             .localizedStringWithFormat(NSLocalizedString("Cancel", comment: "A button that cancels selected icon change."))
         }
-        
+
         static var apply: String {
             .localizedStringWithFormat(NSLocalizedString("Apply", comment: "A button that applies selected icon change."))
         }
     }
 }
 
-struct IconSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
-                                                        name: "Test",
-                                                        iconName: "tv",
-                                                        shortcut: "",
-                                                        actionType: .userDefined,
-                                                        isInMenuBar: false,
-                                                        showInMenuList: true),
-                              dismiss: .constant(true))
-            IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
-                                                        name: "",
-                                                        iconName: "",
-                                                        shortcut: "",
-                                                        actionType: .userDefined,
-                                                        isInMenuBar: false,
-                                                        showInMenuList: true),
-                              dismiss: .constant(true))
-        }
-    }
-}
-
+//struct IconSelectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
+//                                                        name: "Test",
+//                                                        iconName: "tv",
+//                                                        shortcut: "",
+//                                                        actionType: .userDefined,
+//                                                        isInMenuBar: false,
+//                                                        showInMenuList: true))
+//            IconSelectionView(scene: SceneStatusBarItem(id: UUID(),
+//                                                        name: "",
+//                                                        iconName: "",
+//                                                        shortcut: "",
+//                                                        actionType: .userDefined,
+//                                                        isInMenuBar: false,
+//                                                        showInMenuList: true))
+//        }
+//    }
+//}
+//

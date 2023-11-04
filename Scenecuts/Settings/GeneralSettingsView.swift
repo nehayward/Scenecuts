@@ -1,10 +1,3 @@
-//
-//  GeneralSettingsView.swift
-//  Scenecuts
-//
-//  Created by Nick Hayward on 10/29/20.
-//
-
 import SwiftUI
 
 struct GeneralSettingsView: View {
@@ -62,8 +55,6 @@ extension GeneralSettingsView {
     }
 }
 
-struct GeneralSettingsTab_Previews: PreviewProvider {
-    static var previews: some View {
-        GeneralSettingsView(helper: HelperManager.shared.helper)
-    }
+#Preview {
+    GeneralSettingsView(helper: HelperManager.shared.helper)
 }

@@ -8,7 +8,7 @@
 import Intents
 import UIKit
 
-class HomekitIntentHandler: INExtension, ConfigurationIntentHandling {
+class HomeKitIntentHandler: INExtension, ConfigurationIntentHandling {
 
     var scenesUpdated: (([WidgetInfo]) -> Void)?
 

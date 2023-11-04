@@ -10,7 +10,6 @@ import KeyboardShortcuts
 import SFSafeSymbols
 
 struct SceneConfigurationView: View {
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @ObservedObject var scene: SceneStatusBarItem
     @State var showImageView = false
 
@@ -53,8 +52,8 @@ struct SceneConfigurationView: View {
             Toggle("", isOn: $scene.showInMenuList)
                 .frame(width: 120)
         }.sheet(isPresented: $showImageView) {
-            IconSelectionView(scene: scene, dismiss: $showImageView)
-                .frame(width: 500, height: 400)
+            IconSelectionView(scene: scene)
+                .frame(width: 800, height: 600)
         }
     }
 }
