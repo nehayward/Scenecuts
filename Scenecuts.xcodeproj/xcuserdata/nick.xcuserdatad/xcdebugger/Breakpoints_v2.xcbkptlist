@@ -414,8 +414,8 @@
             filePath = "ScenecutsHelper/Home.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "sendScene()"
             landmarkType = "7">
          </BreakpointContent>
@@ -526,58 +526,10 @@
             filePath = "ScenecutsHelper/Home.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "home(_:didRemove:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "74A48FE8-F36A-4580-8A2A-70F718D5946A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ScenecutsHelper/Home.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "sendScene()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "74A48FE8-F36A-4580-8A2A-70F718D5946A - 851da84428c3c2d7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Scenecuts.Home.sendScene() -&gt; ()"
-                  moduleName = "Scenecuts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nick/Library/Mobile%20Documents/com~apple~CloudDocs/Play/SceneCuts/Scenecuts/ScenecutsHelper/Home.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "736">
-               </Location>
-               <Location
-                  uuid = "74A48FE8-F36A-4580-8A2A-70F718D5946A - 851da84428c3c2d7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Scenecuts.Home.sendScene() -&gt; ()"
-                  moduleName = "Scenecuts"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/nick/Library/Mobile%20Documents/com~apple~CloudDocs/Play/SceneCuts/Scenecuts/ScenecutsHelper/Home.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "84"
-                  endingLineNumber = "84"
-                  offsetFromSymbolStart = "1036">
-               </Location>
-            </Locations>
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "Home"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

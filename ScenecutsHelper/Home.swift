@@ -75,11 +75,13 @@ class Home: NSObject {
     }
 
     @objc func sendScene() {
-        guard let actionSets = self.homeManager.primaryHome?.actionSets else { return }
+        guard let actionSets = self.homeManager.primaryHome?.actionSets.filter({ !$0.actions.isEmpty }) else { return }
 
-        homeManager.primaryHome?.builtinActionSet(ofType: <#T##String#>)
         let actions: [ActionSet] = actionSets.sorted(by: { $0.name < $1.name }).compactMap { actionSet in
-            guard let id = getUUID(actionSet: actionSet) else { return nil }
+            guard let id = getUUID(actionSet: actionSet) else {
+                print(actionSet.name)
+                return nil
+            }
             return ActionSet(name: actionSet.name, id: id, type: actionSet.actionSetType)
         }
 
